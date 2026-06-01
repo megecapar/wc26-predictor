@@ -21,7 +21,8 @@ export interface MatchPrediction {
   id: string
   date: string       // ISO
   kickoff: string    // '21:00'
-  stage: string      // 'Grup A · 1. hafta'
+  stage: string   
+  venue?: string   // 'Grup A · 1. hafta'
   group: string      // 'A'
   confidence: 'high' | 'mid' | 'low'
   home: Team
