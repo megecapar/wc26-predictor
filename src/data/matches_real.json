@@ -1,0 +1,7256 @@
+[
+  {
+    "id": "mex-sou-A1",
+    "date": "2026-06-11",
+    "kickoff": "19:00",
+    "venue": "Mexico City",
+    "stage": "Grup A · 1. hafta",
+    "group": "A",
+    "confidence": "high",
+    "home": {
+      "code": "MEX",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "elo": 1768,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "SOU",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "elo": 1617,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "loss",
+        "draw"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.43,
+        "probability": 0.664
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.98,
+        "probability": 0.191
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 6.69,
+        "probability": 0.142
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.61,
+        "probability": 0.591
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.33,
+        "probability": 0.409
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.82,
+        "probability": 0.524
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.0,
+        "probability": 0.476
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.96,
+        "probability": 0.486
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.6,
+        "probability": 0.366
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 6.41,
+        "probability": 0.148
+      }
+    }
+  },
+  {
+    "id": "sou-cze-A1",
+    "date": "2026-06-11",
+    "kickoff": "02:00",
+    "venue": "Guadalajara (Zapopan)",
+    "stage": "Grup A · 1. hafta",
+    "group": "A",
+    "confidence": "high",
+    "home": {
+      "code": "SOU",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "elo": 1785,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "CZE",
+      "name": "Czech Republic",
+      "flag": "🇨🇿",
+      "elo": 1618,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.24,
+        "probability": 0.769
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.78,
+        "probability": 0.122
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 10.38,
+        "probability": 0.092
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.786
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.45,
+        "probability": 0.214
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.52,
+        "probability": 0.625
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.54,
+        "probability": 0.375
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.58,
+        "probability": 0.604
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.51,
+        "probability": 0.271
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 7.64,
+        "probability": 0.125
+      }
+    }
+  },
+  {
+    "id": "cze-sou-A2",
+    "date": "2026-06-18",
+    "kickoff": "16:00",
+    "venue": "Atlanta",
+    "stage": "Grup A · 2. hafta",
+    "group": "A",
+    "confidence": "low",
+    "home": {
+      "code": "CZE",
+      "name": "Czech Republic",
+      "flag": "🇨🇿",
+      "elo": 1618,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "SOU",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "elo": 1617,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "loss",
+        "draw"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.04,
+        "probability": 0.467
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.11,
+        "probability": 0.232
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.17,
+        "probability": 0.301
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.57,
+        "probability": 0.608
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.43,
+        "probability": 0.392
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.54,
+        "probability": 0.62
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.51,
+        "probability": 0.38
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.65,
+        "probability": 0.36
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.48,
+        "probability": 0.383
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.71,
+        "probability": 0.257
+      }
+    }
+  },
+  {
+    "id": "mex-sou-A2",
+    "date": "2026-06-18",
+    "kickoff": "01:00",
+    "venue": "Guadalajara (Zapopan)",
+    "stage": "Grup A · 2. hafta",
+    "group": "A",
+    "confidence": "low",
+    "home": {
+      "code": "MEX",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "elo": 1768,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "SOU",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "elo": 1785,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.92,
+        "probability": 0.243
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.53,
+        "probability": 0.21
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.75,
+        "probability": 0.545
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.43,
+        "probability": 0.664
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.84,
+        "probability": 0.336
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.47,
+        "probability": 0.646
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.69,
+        "probability": 0.354
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.23,
+        "probability": 0.225
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.66,
+        "probability": 0.358
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.29,
+        "probability": 0.417
+      }
+    }
+  },
+  {
+    "id": "cze-mex-A3",
+    "date": "2026-06-24",
+    "kickoff": "01:00",
+    "venue": "Mexico City",
+    "stage": "Grup A · 3. hafta",
+    "group": "A",
+    "confidence": "mid",
+    "home": {
+      "code": "CZE",
+      "name": "Czech Republic",
+      "flag": "🇨🇿",
+      "elo": 1618,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "MEX",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "elo": 1768,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.96,
+        "probability": 0.192
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.74,
+        "probability": 0.201
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.57,
+        "probability": 0.605
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.48,
+        "probability": 0.642
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.66,
+        "probability": 0.358
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.58,
+        "probability": 0.603
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.4,
+        "probability": 0.397
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.05,
+        "probability": 0.189
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.66,
+        "probability": 0.359
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.1,
+        "probability": 0.453
+      }
+    }
+  },
+  {
+    "id": "sou-sou-A3",
+    "date": "2026-06-24",
+    "kickoff": "01:00",
+    "venue": "Monterrey (Guadalupe)",
+    "stage": "Grup A · 3. hafta",
+    "group": "A",
+    "confidence": "high",
+    "home": {
+      "code": "SOU",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "elo": 1617,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "loss",
+        "draw"
+      ],
+      "group": "A"
+    },
+    "away": {
+      "code": "SOU",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "elo": 1785,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "A"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 14.9,
+        "probability": 0.064
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 8.89,
+        "probability": 0.107
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.17,
+        "probability": 0.811
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.26,
+        "probability": 0.755
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.89,
+        "probability": 0.245
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.76,
+        "probability": 0.54
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.07,
+        "probability": 0.46
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 9.91,
+        "probability": 0.096
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.56,
+        "probability": 0.267
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.5,
+        "probability": 0.637
+      }
+    }
+  },
+  {
+    "id": "can-bos-B1",
+    "date": "2026-06-12",
+    "kickoff": "19:00",
+    "venue": "Toronto",
+    "stage": "Grup B · 1. hafta",
+    "group": "B",
+    "confidence": "high",
+    "home": {
+      "code": "CAN",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "elo": 1718,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "group": "B"
+    },
+    "away": {
+      "code": "BOS",
+      "name": "Bosnia & Herzegovina",
+      "flag": "🇧🇦",
+      "elo": 1500,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.13,
+        "probability": 0.844
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 10.87,
+        "probability": 0.088
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 21.47,
+        "probability": 0.044
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.25,
+        "probability": 0.759
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.95,
+        "probability": 0.241
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.95,
+        "probability": 0.488
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.86,
+        "probability": 0.512
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.41,
+        "probability": 0.675
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.83,
+        "probability": 0.249
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 12.53,
+        "probability": 0.076
+      }
+    }
+  },
+  {
+    "id": "qat-swi-B1",
+    "date": "2026-06-13",
+    "kickoff": "19:00",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "stage": "Grup B · 1. hafta",
+    "group": "B",
+    "confidence": "mid",
+    "home": {
+      "code": "QAT",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "elo": 1601,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "loss",
+        "loss"
+      ],
+      "group": "B"
+    },
+    "away": {
+      "code": "SWI",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "elo": 1730,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 8.21,
+        "probability": 0.116
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.15,
+        "probability": 0.155
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.32,
+        "probability": 0.723
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.36,
+        "probability": 0.699
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.17,
+        "probability": 0.301
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.64,
+        "probability": 0.58
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.27,
+        "probability": 0.42
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 6.94,
+        "probability": 0.137
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.01,
+        "probability": 0.317
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.74,
+        "probability": 0.546
+      }
+    }
+  },
+  {
+    "id": "swi-bos-B2",
+    "date": "2026-06-18",
+    "kickoff": "19:00",
+    "venue": "Los Angeles (Inglewood)",
+    "stage": "Grup B · 2. hafta",
+    "group": "B",
+    "confidence": "high",
+    "home": {
+      "code": "SWI",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "elo": 1730,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "B"
+    },
+    "away": {
+      "code": "BOS",
+      "name": "Bosnia & Herzegovina",
+      "flag": "🇧🇦",
+      "elo": 1500,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.11,
+        "probability": 0.854
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 12.1,
+        "probability": 0.079
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 25.06,
+        "probability": 0.038
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.24,
+        "probability": 0.769
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.12,
+        "probability": 0.231
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.0,
+        "probability": 0.476
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.82,
+        "probability": 0.524
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.37,
+        "probability": 0.693
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.02,
+        "probability": 0.237
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 13.7,
+        "probability": 0.07
+      }
+    }
+  },
+  {
+    "id": "can-qat-B2",
+    "date": "2026-06-18",
+    "kickoff": "22:00",
+    "venue": "Vancouver",
+    "stage": "Grup B · 2. hafta",
+    "group": "B",
+    "confidence": "mid",
+    "home": {
+      "code": "CAN",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "elo": 1718,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "group": "B"
+    },
+    "away": {
+      "code": "QAT",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "elo": 1601,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "loss",
+        "loss"
+      ],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.36,
+        "probability": 0.7
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.78,
+        "probability": 0.165
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 7.33,
+        "probability": 0.13
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.38,
+        "probability": 0.688
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.05,
+        "probability": 0.312
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.62,
+        "probability": 0.587
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.31,
+        "probability": 0.413
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.81,
+        "probability": 0.527
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.92,
+        "probability": 0.326
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 6.46,
+        "probability": 0.147
+      }
+    }
+  },
+  {
+    "id": "swi-can-B3",
+    "date": "2026-06-24",
+    "kickoff": "19:00",
+    "venue": "Vancouver",
+    "stage": "Grup B · 3. hafta",
+    "group": "B",
+    "confidence": "low",
+    "home": {
+      "code": "SWI",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "elo": 1730,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "B"
+    },
+    "away": {
+      "code": "CAN",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "elo": 1718,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.28,
+        "probability": 0.418
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.4,
+        "probability": 0.217
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.62,
+        "probability": 0.364
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.7,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.35,
+        "probability": 0.708
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.26,
+        "probability": 0.292
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.35,
+        "probability": 0.704
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.22,
+        "probability": 0.296
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.79,
+        "probability": 0.341
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.71,
+        "probability": 0.351
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.1,
+        "probability": 0.307
+      }
+    }
+  },
+  {
+    "id": "bos-qat-B3",
+    "date": "2026-06-24",
+    "kickoff": "19:00",
+    "venue": "Seattle",
+    "stage": "Grup B · 3. hafta",
+    "group": "B",
+    "confidence": "mid",
+    "home": {
+      "code": "BOS",
+      "name": "Bosnia & Herzegovina",
+      "flag": "🇧🇦",
+      "elo": 1500,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [],
+      "group": "B"
+    },
+    "away": {
+      "code": "QAT",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "elo": 1601,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "loss",
+        "loss"
+      ],
+      "group": "B"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.82,
+        "probability": 0.198
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.32,
+        "probability": 0.22
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.64,
+        "probability": 0.581
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.7,
+        "probability": 0.56
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.17,
+        "probability": 0.44
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.75,
+        "probability": 0.544
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.09,
+        "probability": 0.456
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.15,
+        "probability": 0.185
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.45,
+        "probability": 0.39
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.24,
+        "probability": 0.426
+      }
+    }
+  },
+  {
+    "id": "bra-mor-C1",
+    "date": "2026-06-13",
+    "kickoff": "22:00",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "stage": "Grup C · 1. hafta",
+    "group": "C",
+    "confidence": "mid",
+    "home": {
+      "code": "BRA",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "elo": 1744,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "MOR",
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "elo": 1882,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 6.95,
+        "probability": 0.137
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.45,
+        "probability": 0.148
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.35,
+        "probability": 0.703
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.79
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.54,
+        "probability": 0.21
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.39,
+        "probability": 0.683
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.01,
+        "probability": 0.317
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.87,
+        "probability": 0.162
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.3,
+        "probability": 0.289
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.73,
+        "probability": 0.549
+      }
+    }
+  },
+  {
+    "id": "hai-sco-C1",
+    "date": "2026-06-13",
+    "kickoff": "01:00",
+    "venue": "Boston (Foxborough)",
+    "stage": "Grup C · 1. hafta",
+    "group": "C",
+    "confidence": "low",
+    "home": {
+      "code": "HAI",
+      "name": "Haiti",
+      "flag": "🇭🇹",
+      "elo": 1638,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "SCO",
+      "name": "Scotland",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "elo": 1667,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.9,
+        "probability": 0.501
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.64,
+        "probability": 0.205
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.27,
+        "probability": 0.291
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.8,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.3,
+        "probability": 0.732
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.55,
+        "probability": 0.268
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.34,
+        "probability": 0.713
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.32,
+        "probability": 0.287
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.4,
+        "probability": 0.397
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.81,
+        "probability": 0.339
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.61,
+        "probability": 0.264
+      }
+    }
+  },
+  {
+    "id": "sco-mor-C2",
+    "date": "2026-06-19",
+    "kickoff": "22:00",
+    "venue": "Boston (Foxborough)",
+    "stage": "Grup C · 2. hafta",
+    "group": "C",
+    "confidence": "high",
+    "home": {
+      "code": "SCO",
+      "name": "Scotland",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "elo": 1667,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "MOR",
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "elo": 1882,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 23.12,
+        "probability": 0.041
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 12.36,
+        "probability": 0.077
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.13,
+        "probability": 0.845
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.2,
+        "probability": 0.795
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.64,
+        "probability": 0.205
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.82,
+        "probability": 0.522
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.99,
+        "probability": 0.478
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 12.58,
+        "probability": 0.076
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.19,
+        "probability": 0.227
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.37,
+        "probability": 0.697
+      }
+    }
+  },
+  {
+    "id": "bra-hai-C2",
+    "date": "2026-06-19",
+    "kickoff": "00:30",
+    "venue": "Philadelphia",
+    "stage": "Grup C · 2. hafta",
+    "group": "C",
+    "confidence": "mid",
+    "home": {
+      "code": "BRA",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "elo": 1744,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "HAI",
+      "name": "Haiti",
+      "flag": "🇭🇹",
+      "elo": 1638,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.69,
+        "probability": 0.563
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.23,
+        "probability": 0.182
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.84,
+        "probability": 0.248
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.18,
+        "probability": 0.806
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.9,
+        "probability": 0.194
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.25,
+        "probability": 0.761
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.98,
+        "probability": 0.239
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.12,
+        "probability": 0.449
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.1,
+        "probability": 0.307
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.91,
+        "probability": 0.243
+      }
+    }
+  },
+  {
+    "id": "sco-bra-C3",
+    "date": "2026-06-24",
+    "kickoff": "22:00",
+    "venue": "Miami (Miami Gardens)",
+    "stage": "Grup C · 3. hafta",
+    "group": "C",
+    "confidence": "mid",
+    "home": {
+      "code": "SCO",
+      "name": "Scotland",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "elo": 1667,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "BRA",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "elo": 1744,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 5.43,
+        "probability": 0.175
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.2,
+        "probability": 0.183
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.49,
+        "probability": 0.638
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.36,
+        "probability": 0.699
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.16,
+        "probability": 0.301
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.5,
+        "probability": 0.636
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.62,
+        "probability": 0.364
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.23,
+        "probability": 0.182
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.85,
+        "probability": 0.334
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.97,
+        "probability": 0.483
+      }
+    }
+  },
+  {
+    "id": "mor-hai-C3",
+    "date": "2026-06-24",
+    "kickoff": "22:00",
+    "venue": "Atlanta",
+    "stage": "Grup C · 3. hafta",
+    "group": "C",
+    "confidence": "high",
+    "home": {
+      "code": "MOR",
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "elo": 1882,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "C"
+    },
+    "away": {
+      "code": "HAI",
+      "name": "Haiti",
+      "flag": "🇭🇹",
+      "elo": 1638,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "C"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.19,
+        "probability": 0.802
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 11.13,
+        "probability": 0.086
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 15.55,
+        "probability": 0.061
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 5.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.14,
+        "probability": 0.838
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.88,
+        "probability": 0.162
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.48,
+        "probability": 0.643
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.67,
+        "probability": 0.357
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.41,
+        "probability": 0.677
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.34,
+        "probability": 0.219
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 9.27,
+        "probability": 0.103
+      }
+    }
+  },
+  {
+    "id": "usa-par-D1",
+    "date": "2026-06-12",
+    "kickoff": "01:00",
+    "venue": "Los Angeles (Inglewood)",
+    "stage": "Grup D · 1. hafta",
+    "group": "D",
+    "confidence": "low",
+    "home": {
+      "code": "USA",
+      "name": "USA",
+      "flag": "🇺🇸",
+      "elo": 1721,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "PAR",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "elo": 1668,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.34,
+        "probability": 0.71
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.27,
+        "probability": 0.181
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 8.87,
+        "probability": 0.107
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.73,
+        "probability": 0.551
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.12,
+        "probability": 0.449
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.11,
+        "probability": 0.451
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.73,
+        "probability": 0.549
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.86,
+        "probability": 0.512
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.57,
+        "probability": 0.37
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 8.06,
+        "probability": 0.118
+      }
+    }
+  },
+  {
+    "id": "aus-tur-D1",
+    "date": "2026-06-13",
+    "kickoff": "04:00",
+    "venue": "Vancouver",
+    "stage": "Grup D · 1. hafta",
+    "group": "D",
+    "confidence": "low",
+    "home": {
+      "code": "AUS",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "elo": 1790,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "TUR",
+      "name": "Turkey",
+      "flag": "🇹🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.59,
+        "probability": 0.368
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.43,
+        "probability": 0.215
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.29,
+        "probability": 0.416
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.7,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.33,
+        "probability": 0.716
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.36,
+        "probability": 0.284
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.34,
+        "probability": 0.711
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.29,
+        "probability": 0.289
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.07,
+        "probability": 0.311
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.73,
+        "probability": 0.348
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.79,
+        "probability": 0.341
+      }
+    }
+  },
+  {
+    "id": "usa-aus-D2",
+    "date": "2026-06-19",
+    "kickoff": "19:00",
+    "venue": "Seattle",
+    "stage": "Grup D · 2. hafta",
+    "group": "D",
+    "confidence": "mid",
+    "home": {
+      "code": "USA",
+      "name": "USA",
+      "flag": "🇺🇸",
+      "elo": 1721,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "AUS",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "elo": 1790,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.5,
+        "probability": 0.272
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.63,
+        "probability": 0.206
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.83,
+        "probability": 0.52
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.7,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.33,
+        "probability": 0.715
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.34,
+        "probability": 0.285
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.37,
+        "probability": 0.695
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.12,
+        "probability": 0.305
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.82,
+        "probability": 0.249
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.77,
+        "probability": 0.343
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.34,
+        "probability": 0.407
+      }
+    }
+  },
+  {
+    "id": "tur-par-D2",
+    "date": "2026-06-19",
+    "kickoff": "03:00",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "stage": "Grup D · 2. hafta",
+    "group": "D",
+    "confidence": "mid",
+    "home": {
+      "code": "TUR",
+      "name": "Turkey",
+      "flag": "🇹🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "PAR",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "elo": 1668,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.17,
+        "probability": 0.814
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.76,
+        "probability": 0.123
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 16.9,
+        "probability": 0.056
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.5,
+        "probability": 0.636
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.62,
+        "probability": 0.364
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.31,
+        "probability": 0.412
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.62,
+        "probability": 0.588
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.56,
+        "probability": 0.61
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.06,
+        "probability": 0.311
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 11.98,
+        "probability": 0.08
+      }
+    }
+  },
+  {
+    "id": "tur-usa-D3",
+    "date": "2026-06-25",
+    "kickoff": "02:00",
+    "venue": "Los Angeles (Inglewood)",
+    "stage": "Grup D · 3. hafta",
+    "group": "D",
+    "confidence": "mid",
+    "home": {
+      "code": "TUR",
+      "name": "Turkey",
+      "flag": "🇹🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "USA",
+      "name": "USA",
+      "flag": "🇺🇸",
+      "elo": 1721,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.73,
+        "probability": 0.55
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.86,
+        "probability": 0.196
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.8,
+        "probability": 0.251
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.28,
+        "probability": 0.743
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.71,
+        "probability": 0.257
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.34,
+        "probability": 0.71
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.29,
+        "probability": 0.29
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.21,
+        "probability": 0.431
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.88,
+        "probability": 0.331
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.0,
+        "probability": 0.238
+      }
+    }
+  },
+  {
+    "id": "par-aus-D3",
+    "date": "2026-06-25",
+    "kickoff": "02:00",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "stage": "Grup D · 3. hafta",
+    "group": "D",
+    "confidence": "mid",
+    "home": {
+      "code": "PAR",
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "elo": 1668,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "away": {
+      "code": "AUS",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "elo": 1790,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "D"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 14.69,
+        "probability": 0.065
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.87,
+        "probability": 0.139
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.2,
+        "probability": 0.792
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.59,
+        "probability": 0.597
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.36,
+        "probability": 0.403
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.35,
+        "probability": 0.405
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.6,
+        "probability": 0.595
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 11.21,
+        "probability": 0.085
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.87,
+        "probability": 0.332
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.63,
+        "probability": 0.583
+      }
+    }
+  },
+  {
+    "id": "ger-cur-E1",
+    "date": "2026-06-14",
+    "kickoff": "17:00",
+    "venue": "Houston",
+    "stage": "Grup E · 1. hafta",
+    "group": "E",
+    "confidence": "high",
+    "home": {
+      "code": "GER",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "elo": 1791,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "CUR",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.15,
+        "probability": 0.831
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 12.87,
+        "probability": 0.074
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 21.51,
+        "probability": 0.044
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 5.0,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.16,
+        "probability": 0.821
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.32,
+        "probability": 0.179
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.66,
+        "probability": 0.575
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.24,
+        "probability": 0.425
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.35,
+        "probability": 0.704
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.46,
+        "probability": 0.214
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 11.55,
+        "probability": 0.082
+      }
+    }
+  },
+  {
+    "id": "ivo-ecu-E1",
+    "date": "2026-06-14",
+    "kickoff": "23:00",
+    "venue": "Philadelphia",
+    "stage": "Grup E · 1. hafta",
+    "group": "E",
+    "confidence": "low",
+    "home": {
+      "code": "IVO",
+      "name": "Ivory Coast",
+      "flag": "🇨🇮",
+      "elo": 1733,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "ECU",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "elo": 1757,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.89,
+        "probability": 0.505
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.94,
+        "probability": 0.242
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.76,
+        "probability": 0.253
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.8,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.8,
+        "probability": 0.53
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.03,
+        "probability": 0.47
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.74,
+        "probability": 0.547
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.1,
+        "probability": 0.453
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.55,
+        "probability": 0.374
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.33,
+        "probability": 0.408
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.36,
+        "probability": 0.218
+      }
+    }
+  },
+  {
+    "id": "ger-ivo-E2",
+    "date": "2026-06-20",
+    "kickoff": "20:00",
+    "venue": "Toronto",
+    "stage": "Grup E · 2. hafta",
+    "group": "E",
+    "confidence": "low",
+    "home": {
+      "code": "GER",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "elo": 1791,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "IVO",
+      "name": "Ivory Coast",
+      "flag": "🇨🇮",
+      "elo": 1733,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.53,
+        "probability": 0.623
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.53,
+        "probability": 0.172
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 4.81,
+        "probability": 0.198
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.79
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.53,
+        "probability": 0.21
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.31,
+        "probability": 0.726
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.47,
+        "probability": 0.274
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.95,
+        "probability": 0.488
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.12,
+        "probability": 0.305
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.6,
+        "probability": 0.207
+      }
+    }
+  },
+  {
+    "id": "ecu-cur-E2",
+    "date": "2026-06-20",
+    "kickoff": "00:00",
+    "venue": "Kansas City",
+    "stage": "Grup E · 2. hafta",
+    "group": "E",
+    "confidence": "high",
+    "home": {
+      "code": "ECU",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "elo": 1757,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "CUR",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.84,
+        "probability": 0.517
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.92,
+        "probability": 0.243
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.97,
+        "probability": 0.24
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.7,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.86,
+        "probability": 0.513
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 1.96,
+        "probability": 0.487
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.8,
+        "probability": 0.53
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.03,
+        "probability": 0.47
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.51,
+        "probability": 0.379
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.31,
+        "probability": 0.413
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.57,
+        "probability": 0.208
+      }
+    }
+  },
+  {
+    "id": "cur-ivo-E3",
+    "date": "2026-06-25",
+    "kickoff": "20:00",
+    "venue": "Philadelphia",
+    "stage": "Grup E · 3. hafta",
+    "group": "E",
+    "confidence": "mid",
+    "home": {
+      "code": "CUR",
+      "name": "Curaçao",
+      "flag": "🇨🇼",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "IVO",
+      "name": "Ivory Coast",
+      "flag": "🇨🇮",
+      "elo": 1733,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 6.99,
+        "probability": 0.136
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.95,
+        "probability": 0.16
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.37,
+        "probability": 0.697
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.8,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.31,
+        "probability": 0.729
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.51,
+        "probability": 0.271
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.52,
+        "probability": 0.628
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.56,
+        "probability": 0.372
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 6.11,
+        "probability": 0.156
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.04,
+        "probability": 0.313
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.79,
+        "probability": 0.531
+      }
+    }
+  },
+  {
+    "id": "ecu-ger-E3",
+    "date": "2026-06-25",
+    "kickoff": "20:00",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "stage": "Grup E · 3. hafta",
+    "group": "E",
+    "confidence": "low",
+    "home": {
+      "code": "ECU",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "elo": 1757,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "draw",
+        "draw",
+        "win"
+      ],
+      "group": "E"
+    },
+    "away": {
+      "code": "GER",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "elo": 1791,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "E"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 8.03,
+        "probability": 0.119
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.89,
+        "probability": 0.162
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.33,
+        "probability": 0.715
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.41,
+        "probability": 0.674
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.92,
+        "probability": 0.326
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.7,
+        "probability": 0.561
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.17,
+        "probability": 0.439
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 6.95,
+        "probability": 0.137
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.91,
+        "probability": 0.328
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.78,
+        "probability": 0.535
+      }
+    }
+  },
+  {
+    "id": "net-jap-F1",
+    "date": "2026-06-14",
+    "kickoff": "20:00",
+    "venue": "Dallas (Arlington)",
+    "stage": "Grup F · 1. hafta",
+    "group": "F",
+    "confidence": "mid",
+    "home": {
+      "code": "NET",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "elo": 1780,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "JAP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "elo": 1845,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.25,
+        "probability": 0.224
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.1,
+        "probability": 0.156
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.59,
+        "probability": 0.599
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 5.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.08,
+        "probability": 0.881
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 8.02,
+        "probability": 0.119
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.16,
+        "probability": 0.823
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 5.37,
+        "probability": 0.177
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.01,
+        "probability": 0.237
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.56,
+        "probability": 0.267
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.92,
+        "probability": 0.495
+      }
+    }
+  },
+  {
+    "id": "swe-tun-F1",
+    "date": "2026-06-14",
+    "kickoff": "02:00",
+    "venue": "Monterrey (Guadalupe)",
+    "stage": "Grup F · 1. hafta",
+    "group": "F",
+    "confidence": "mid",
+    "home": {
+      "code": "SWE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "elo": 1606,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "TUN",
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "elo": 1702,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.49,
+        "probability": 0.273
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.25,
+        "probability": 0.224
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.9,
+        "probability": 0.502
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.52,
+        "probability": 0.627
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.55,
+        "probability": 0.373
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.52,
+        "probability": 0.627
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.55,
+        "probability": 0.373
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.95,
+        "probability": 0.241
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.54,
+        "probability": 0.375
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.48,
+        "probability": 0.384
+      }
+    }
+  },
+  {
+    "id": "net-swe-F2",
+    "date": "2026-06-20",
+    "kickoff": "17:00",
+    "venue": "Houston",
+    "stage": "Grup F · 2. hafta",
+    "group": "F",
+    "confidence": "high",
+    "home": {
+      "code": "NET",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "elo": 1780,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "SWE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "elo": 1606,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.17,
+        "probability": 0.816
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 11.89,
+        "probability": 0.08
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 18.04,
+        "probability": 0.053
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 5.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.15,
+        "probability": 0.83
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.61,
+        "probability": 0.17
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.56,
+        "probability": 0.612
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.45,
+        "probability": 0.388
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.38,
+        "probability": 0.69
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.39,
+        "probability": 0.217
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 10.25,
+        "probability": 0.093
+      }
+    }
+  },
+  {
+    "id": "tun-jap-F2",
+    "date": "2026-06-20",
+    "kickoff": "04:00",
+    "venue": "Monterrey (Guadalupe)",
+    "stage": "Grup F · 2. hafta",
+    "group": "F",
+    "confidence": "mid",
+    "home": {
+      "code": "TUN",
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "elo": 1702,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "JAP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "elo": 1845,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 21.92,
+        "probability": 0.043
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 12.99,
+        "probability": 0.073
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.14,
+        "probability": 0.832
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.16,
+        "probability": 0.82
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.29,
+        "probability": 0.18
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.67,
+        "probability": 0.571
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.22,
+        "probability": 0.429
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 11.7,
+        "probability": 0.081
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.47,
+        "probability": 0.213
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.35,
+        "probability": 0.705
+      }
+    }
+  },
+  {
+    "id": "jap-swe-F3",
+    "date": "2026-06-25",
+    "kickoff": "23:00",
+    "venue": "Dallas (Arlington)",
+    "stage": "Grup F · 3. hafta",
+    "group": "F",
+    "confidence": "high",
+    "home": {
+      "code": "JAP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "elo": 1845,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "SWE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "elo": 1606,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.13,
+        "probability": 0.84
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 13.62,
+        "probability": 0.07
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 24.36,
+        "probability": 0.039
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.17,
+        "probability": 0.815
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.13,
+        "probability": 0.185
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.74,
+        "probability": 0.548
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.11,
+        "probability": 0.452
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.34,
+        "probability": 0.712
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.51,
+        "probability": 0.211
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 12.58,
+        "probability": 0.076
+      }
+    }
+  },
+  {
+    "id": "tun-net-F3",
+    "date": "2026-06-25",
+    "kickoff": "23:00",
+    "venue": "Kansas City",
+    "stage": "Grup F · 3. hafta",
+    "group": "F",
+    "confidence": "mid",
+    "home": {
+      "code": "TUN",
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "elo": 1702,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "away": {
+      "code": "NET",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "elo": 1780,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "F"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 9.11,
+        "probability": 0.105
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.27,
+        "probability": 0.131
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.27,
+        "probability": 0.75
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.784
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.41,
+        "probability": 0.216
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.48,
+        "probability": 0.642
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.66,
+        "probability": 0.358
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 7.03,
+        "probability": 0.135
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.42,
+        "probability": 0.278
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.62,
+        "probability": 0.586
+      }
+    }
+  },
+  {
+    "id": "bel-egy-G1",
+    "date": "2026-06-15",
+    "kickoff": "19:00",
+    "venue": "Seattle",
+    "stage": "Grup G · 1. hafta",
+    "group": "G",
+    "confidence": "low",
+    "home": {
+      "code": "BEL",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "elo": 1697,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "EGY",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "elo": 1741,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.32,
+        "probability": 0.41
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.36,
+        "probability": 0.218
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.57,
+        "probability": 0.37
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.36,
+        "probability": 0.699
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.17,
+        "probability": 0.301
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.36,
+        "probability": 0.698
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.15,
+        "probability": 0.302
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.84,
+        "probability": 0.335
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.69,
+        "probability": 0.354
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.07,
+        "probability": 0.31
+      }
+    }
+  },
+  {
+    "id": "ira-new-G1",
+    "date": "2026-06-15",
+    "kickoff": "01:00",
+    "venue": "Los Angeles (Inglewood)",
+    "stage": "Grup G · 1. hafta",
+    "group": "G",
+    "confidence": "mid",
+    "home": {
+      "code": "IRA",
+      "name": "Iran",
+      "flag": "🇮🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "NEW",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "elo": 1640,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.29,
+        "probability": 0.737
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.24,
+        "probability": 0.131
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 8.36,
+        "probability": 0.114
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.18,
+        "probability": 0.808
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.96,
+        "probability": 0.192
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.41,
+        "probability": 0.677
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.95,
+        "probability": 0.323
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.64,
+        "probability": 0.582
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.5,
+        "probability": 0.272
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 6.54,
+        "probability": 0.146
+      }
+    }
+  },
+  {
+    "id": "bel-ira-G2",
+    "date": "2026-06-21",
+    "kickoff": "19:00",
+    "venue": "Los Angeles (Inglewood)",
+    "stage": "Grup G · 2. hafta",
+    "group": "G",
+    "confidence": "mid",
+    "home": {
+      "code": "BEL",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "elo": 1697,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "IRA",
+      "name": "Iran",
+      "flag": "🇮🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.44,
+        "probability": 0.214
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.47,
+        "probability": 0.174
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.58,
+        "probability": 0.604
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.19,
+        "probability": 0.803
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.84,
+        "probability": 0.197
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.28,
+        "probability": 0.746
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.74,
+        "probability": 0.254
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.33,
+        "probability": 0.22
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.14,
+        "probability": 0.303
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.0,
+        "probability": 0.477
+      }
+    }
+  },
+  {
+    "id": "new-egy-G2",
+    "date": "2026-06-21",
+    "kickoff": "01:00",
+    "venue": "Vancouver",
+    "stage": "Grup G · 2. hafta",
+    "group": "G",
+    "confidence": "mid",
+    "home": {
+      "code": "NEW",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "elo": 1640,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "EGY",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "elo": 1741,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.55,
+        "probability": 0.268
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.49,
+        "probability": 0.212
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.84,
+        "probability": 0.518
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.4,
+        "probability": 0.681
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.99,
+        "probability": 0.319
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.43,
+        "probability": 0.668
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.87,
+        "probability": 0.332
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.91,
+        "probability": 0.243
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.68,
+        "probability": 0.355
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.37,
+        "probability": 0.402
+      }
+    }
+  },
+  {
+    "id": "egy-ira-G3",
+    "date": "2026-06-26",
+    "kickoff": "03:00",
+    "venue": "Seattle",
+    "stage": "Grup G · 3. hafta",
+    "group": "G",
+    "confidence": "low",
+    "home": {
+      "code": "EGY",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "elo": 1741,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "draw",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "IRA",
+      "name": "Iran",
+      "flag": "🇮🇷",
+      "elo": 1787,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.66,
+        "probability": 0.204
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.07,
+        "probability": 0.188
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.58,
+        "probability": 0.604
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.8,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.32,
+        "probability": 0.723
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.44,
+        "probability": 0.277
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.41,
+        "probability": 0.674
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.92,
+        "probability": 0.326
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.65,
+        "probability": 0.205
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.87,
+        "probability": 0.331
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.05,
+        "probability": 0.464
+      }
+    }
+  },
+  {
+    "id": "new-bel-G3",
+    "date": "2026-06-26",
+    "kickoff": "03:00",
+    "venue": "Vancouver",
+    "stage": "Grup G · 3. hafta",
+    "group": "G",
+    "confidence": "low",
+    "home": {
+      "code": "NEW",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "elo": 1640,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "loss",
+        "loss",
+        "win"
+      ],
+      "group": "G"
+    },
+    "away": {
+      "code": "BEL",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "elo": 1697,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "win",
+        "win",
+        "draw"
+      ],
+      "group": "G"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.82,
+        "probability": 0.249
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.04,
+        "probability": 0.189
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.71,
+        "probability": 0.558
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.23,
+        "probability": 0.775
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.23,
+        "probability": 0.225
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.29,
+        "probability": 0.735
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.6,
+        "probability": 0.265
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.96,
+        "probability": 0.241
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.98,
+        "probability": 0.319
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.16,
+        "probability": 0.44
+      }
+    }
+  },
+  {
+    "id": "spa-cap-H1",
+    "date": "2026-06-15",
+    "kickoff": "16:00",
+    "venue": "Atlanta",
+    "stage": "Grup H · 1. hafta",
+    "group": "H",
+    "confidence": "high",
+    "home": {
+      "code": "SPA",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "elo": 1953,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "CAP",
+      "name": "Cape Verde",
+      "flag": "🇨🇻",
+      "elo": 1648,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.08,
+        "probability": 0.881
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 19.16,
+        "probability": 0.05
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 51.99,
+        "probability": 0.018
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.22,
+        "probability": 0.78
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.33,
+        "probability": 0.22
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.45,
+        "probability": 0.389
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.56,
+        "probability": 0.611
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.26,
+        "probability": 0.756
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.79,
+        "probability": 0.199
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 21.48,
+        "probability": 0.044
+      }
+    }
+  },
+  {
+    "id": "sau-uru-H1",
+    "date": "2026-06-15",
+    "kickoff": "22:00",
+    "venue": "Miami (Miami Gardens)",
+    "stage": "Grup H · 1. hafta",
+    "group": "H",
+    "confidence": "low",
+    "home": {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "elo": 1649,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "URU",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "elo": 1686,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.47,
+        "probability": 0.275
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.59,
+        "probability": 0.265
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.07,
+        "probability": 0.46
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 2.11,
+        "probability": 0.451
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 1.73,
+        "probability": 0.549
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.93,
+        "probability": 0.493
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.88,
+        "probability": 0.507
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.26,
+        "probability": 0.223
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.16,
+        "probability": 0.441
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.84,
+        "probability": 0.336
+      }
+    }
+  },
+  {
+    "id": "spa-sau-H2",
+    "date": "2026-06-21",
+    "kickoff": "16:00",
+    "venue": "Atlanta",
+    "stage": "Grup H · 2. hafta",
+    "group": "H",
+    "confidence": "high",
+    "home": {
+      "code": "SPA",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "elo": 1953,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "elo": 1649,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.07,
+        "probability": 0.887
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 20.56,
+        "probability": 0.046
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 61.13,
+        "probability": 0.016
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.23,
+        "probability": 0.774
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.21,
+        "probability": 0.226
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.66,
+        "probability": 0.357
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.48,
+        "probability": 0.643
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.25,
+        "probability": 0.764
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.85,
+        "probability": 0.196
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 24.18,
+        "probability": 0.039
+      }
+    }
+  },
+  {
+    "id": "uru-cap-H2",
+    "date": "2026-06-21",
+    "kickoff": "22:00",
+    "venue": "Miami (Miami Gardens)",
+    "stage": "Grup H · 2. hafta",
+    "group": "H",
+    "confidence": "low",
+    "home": {
+      "code": "URU",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "elo": 1686,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "CAP",
+      "name": "Cape Verde",
+      "flag": "🇨🇻",
+      "elo": 1648,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.2,
+        "probability": 0.434
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.66,
+        "probability": 0.261
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.11,
+        "probability": 0.306
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.97,
+        "probability": 0.483
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 1.84,
+        "probability": 0.517
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.81,
+        "probability": 0.525
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.01,
+        "probability": 0.475
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.94,
+        "probability": 0.324
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.22,
+        "probability": 0.43
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.87,
+        "probability": 0.246
+      }
+    }
+  },
+  {
+    "id": "cap-sau-H3",
+    "date": "2026-06-26",
+    "kickoff": "00:00",
+    "venue": "Houston",
+    "stage": "Grup H · 3. hafta",
+    "group": "H",
+    "confidence": "low",
+    "home": {
+      "code": "CAP",
+      "name": "Cape Verde",
+      "flag": "🇨🇻",
+      "elo": 1648,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "draw",
+        "loss",
+        "draw",
+        "win"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "elo": 1649,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.41,
+        "probability": 0.396
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.51,
+        "probability": 0.271
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.86,
+        "probability": 0.333
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 2.13,
+        "probability": 0.448
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 1.72,
+        "probability": 0.552
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.9,
+        "probability": 0.501
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.91,
+        "probability": 0.499
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.21,
+        "probability": 0.297
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.14,
+        "probability": 0.444
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.68,
+        "probability": 0.259
+      }
+    }
+  },
+  {
+    "id": "uru-spa-H3",
+    "date": "2026-06-26",
+    "kickoff": "00:00",
+    "venue": "Guadalajara (Zapopan)",
+    "stage": "Grup H · 3. hafta",
+    "group": "H",
+    "confidence": "high",
+    "home": {
+      "code": "URU",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "elo": 1686,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "loss",
+        "draw",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "away": {
+      "code": "SPA",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "elo": 1953,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "H"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 44.91,
+        "probability": 0.021
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 17.96,
+        "probability": 0.053
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.09,
+        "probability": 0.875
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.786
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.45,
+        "probability": 0.214
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.27,
+        "probability": 0.419
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.64,
+        "probability": 0.581
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 19.32,
+        "probability": 0.049
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.74,
+        "probability": 0.201
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.27,
+        "probability": 0.749
+      }
+    }
+  },
+  {
+    "id": "fra-sen-I1",
+    "date": "2026-06-16",
+    "kickoff": "19:00",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "stage": "Grup I · 1. hafta",
+    "group": "I",
+    "confidence": "mid",
+    "home": {
+      "code": "FRA",
+      "name": "France",
+      "flag": "🇫🇷",
+      "elo": 1867,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "SEN",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "elo": 1794,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.54,
+        "probability": 0.62
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.44,
+        "probability": 0.175
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 4.81,
+        "probability": 0.198
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.23,
+        "probability": 0.776
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.24,
+        "probability": 0.224
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.33,
+        "probability": 0.714
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.33,
+        "probability": 0.286
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.97,
+        "probability": 0.484
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.07,
+        "probability": 0.311
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.63,
+        "probability": 0.206
+      }
+    }
+  },
+  {
+    "id": "ira-nor-I1",
+    "date": "2026-06-16",
+    "kickoff": "22:00",
+    "venue": "Boston (Foxborough)",
+    "stage": "Grup I · 1. hafta",
+    "group": "I",
+    "confidence": "low",
+    "home": {
+      "code": "IRA",
+      "name": "Iraq",
+      "flag": "🇮🇶",
+      "elo": 1722,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "NOR",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "elo": 1765,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 6.23,
+        "probability": 0.153
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.53,
+        "probability": 0.172
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.42,
+        "probability": 0.67
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.7,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.35,
+        "probability": 0.707
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.25,
+        "probability": 0.293
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.52,
+        "probability": 0.625
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.54,
+        "probability": 0.375
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.72,
+        "probability": 0.166
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.92,
+        "probability": 0.326
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.88,
+        "probability": 0.508
+      }
+    }
+  },
+  {
+    "id": "fra-ira-I2",
+    "date": "2026-06-22",
+    "kickoff": "21:00",
+    "venue": "Philadelphia",
+    "stage": "Grup I · 2. hafta",
+    "group": "I",
+    "confidence": "mid",
+    "home": {
+      "code": "FRA",
+      "name": "France",
+      "flag": "🇫🇷",
+      "elo": 1867,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "IRA",
+      "name": "Iraq",
+      "flag": "🇮🇶",
+      "elo": 1722,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.17,
+        "probability": 0.815
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 9.13,
+        "probability": 0.104
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 15.36,
+        "probability": 0.062
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.1,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.25,
+        "probability": 0.761
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.99,
+        "probability": 0.239
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.76,
+        "probability": 0.542
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.08,
+        "probability": 0.458
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.48,
+        "probability": 0.642
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.62,
+        "probability": 0.263
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 10.05,
+        "probability": 0.095
+      }
+    }
+  },
+  {
+    "id": "nor-sen-I2",
+    "date": "2026-06-22",
+    "kickoff": "00:00",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "stage": "Grup I · 2. hafta",
+    "group": "I",
+    "confidence": "low",
+    "home": {
+      "code": "NOR",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "elo": 1765,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "SEN",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "elo": 1794,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.33,
+        "probability": 0.409
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.63,
+        "probability": 0.206
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.49,
+        "probability": 0.383
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.0,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.24,
+        "probability": 0.766
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.07,
+        "probability": 0.234
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.27,
+        "probability": 0.751
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.82,
+        "probability": 0.249
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.78,
+        "probability": 0.343
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.88,
+        "probability": 0.331
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.92,
+        "probability": 0.326
+      }
+    }
+  },
+  {
+    "id": "nor-fra-I3",
+    "date": "2026-06-26",
+    "kickoff": "19:00",
+    "venue": "Boston (Foxborough)",
+    "stage": "Grup I · 3. hafta",
+    "group": "I",
+    "confidence": "mid",
+    "home": {
+      "code": "NOR",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "elo": 1765,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "draw"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "FRA",
+      "name": "France",
+      "flag": "🇫🇷",
+      "elo": 1867,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 4.67,
+        "probability": 0.204
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.73,
+        "probability": 0.166
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.54,
+        "probability": 0.62
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.16,
+        "probability": 0.824
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.4,
+        "probability": 0.176
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.26,
+        "probability": 0.759
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.95,
+        "probability": 0.241
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 4.43,
+        "probability": 0.215
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.26,
+        "probability": 0.292
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.93,
+        "probability": 0.493
+      }
+    }
+  },
+  {
+    "id": "sen-ira-I3",
+    "date": "2026-06-26",
+    "kickoff": "19:00",
+    "venue": "Toronto",
+    "stage": "Grup I · 3. hafta",
+    "group": "I",
+    "confidence": "mid",
+    "home": {
+      "code": "SEN",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "elo": 1794,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "I"
+    },
+    "away": {
+      "code": "IRA",
+      "name": "Iraq",
+      "flag": "🇮🇶",
+      "elo": 1722,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "I"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.49,
+        "probability": 0.641
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.98,
+        "probability": 0.191
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 5.77,
+        "probability": 0.165
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.49,
+        "probability": 0.639
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.64,
+        "probability": 0.361
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.64,
+        "probability": 0.581
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.27,
+        "probability": 0.419
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.0,
+        "probability": 0.477
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.69,
+        "probability": 0.354
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 5.63,
+        "probability": 0.169
+      }
+    }
+  },
+  {
+    "id": "arg-alg-J1",
+    "date": "2026-06-16",
+    "kickoff": "01:00",
+    "venue": "Kansas City",
+    "stage": "Grup J · 1. hafta",
+    "group": "J",
+    "confidence": "low",
+    "home": {
+      "code": "ARG",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "elo": 1839,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "ALG",
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "elo": 1783,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "draw"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.88,
+        "probability": 0.507
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.03,
+        "probability": 0.189
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.19,
+        "probability": 0.299
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.17,
+        "probability": 0.814
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.11,
+        "probability": 0.186
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.22,
+        "probability": 0.78
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 4.33,
+        "probability": 0.22
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.31,
+        "probability": 0.413
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.08,
+        "probability": 0.31
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.43,
+        "probability": 0.278
+      }
+    }
+  },
+  {
+    "id": "aus-jor-J1",
+    "date": "2026-06-16",
+    "kickoff": "04:00",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "stage": "Grup J · 1. hafta",
+    "group": "J",
+    "confidence": "low",
+    "home": {
+      "code": "AUS",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "elo": 1681,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "JOR",
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "elo": 1696,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "draw",
+        "loss"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 2.31,
+        "probability": 0.412
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.28,
+        "probability": 0.222
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 2.61,
+        "probability": 0.365
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.5,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.4,
+        "probability": 0.679
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.97,
+        "probability": 0.321
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.4,
+        "probability": 0.682
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.99,
+        "probability": 0.318
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.85,
+        "probability": 0.334
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.64,
+        "probability": 0.361
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.13,
+        "probability": 0.305
+      }
+    }
+  },
+  {
+    "id": "arg-aus-J2",
+    "date": "2026-06-22",
+    "kickoff": "17:00",
+    "venue": "Dallas (Arlington)",
+    "stage": "Grup J · 2. hafta",
+    "group": "J",
+    "confidence": "high",
+    "home": {
+      "code": "ARG",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "elo": 1839,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "AUS",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "elo": 1681,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.25,
+        "probability": 0.763
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.96,
+        "probability": 0.12
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 9.94,
+        "probability": 0.096
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.17,
+        "probability": 0.811
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 5.04,
+        "probability": 0.189
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.45,
+        "probability": 0.658
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.79,
+        "probability": 0.342
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.57,
+        "probability": 0.607
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.64,
+        "probability": 0.262
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 7.28,
+        "probability": 0.131
+      }
+    }
+  },
+  {
+    "id": "jor-alg-J2",
+    "date": "2026-06-22",
+    "kickoff": "03:00",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "stage": "Grup J · 2. hafta",
+    "group": "J",
+    "confidence": "mid",
+    "home": {
+      "code": "JOR",
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "elo": 1696,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "draw",
+        "loss"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "ALG",
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "elo": 1783,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "draw"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 6.93,
+        "probability": 0.137
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.32,
+        "probability": 0.151
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.36,
+        "probability": 0.702
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.23,
+        "probability": 0.777
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.26,
+        "probability": 0.223
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.42,
+        "probability": 0.671
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.9,
+        "probability": 0.329
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.91,
+        "probability": 0.161
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.23,
+        "probability": 0.294
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.75,
+        "probability": 0.544
+      }
+    }
+  },
+  {
+    "id": "alg-aus-J1",
+    "date": "2026-06-27",
+    "kickoff": "02:00",
+    "venue": "Kansas City",
+    "stage": "Grup J · 1. hafta",
+    "group": "J",
+    "confidence": "mid",
+    "home": {
+      "code": "ALG",
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "elo": 1783,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "loss",
+        "win",
+        "draw"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "AUS",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "elo": 1681,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "win",
+        "draw",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.38,
+        "probability": 0.69
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.39,
+        "probability": 0.149
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 6.42,
+        "probability": 0.148
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.18,
+        "probability": 0.807
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.94,
+        "probability": 0.193
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.34,
+        "probability": 0.709
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.28,
+        "probability": 0.291
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.76,
+        "probability": 0.542
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.34,
+        "probability": 0.285
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 5.52,
+        "probability": 0.173
+      }
+    }
+  },
+  {
+    "id": "jor-arg-J1",
+    "date": "2026-06-27",
+    "kickoff": "02:00",
+    "venue": "Dallas (Arlington)",
+    "stage": "Grup J · 1. hafta",
+    "group": "J",
+    "confidence": "mid",
+    "home": {
+      "code": "JOR",
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "elo": 1696,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "loss",
+        "draw",
+        "draw",
+        "loss"
+      ],
+      "group": "J"
+    },
+    "away": {
+      "code": "ARG",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "elo": 1839,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "group": "J"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 10.65,
+        "probability": 0.089
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.87,
+        "probability": 0.121
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.23,
+        "probability": 0.772
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.785
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.43,
+        "probability": 0.215
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.53,
+        "probability": 0.621
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.51,
+        "probability": 0.379
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 7.77,
+        "probability": 0.123
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.52,
+        "probability": 0.27
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.57,
+        "probability": 0.607
+      }
+    }
+  },
+  {
+    "id": "por-dr-K1",
+    "date": "2026-06-17",
+    "kickoff": "17:00",
+    "venue": "Houston",
+    "stage": "Grup K · 1. hafta",
+    "group": "K",
+    "confidence": "mid",
+    "home": {
+      "code": "POR",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "elo": 1784,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "DR ",
+      "name": "DR Congo",
+      "flag": "🇨🇩",
+      "elo": 1720,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.26,
+        "probability": 0.757
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.98,
+        "probability": 0.136
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 9.86,
+        "probability": 0.097
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.9,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.3,
+        "probability": 0.732
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 3.56,
+        "probability": 0.268
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.64,
+        "probability": 0.581
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.27,
+        "probability": 0.419
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.64,
+        "probability": 0.58
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.22,
+        "probability": 0.296
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 7.68,
+        "probability": 0.124
+      }
+    }
+  },
+  {
+    "id": "uzb-col-K1",
+    "date": "2026-06-17",
+    "kickoff": "02:00",
+    "venue": "Mexico City",
+    "stage": "Grup K · 1. hafta",
+    "group": "K",
+    "confidence": "low",
+    "home": {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "flag": "🇺🇿",
+      "elo": 1774,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "COL",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "elo": 1725,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.86,
+        "probability": 0.513
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.38,
+        "probability": 0.217
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.54,
+        "probability": 0.269
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.45,
+        "probability": 0.656
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.77,
+        "probability": 0.344
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.47,
+        "probability": 0.649
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.71,
+        "probability": 0.351
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.41,
+        "probability": 0.395
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.62,
+        "probability": 0.364
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.95,
+        "probability": 0.241
+      }
+    }
+  },
+  {
+    "id": "por-uzb-K2",
+    "date": "2026-06-23",
+    "kickoff": "17:00",
+    "venue": "Houston",
+    "stage": "Grup K · 2. hafta",
+    "group": "K",
+    "confidence": "low",
+    "home": {
+      "code": "POR",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "elo": 1784,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "flag": "🇺🇿",
+      "elo": 1774,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.74,
+        "probability": 0.549
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.02,
+        "probability": 0.19
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.7,
+        "probability": 0.257
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.22,
+        "probability": 0.78
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.33,
+        "probability": 0.22
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.28,
+        "probability": 0.742
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.69,
+        "probability": 0.258
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.19,
+        "probability": 0.435
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.99,
+        "probability": 0.318
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 3.86,
+        "probability": 0.246
+      }
+    }
+  },
+  {
+    "id": "col-dr-K2",
+    "date": "2026-06-23",
+    "kickoff": "02:00",
+    "venue": "Guadalajara (Zapopan)",
+    "stage": "Grup K · 2. hafta",
+    "group": "K",
+    "confidence": "low",
+    "home": {
+      "code": "COL",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "elo": 1725,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "DR ",
+      "name": "DR Congo",
+      "flag": "🇨🇩",
+      "elo": 1720,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.96,
+        "probability": 0.486
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 3.88,
+        "probability": 0.246
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 3.55,
+        "probability": 0.268
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 2.8,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.81,
+        "probability": 0.525
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.01,
+        "probability": 0.475
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.73,
+        "probability": 0.549
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.11,
+        "probability": 0.451
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 2.64,
+        "probability": 0.361
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.32,
+        "probability": 0.411
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 4.18,
+        "probability": 0.228
+      }
+    }
+  },
+  {
+    "id": "col-por-K1",
+    "date": "2026-06-27",
+    "kickoff": "23:30",
+    "venue": "Miami (Miami Gardens)",
+    "stage": "Grup K · 1. hafta",
+    "group": "K",
+    "confidence": "low",
+    "home": {
+      "code": "COL",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "elo": 1725,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "POR",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "elo": 1784,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "win",
+        "draw",
+        "win"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 6.05,
+        "probability": 0.157
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 6.0,
+        "probability": 0.159
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.41,
+        "probability": 0.675
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.22,
+        "probability": 0.782
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.37,
+        "probability": 0.218
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.37,
+        "probability": 0.693
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.1,
+        "probability": 0.307
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.38,
+        "probability": 0.177
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.19,
+        "probability": 0.298
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.82,
+        "probability": 0.525
+      }
+    }
+  },
+  {
+    "id": "dr-uzb-K1",
+    "date": "2026-06-27",
+    "kickoff": "23:30",
+    "venue": "Atlanta",
+    "stage": "Grup K · 1. hafta",
+    "group": "K",
+    "confidence": "low",
+    "home": {
+      "code": "DR ",
+      "name": "DR Congo",
+      "flag": "🇨🇩",
+      "elo": 1720,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "win",
+        "loss",
+        "win",
+        "win"
+      ],
+      "group": "K"
+    },
+    "away": {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "flag": "🇺🇿",
+      "elo": 1774,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "draw",
+        "draw",
+        "win",
+        "draw"
+      ],
+      "group": "K"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 5.31,
+        "probability": 0.179
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.54,
+        "probability": 0.21
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.56,
+        "probability": 0.61
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.0,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.64,
+        "probability": 0.58
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.27,
+        "probability": 0.42
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.74,
+        "probability": 0.547
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.1,
+        "probability": 0.453
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 5.47,
+        "probability": 0.174
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.51,
+        "probability": 0.379
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.13,
+        "probability": 0.447
+      }
+    }
+  },
+  {
+    "id": "eng-cro-L1",
+    "date": "2026-06-17",
+    "kickoff": "20:00",
+    "venue": "Dallas (Arlington)",
+    "stage": "Grup L · 1. hafta",
+    "group": "L",
+    "confidence": "mid",
+    "home": {
+      "code": "ENG",
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "elo": 1841,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "draw",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "CRO",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "elo": 1758,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.44,
+        "probability": 0.662
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.83,
+        "probability": 0.163
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 5.73,
+        "probability": 0.166
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.23,
+        "probability": 0.777
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.27,
+        "probability": 0.223
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.37,
+        "probability": 0.695
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 3.13,
+        "probability": 0.305
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.85,
+        "probability": 0.514
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.15,
+        "probability": 0.303
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 5.21,
+        "probability": 0.183
+      }
+    }
+  },
+  {
+    "id": "gha-pan-L1",
+    "date": "2026-06-17",
+    "kickoff": "23:00",
+    "venue": "Toronto",
+    "stage": "Grup L · 1. hafta",
+    "group": "L",
+    "confidence": "mid",
+    "home": {
+      "code": "GHA",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "PAN",
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "elo": 1711,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "draw",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 7.65,
+        "probability": 0.124
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 5.37,
+        "probability": 0.177
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.37,
+        "probability": 0.695
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.2,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.56,
+        "probability": 0.612
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.46,
+        "probability": 0.388
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.83,
+        "probability": 0.52
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.98,
+        "probability": 0.48
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 6.97,
+        "probability": 0.137
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.7,
+        "probability": 0.353
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.86,
+        "probability": 0.511
+      }
+    }
+  },
+  {
+    "id": "eng-gha-L2",
+    "date": "2026-06-23",
+    "kickoff": "20:00",
+    "venue": "Boston (Foxborough)",
+    "stage": "Grup L · 2. hafta",
+    "group": "L",
+    "confidence": "high",
+    "home": {
+      "code": "ENG",
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "elo": 1841,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "draw",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "GHA",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.09,
+        "probability": 0.875
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 18.02,
+        "probability": 0.053
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 45.26,
+        "probability": 0.021
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.786
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.44,
+        "probability": 0.214
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 2.28,
+        "probability": 0.417
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.63,
+        "probability": 0.583
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.27,
+        "probability": 0.75
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 4.74,
+        "probability": 0.201
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 19.43,
+        "probability": 0.049
+      }
+    }
+  },
+  {
+    "id": "pan-cro-L2",
+    "date": "2026-06-23",
+    "kickoff": "23:00",
+    "venue": "Toronto",
+    "stage": "Grup L · 2. hafta",
+    "group": "L",
+    "confidence": "low",
+    "home": {
+      "code": "PAN",
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "elo": 1711,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "draw",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "CRO",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "elo": 1758,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 3.44,
+        "probability": 0.277
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 4.4,
+        "probability": 0.217
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.88,
+        "probability": 0.505
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.4,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.43,
+        "probability": 0.666
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.86,
+        "probability": 0.334
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.45,
+        "probability": 0.659
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.79,
+        "probability": 0.341
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 3.85,
+        "probability": 0.248
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 2.64,
+        "probability": 0.361
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 2.43,
+        "probability": 0.391
+      }
+    }
+  },
+  {
+    "id": "pan-eng-L1",
+    "date": "2026-06-27",
+    "kickoff": "21:00",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "stage": "Grup L · 1. hafta",
+    "group": "L",
+    "confidence": "mid",
+    "home": {
+      "code": "PAN",
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "elo": 1711,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "draw",
+        "loss",
+        "draw",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "ENG",
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "elo": 1841,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "draw",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 9.68,
+        "probability": 0.098
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.55,
+        "probability": 0.126
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 1.26,
+        "probability": 0.759
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 4.3,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.21,
+        "probability": 0.789
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 4.52,
+        "probability": 0.211
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.49,
+        "probability": 0.639
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 2.64,
+        "probability": 0.361
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 7.28,
+        "probability": 0.131
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.49,
+        "probability": 0.273
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 1.6,
+        "probability": 0.596
+      }
+    }
+  },
+  {
+    "id": "cro-gha-L1",
+    "date": "2026-06-27",
+    "kickoff": "21:00",
+    "venue": "Philadelphia",
+    "stage": "Grup L · 1. hafta",
+    "group": "L",
+    "confidence": "high",
+    "home": {
+      "code": "CRO",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "elo": 1758,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "away": {
+      "code": "GHA",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "elo": 1593,
+      "fifaRank": 0,
+      "marketValue": 0,
+      "form": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "group": "L"
+    },
+    "ms": {
+      "home": {
+        "label": "MS 1",
+        "value": 1.21,
+        "probability": 0.789
+      },
+      "draw": {
+        "label": "MS X",
+        "value": 7.37,
+        "probability": 0.129
+      },
+      "away": {
+        "label": "MS 2",
+        "value": 12.96,
+        "probability": 0.074
+      }
+    },
+    "overUnder": {
+      "line": 2.5,
+      "expectedGoals": 3.6,
+      "over": {
+        "label": "2.5 Üst",
+        "value": 1.4,
+        "probability": 0.682
+      },
+      "under": {
+        "label": "2.5 Alt",
+        "value": 2.99,
+        "probability": 0.318
+      }
+    },
+    "btts": {
+      "yes": {
+        "label": "KG Var",
+        "value": 1.93,
+        "probability": 0.494
+      },
+      "no": {
+        "label": "KG Yok",
+        "value": 1.88,
+        "probability": 0.506
+      }
+    },
+    "htMs": {
+      "home": {
+        "label": "İY 1",
+        "value": 1.6,
+        "probability": 0.597
+      },
+      "draw": {
+        "label": "İY X",
+        "value": 3.14,
+        "probability": 0.304
+      },
+      "away": {
+        "label": "İY 2",
+        "value": 9.58,
+        "probability": 0.099
+      }
+    }
+  }
+]

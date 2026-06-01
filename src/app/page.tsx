@@ -1,0 +1,137 @@
+'use client'
+import { useState, useMemo } from 'react'
+import { MATCHES, GROUPS } from '@/data/matches'
+import { MatchCard } from '@/components/MatchCard'
+import { Betslip } from '@/components/Betslip'
+import { GroupFilter } from '@/components/GroupFilter'
+import { cn } from '@/lib/utils'
+
+function groupByDate(matches: typeof MATCHES) {
+  const map = new Map<string, typeof MATCHES>()
+  for (const m of matches) {
+    const list = map.get(m.date) ?? []
+    list.push(m)
+    map.set(m.date, list)
+  }
+  return map
+}
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString('tr-TR', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+  })
+}
+
+export default function Home() {
+  const [group, setGroup] = useState('all')
+  const [date, setDate]   = useState('all')
+
+  const dates = useMemo(() =>
+    [...new Set(MATCHES.map(m => m.date))].sort(),
+    []
+  )
+
+  const filtered = useMemo(() =>
+    MATCHES
+      .filter(m => group === 'all' || m.group === group)
+      .filter(m => date  === 'all' || m.date  === date),
+    [group, date]
+  )
+
+  const grouped = useMemo(() => groupByDate(filtered), [filtered])
+
+  return (
+    <div className="min-h-screen pitch-stripes">
+      <header className="border-b border-white/8 bg-black/20 backdrop-blur-md sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl font-display tracking-wider text-chalk-50">WC26</span>
+            <span className="text-[10px] font-mono text-grass-400 border border-grass-500/30 rounded px-1.5 py-0.5 bg-grass-500/10">
+              PREDICTOR
+            </span>
+          </div>
+          <div className="text-[10px] font-mono text-white/25 hidden sm:block">
+            FIFA 2026 · Yapay Zeka Tahminleri
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="font-display text-5xl sm:text-7xl text-chalk-50 tracking-wide leading-none mb-2">
+            DÜNYA KUPASI<br />
+            <span className="text-grass-400">TAHMİNLERİ</span>
+          </h1>
+          <p className="text-sm font-mono text-white/35 mt-3">
+            49,000+ tarihi maç · ELO modeli · Poisson regresyon
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 items-start">
+          <div>
+            {/* Grup filtresi */}
+            <div className="mb-3">
+              <GroupFilter value={group} onChange={setGroup} groups={GROUPS} />
+            </div>
+
+            {/* Gün filtresi */}
+            <div className="flex gap-2 flex-wrap mb-6">
+              <button
+                onClick={() => setDate('all')}
+                className={cn(
+                  'text-xs font-mono px-3 py-1.5 rounded-md border transition-all',
+                  date === 'all'
+                    ? 'bg-white/10 text-white border-white/20'
+                    : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60'
+                )}
+              >
+                Tüm günler
+              </button>
+              {dates.map(d => (
+                <button
+                  key={d}
+                  onClick={() => setDate(d)}
+                  className={cn(
+                    'text-xs font-mono px-3 py-1.5 rounded-md border transition-all',
+                    date === d
+                      ? 'bg-white/10 text-white border-white/20'
+                      : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60'
+                  )}
+                >
+                  {new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })}
+                </button>
+              ))}
+            </div>
+
+            {/* Maç listesi */}
+            <div className="space-y-8">
+              {Array.from(grouped.entries()).map(([d, matches]) => (
+                <div key={d}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xs font-mono text-white/35 capitalize">{formatDate(d)}</span>
+                    <div className="flex-1 h-px bg-white/8" />
+                  </div>
+                  <div className="space-y-4">
+                    {matches.map(match => (
+                      <MatchCard key={match.id} match={match} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {filtered.length === 0 && (
+                <div className="text-center py-16 text-white/25 font-mono text-sm">
+                  Bu filtre için maç bulunamadı.
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="lg:sticky lg:top-20 h-[calc(100vh-6rem)]">
+            <Betslip />
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}
