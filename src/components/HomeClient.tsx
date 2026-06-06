@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { MatchPrediction } from '@/lib/types'
 import { MatchCard } from '@/components/MatchCard'
 import { Betslip } from '@/components/Betslip'
@@ -27,9 +27,41 @@ interface Props {
   lastUpdate: string | null
 }
 
-export default function HomeClient({ matches, lastUpdate }: Props) {
-  const [group, setGroup] = useState('all')
-  const [date,  setDate]  = useState('all')
+export default function HomeClient({ matches: initialMatches, lastUpdate: initialLastUpdate }: Props) {
+  const [matches,    setMatchesState] = useState(initialMatches)
+  const [lastUpdate, setLastUpdate]   = useState(initialLastUpdate)
+  const [group,      setGroup]        = useState('all')
+  const [date,       setDate]         = useState('all')
+  const [isLive,     setIsLive]       = useState(false)
+
+  // Her 5 dakikada bir canlı güncelleme
+  useEffect(() => {
+    const refresh = async () => {
+      try {
+        // Canlı maç var mı kontrol et
+        const liveRes = await fetch('/api/live')
+        if (!liveRes.ok) return
+        const liveData = await liveRes.json()
+
+        // Bugün maç yoksa güncelleme yapma
+        if (liveData.skipped) { setIsLive(false); return }
+        setIsLive(true)
+
+        // Güncel maç verisini çek
+        const matchRes = await fetch('/api/matches', { cache: 'no-store' })
+        if (!matchRes.ok) return
+        const { matches: newMatches, lastUpdate: newTime } = await matchRes.json()
+        if (newMatches?.length > 0) {
+          setMatchesState(newMatches)
+          setLastUpdate(newTime)
+        }
+      } catch { /* sessiz hata */ }
+    }
+
+    refresh()
+    const interval = setInterval(refresh, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   const groups = useMemo(() =>
     [...new Set(matches.map(m => m.group))].sort(), [matches]
@@ -57,6 +89,12 @@ export default function HomeClient({ matches, lastUpdate }: Props) {
             <span className="text-[10px] font-mono text-grass-400 border border-grass-500/30 rounded px-1.5 py-0.5 bg-grass-500/10">
               PREDICTOR
             </span>
+            {isLive && (
+              <span className="flex items-center gap-1 text-[10px] font-mono text-red-400 border border-red-500/30 rounded px-1.5 py-0.5 bg-red-500/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+                CANLI
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-3">
             {lastUpdate && (
@@ -84,12 +122,10 @@ export default function HomeClient({ matches, lastUpdate }: Props) {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 items-start">
           <div>
-            {/* Grup filtresi */}
             <div className="mb-3">
               <GroupFilter value={group} onChange={setGroup} groups={groups} />
             </div>
 
-            {/* Gün filtresi */}
             <div className="flex gap-2 flex-wrap mb-6">
               <button
                 onClick={() => setDate('all')}
@@ -118,7 +154,6 @@ export default function HomeClient({ matches, lastUpdate }: Props) {
               ))}
             </div>
 
-            {/* Maç listesi */}
             <div className="space-y-8">
               {Array.from(grouped.entries()).map(([d, dayMatches]) => (
                 <div key={d}>
