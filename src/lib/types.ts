@@ -1,54 +1,52 @@
 export type MatchResult = 'win' | 'draw' | 'loss'
 
 export interface Team {
-  code: string       // 'FRA'
-  name: string       // 'Fransa'
-  flag: string       // emoji
+  code: string
+  name: string
+  flag: string
   elo: number
   fifaRank: number
-  marketValue: number // milyon €
-  form: MatchResult[] // son 5 maç
+  marketValue: number
+  form: MatchResult[]
   group: string
 }
 
 export interface MarketOdds {
   label: string
-  value: number      // oran, ör. 1.72
-  probability: number // 0-1
+  value: number
+  probability: number
 }
 
 export interface MatchPrediction {
   id: string
-  date: string       // ISO
-  kickoff: string    // '21:00'
-  stage: string      // 'Grup A · 1. hafta'
-  group: string      // 'A'
+  date: string
+  kickoff: string
+  stage: string
+  group: string
   confidence: 'high' | 'mid' | 'low'
   home: Team
   away: Team
+  venue?: string
+  result?: { homeScore: number; awayScore: number; status: string }
 
-  // MS 1 / X / 2
   ms: {
     home: MarketOdds
     draw: MarketOdds
     away: MarketOdds
   }
 
-  // Üst / Alt
   overUnder: {
-    line: number          // 2.5
-    expectedGoals: number // modelin beklenen gol sayısı
+    line: number
+    expectedGoals: number
     over: MarketOdds
     under: MarketOdds
   }
 
-  // KG
   btts: {
     yes: MarketOdds
     no: MarketOdds
   }
 
-  // İlk yarı MS
   htMs: {
     home: MarketOdds
     draw: MarketOdds
@@ -58,7 +56,7 @@ export interface MatchPrediction {
 
 export interface SelectedBet {
   matchId: string
-  marketKey: string  // 'ms.home' | 'ou.over' | 'btts.yes' | 'ht.draw' ...
+  marketKey: string
   label: string
   odd: number
 }
