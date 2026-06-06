@@ -3,3 +3,5 @@ node_modules/
 .env.local
 data_raw/
 *.csv
+.vercel
+.env*
