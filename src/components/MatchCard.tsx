@@ -87,6 +87,7 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
         <div className="flex items-center gap-1.5 text-white/40 text-xs font-mono">
           <Clock size={11} />
           {match.kickoff}
+          {match.venue && <span className="text-white/20 hidden sm:inline">· {match.venue}</span>}
         </div>
         <Badge variant={conf.variant} className="flex items-center gap-1 text-[10px]">
           {conf.icon}{conf.label}

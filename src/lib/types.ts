@@ -54,8 +54,6 @@ export interface MatchPrediction {
     draw: MarketOdds
     away: MarketOdds
   }
-  venue?: string
-  result?: { homeScore: number; awayScore: number; status: string }
 }
 
 export interface SelectedBet {
