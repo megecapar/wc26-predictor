@@ -145,7 +145,7 @@ export async function GET(req: NextRequest) {
 
       if (finishedKeys.has(key)) {
         const r = allFinished.find(f => f.home === hN && f.away === aN)
-        if (r) match.result = { homeScore: r.homeScore, awayScore: r.awayScore, status: 'FT' }
+        if (r) (match as any).result = { homeScore: r.homeScore, awayScore: r.awayScore, status: "FT" }
         continue
       }
 
