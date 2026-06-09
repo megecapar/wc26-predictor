@@ -4,21 +4,21 @@ import Link from 'next/link'
 
 interface Props { matches: MatchPrediction[] }
 interface Team { name: string; flag: string; elo: number }
+interface GroupResult { first: Team; second: Team; third: Team }
 
-// Resmi WC 2026 grupları + eloratings.net ELO (Haziran 2026)
-const GROUPS_DEF: Record<string, { teams: string[] }> = {
-  A: { teams: ['Mexico','South Korea','South Africa','Czech Republic'] },
-  B: { teams: ['Canada','Switzerland','Qatar','Bosnia & Herzegovina'] },
-  C: { teams: ['Brazil','Morocco','Scotland','Haiti'] },
-  D: { teams: ['USA','Paraguay','Australia','Turkey'] },
-  E: { teams: ['Germany','Curaçao','Ivory Coast','Ecuador'] },
-  F: { teams: ['Netherlands','Japan','Sweden','Tunisia'] },
-  G: { teams: ['Belgium','Egypt','Iran','New Zealand'] },
-  H: { teams: ['Spain','Cape Verde','Saudi Arabia','Uruguay'] },
-  I: { teams: ['France','Senegal','Iraq','Norway'] },
-  J: { teams: ['Argentina','Algeria','Austria','Jordan'] },
-  K: { teams: ['Portugal','Uzbekistan','Colombia','DR Congo'] },
-  L: { teams: ['England','Croatia','Ghana','Panama'] },
+const GROUPS_DEF: Record<string, string[]> = {
+  A: ['Mexico','South Korea','South Africa','Czech Republic'],
+  B: ['Canada','Switzerland','Qatar','Bosnia & Herzegovina'],
+  C: ['Brazil','Morocco','Scotland','Haiti'],
+  D: ['USA','Paraguay','Australia','Turkey'],
+  E: ['Germany','Curaçao','Ivory Coast','Ecuador'],
+  F: ['Netherlands','Japan','Sweden','Tunisia'],
+  G: ['Belgium','Egypt','Iran','New Zealand'],
+  H: ['Spain','Cape Verde','Saudi Arabia','Uruguay'],
+  I: ['France','Senegal','Iraq','Norway'],
+  J: ['Argentina','Algeria','Austria','Jordan'],
+  K: ['Portugal','Uzbekistan','Colombia','DR Congo'],
+  L: ['England','Croatia','Ghana','Panama'],
 }
 
 const ELO: Record<string, number> = {
@@ -33,10 +33,9 @@ const ELO: Record<string, number> = {
   'DR Congo':1700,'Cameroon':1690,'Tunisia':1680,'Paraguay':1670,
   'Saudi Arabia':1660,'South Africa':1650,'Scotland':1640,'Canada':1630,
   'Czech Republic':1620,'Ghana':1610,'Iraq':1600,'Jordan':1590,
-  'Uzbekistan':1580,'Bosnia & Herzegovina':1560,
-  'New Zealand':1550,'Qatar':1540,'Haiti':1380,
-  'Panama':1360,'Sweden':1860,'Egypt':1740,'Austria':1730,
-  'Curaçao':1390,'Cape Verde':1570,
+  'Uzbekistan':1580,'Cape Verde':1570,'Bosnia & Herzegovina':1560,
+  'New Zealand':1550,'Qatar':1540,'Egypt':1530,'Sweden':1860,
+  'Austria':1730,'Curaçao':1390,'Haiti':1380,'Panama':1360,
 }
 
 const FLAGS: Record<string, string> = {
@@ -52,21 +51,22 @@ const FLAGS: Record<string, string> = {
   'Saudi Arabia':'🇸🇦','South Africa':'🇿🇦','Scotland':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','Canada':'🇨🇦',
   'Czech Republic':'🇨🇿','Ghana':'🇬🇭','Iraq':'🇮🇶','Jordan':'🇯🇴',
   'Uzbekistan':'🇺🇿','Cape Verde':'🇨🇻','Bosnia & Herzegovina':'🇧🇦',
-  'New Zealand':'🇳🇿','Qatar':'🇶🇦','Haiti':'🇭🇹','Curaçao':'🇨🇼','Panama':'🇵🇦',
+  'New Zealand':'🇳🇿','Qatar':'🇶🇦','Haiti':'🇭🇹','Curaçao':'🇨🇼',
+  'Panama':'🇵🇦','Egypt':'🇪🇬','Sweden':'🇸🇪','Austria':'🇦🇹',
 }
+
+const BLANK: Team = { name: '?', flag: '🏳️', elo: 0 }
 
 function getTeam(name: string): Team {
   return { name, flag: FLAGS[name] ?? '🏳️', elo: ELO[name] ?? 1500 }
 }
-
-const BLANK: Team = { name: '?', flag: '🏳️', elo: 0 }
 
 function beat(a?: Team, b?: Team): Team {
   const ta = a ?? BLANK, tb = b ?? BLANK
   return ta.elo >= tb.elo ? ta : tb
 }
 
-function getGroupWinners(matches: MatchPrediction[]): Record<string, [Team, Team]> {
+function getGroupResults(matches: MatchPrediction[]): Record<string, GroupResult> {
   const pts: Record<string, number> = {}
 
   for (const m of matches) {
@@ -82,33 +82,68 @@ function getGroupWinners(matches: MatchPrediction[]): Record<string, [Team, Team
     }
   }
 
-  const result: Record<string, [Team, Team]> = {}
-  for (const [g, { teams }] of Object.entries(GROUPS_DEF)) {
+  const result: Record<string, GroupResult> = {}
+  for (const [g, teams] of Object.entries(GROUPS_DEF)) {
     const sorted = teams.map(getTeam).sort((a, b) =>
       (pts[b.name] ?? 0) - (pts[a.name] ?? 0) || b.elo - a.elo
     )
-    result[g] = [sorted[0] ?? BLANK, sorted[1] ?? BLANK]
+    result[g] = {
+      first:  sorted[0] ?? BLANK,
+      second: sorted[1] ?? BLANK,
+      third:  sorted[2] ?? BLANK,
+    }
   }
   return result
 }
 
-function simulate(gw: Record<string, [Team, Team]>) {
+function simulate(groupResults: Record<string, GroupResult>) {
   const groups = Object.keys(GROUPS_DEF).sort()
-  const r32: [Team, Team][] = []
-  for (let i = 0; i < groups.length; i += 2) {
-    const g1 = groups[i], g2 = groups[i + 1] ?? groups[0]
-    r32.push([gw[g1]?.[0] ?? BLANK, gw[g2]?.[1] ?? BLANK])
-    r32.push([gw[g2]?.[0] ?? BLANK, gw[g1]?.[1] ?? BLANK])
+
+  // 24 grup çıkanı (1. ve 2.ler)
+  const firsts  = groups.map(g => groupResults[g].first)
+  const seconds = groups.map(g => groupResults[g].second)
+  const thirds  = groups.map(g => groupResults[g].third)
+
+  // En iyi 8 üçüncü (ELO'ya göre)
+  const best8thirds = [...thirds]
+    .sort((a, b) => b.elo - a.elo)
+    .slice(0, 8)
+
+  // Round of 32: 16 maç
+  // Resmi eşleşme: 1A vs 3DEF, 1B vs 3AEFG, vb. — basit simulasyon için ELO sıralaması
+  const r32teams = [...firsts, ...seconds, ...best8thirds]
+    .sort((a, b) => b.elo - a.elo)
+
+  // Serpme bracket: 1. vs 32., 2. vs 31. şeklinde
+  const r32pairs: [Team, Team][] = []
+  for (let i = 0; i < 16; i++) {
+    r32pairs.push([r32teams[i] ?? BLANK, r32teams[31 - i] ?? BLANK])
   }
-  const r16w = r32.map(([a, b]) => beat(a, b))
-  const qfP: [Team,Team][] = []; for (let i = 0; i < r16w.length; i+=2) qfP.push([r16w[i], r16w[i+1]])
-  const qfw = qfP.map(([a,b]) => beat(a,b))
-  const sfP: [Team,Team][] = []; for (let i = 0; i < qfw.length; i+=2) sfP.push([qfw[i], qfw[i+1]])
-  const sfw = sfP.map(([a,b]) => beat(a,b))
-  const fP:  [Team,Team][] = []; for (let i = 0; i < sfw.length; i+=2) fP.push([sfw[i], sfw[i+1]])
-  const fw  = fP.map(([a,b]) => beat(a,b))
-  const champ = fw.length >= 2 ? beat(fw[0], fw[1]) : (fw[0] ?? BLANK)
-  return { r32, r16w, qfP, qfw, sfP, sfw, fP, fw, champ }
+
+  function playRound(pairs: [Team, Team][]): { winners: Team[], pairs: [Team, Team][] } {
+    const winners = pairs.map(([a, b]) => beat(a, b))
+    const nextPairs: [Team, Team][] = []
+    for (let i = 0; i < winners.length; i += 2) {
+      nextPairs.push([winners[i] ?? BLANK, winners[i + 1] ?? BLANK])
+    }
+    return { winners, pairs: nextPairs }
+  }
+
+  const r16 = playRound(r32pairs)
+  const qf  = playRound(r16.pairs)
+  const sf  = playRound(qf.pairs)
+  const fin = playRound(sf.pairs)
+  const champ = fin.winners[0] ?? BLANK
+
+  return {
+    r32pairs,
+    r16winners: r16.winners, r16pairs: r16.pairs,
+    qfwinners:  qf.winners,  qfpairs:  qf.pairs,
+    sfwinners:  sf.winners,  sfpairs:  sf.pairs,
+    finalists:  fin.pairs[0] ?? [BLANK, BLANK],
+    champ,
+    best8thirds,
+  }
 }
 
 function TeamSlot({ team, winner }: { team: Team; winner: boolean }) {
@@ -131,10 +166,14 @@ function MatchBox({ t1, t2, winner }: { t1: Team; t2: Team; winner: Team }) {
   )
 }
 
-function RoundCol({ label, pairs, winners, gap }: { label: string; pairs: [Team,Team][]; winners: Team[]; gap: number }) {
+function RoundCol({ label, pairs, winners, gap }: {
+  label: string; pairs: [Team, Team][]; winners: Team[]; gap: number
+}) {
   return (
     <div className="flex flex-col flex-shrink-0">
-      <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2 whitespace-nowrap">{label}</div>
+      <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2 whitespace-nowrap">
+        {label}
+      </div>
       <div className="flex flex-col">
         {pairs.map(([t1, t2], i) => (
           <div key={i} style={{ marginTop: i === 0 ? 0 : gap }}>
@@ -147,11 +186,9 @@ function RoundCol({ label, pairs, winners, gap }: { label: string; pairs: [Team,
 }
 
 export default function BracketClient({ matches }: Props) {
-  const gw = getGroupWinners(matches)
-  const { r32, r16w, qfP, qfw, sfP, sfw, fP, fw, champ } = simulate(gw)
-  const r16pairs: [Team,Team][] = []; for (let i = 0; i < r16w.length; i+=2) r16pairs.push([r16w[i], r16w[i+1]])
+  const groupResults = getGroupResults(matches)
+  const { r32pairs, r16winners, r16pairs, qfwinners, qfpairs, sfwinners, sfpairs, finalists, champ, best8thirds } = simulate(groupResults)
 
-  // Grup tablosu için maç puanları
   const pts: Record<string, number> = {}
   for (const m of matches) {
     pts[m.home.name] ??= 0; pts[m.away.name] ??= 0
@@ -180,28 +217,44 @@ export default function BracketClient({ matches }: Props) {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h1 className="font-display text-4xl sm:text-5xl text-chalk-50 tracking-wide">WORLD CUP 2026 BRACKET</h1>
-          <p className="text-xs font-mono text-white/35 mt-2">eloratings.net ELO verileri · Maçlar oynanınca otomatik güncellenir</p>
+          <p className="text-xs font-mono text-white/35 mt-2">
+            32 takım · 24 grup çıkanı + 8 en iyi 3. · ELO modeli
+          </p>
+        </div>
+
+        {/* En iyi 8 üçüncü */}
+        <div className="mb-6 p-3 rounded-lg border border-white/8 bg-white/[0.02]">
+          <p className="text-[9px] font-mono text-white/30 uppercase tracking-widest mb-2">En İyi 8 Üçüncü (Son 32&apos;ye Kalan)</p>
+          <div className="flex flex-wrap gap-2">
+            {best8thirds.map((t, i) => (
+              <div key={i} className="flex items-center gap-1.5 px-2 py-1 rounded bg-gold-500/10 border border-gold-500/20">
+                <span className="text-xs">{t.flag}</span>
+                <span className="text-[10px] font-mono text-gold-300">{t.name}</span>
+                <span className="text-[9px] font-mono text-white/25">{t.elo}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bracket */}
         <div className="overflow-x-auto pb-4 mb-10">
           <div className="flex items-start gap-0 min-w-max py-2">
-            <RoundCol label="Round of 32" pairs={r32} winners={r16w} gap={4} />
+            <RoundCol label={`Round of 32 (${r32pairs.length})`} pairs={r32pairs} winners={r16winners} gap={4} />
             <div className="w-3 flex-shrink-0" />
-            <RoundCol label="Round of 16" pairs={r16pairs} winners={qfw} gap={62} />
+            <RoundCol label="Round of 16" pairs={r16pairs} winners={qfwinners} gap={62} />
             <div className="w-3 flex-shrink-0" />
-            <RoundCol label="Quarterfinals" pairs={qfP} winners={sfw} gap={126} />
+            <RoundCol label="Quarterfinals" pairs={qfpairs} winners={sfwinners} gap={126} />
             <div className="w-3 flex-shrink-0" />
-            <RoundCol label="Semifinals" pairs={sfP} winners={fw} gap={254} />
+            <RoundCol label="Semifinals" pairs={sfpairs} winners={[finalists[0], finalists[1]]} gap={254} />
             <div className="w-3 flex-shrink-0" />
 
             {/* Final */}
             <div className="flex flex-col flex-shrink-0">
               <div className="text-[9px] font-mono text-white/30 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2">Final</div>
               <div style={{ marginTop: 510 }}>
-                {fP[0] && <MatchBox t1={fP[0][0]} t2={fP[0][1]} winner={champ} />}
+                <MatchBox t1={finalists[0] ?? BLANK} t2={finalists[1] ?? BLANK} winner={champ} />
               </div>
             </div>
             <div className="w-3 flex-shrink-0" />
@@ -222,7 +275,7 @@ export default function BracketClient({ matches }: Props) {
         <div className="border-t border-white/8 pt-8">
           <p className="text-[10px] font-mono text-white/25 uppercase tracking-widest mb-5">Grup Tabloları</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {Object.entries(GROUPS_DEF).map(([g, { teams }]) => {
+            {Object.entries(GROUPS_DEF).map(([g, teams]) => {
               const sorted = teams.map(getTeam).sort((a, b) =>
                 (pts[b.name] ?? 0) - (pts[a.name] ?? 0) || b.elo - a.elo
               )
@@ -233,9 +286,9 @@ export default function BracketClient({ matches }: Props) {
                     <span className="text-[9px] font-mono text-white/20">ELO&nbsp;&nbsp;Puan</span>
                   </div>
                   {sorted.map((t, i) => (
-                    <div key={t.name} className={`flex items-center gap-2 px-3 py-1.5 border-b border-white/5 last:border-b-0 ${i < 2 ? 'bg-grass-500/5' : ''}`}>
+                    <div key={t.name} className={`flex items-center gap-2 px-3 py-1.5 border-b border-white/5 last:border-b-0 ${i < 2 ? 'bg-grass-500/5' : i === 2 && best8thirds.some(b => b.name === t.name) ? 'bg-gold-500/5' : ''}`}>
                       <span className="text-xs flex-shrink-0">{t.flag}</span>
-                      <span className={`flex-1 text-[10px] font-mono truncate ${i < 2 ? 'text-white/80' : 'text-white/35'}`}>{t.name}</span>
+                      <span className={`flex-1 text-[10px] font-mono truncate ${i < 2 ? 'text-white/80' : best8thirds.some(b => b.name === t.name) ? 'text-gold-400' : 'text-white/35'}`}>{t.name}</span>
                       <span className="text-[9px] font-mono text-white/25 w-8 text-right">{t.elo}</span>
                       <span className={`text-[10px] font-mono w-5 text-right font-medium ${i < 2 ? 'text-grass-400' : 'text-white/25'}`}>{pts[t.name] ?? 0}</span>
                     </div>
@@ -244,6 +297,10 @@ export default function BracketClient({ matches }: Props) {
               )
             })}
           </div>
+          <p className="text-[9px] font-mono text-white/20 mt-3">
+            <span className="inline-block w-2 h-2 rounded-sm bg-grass-500/30 mr-1" />Grup çıkanı
+            <span className="inline-block w-2 h-2 rounded-sm bg-gold-500/30 ml-3 mr-1" />En iyi 8 üçüncü
+          </p>
         </div>
       </main>
     </div>
