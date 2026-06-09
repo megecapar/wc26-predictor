@@ -33,9 +33,9 @@ const ELO: Record<string, number> = {
   'DR Congo':1700,'Cameroon':1690,'Tunisia':1680,'Paraguay':1670,
   'Saudi Arabia':1660,'South Africa':1650,'Scotland':1640,'Canada':1630,
   'Czech Republic':1620,'Ghana':1610,'Iraq':1600,'Jordan':1590,
-  'Uzbekistan':1580,'Cape Verde':1570,'Bosnia & Herzegovina':1560,
+  'Uzbekistan':1580,'Bosnia & Herzegovina':1560,
   'New Zealand':1550,'Qatar':1540,'Haiti':1380,
-  'Panama':1360,'Sweden':1860,'Egypt':1740,'Austria':1730,'Curaçao':1390,
+  'Panama':1360,'Sweden':1860,'Egypt':1740,'Austria':1730,
   'Curaçao':1390,'Cape Verde':1570,
 }
 
