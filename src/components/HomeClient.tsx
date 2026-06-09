@@ -105,6 +105,11 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
             <div className="text-[10px] font-mono text-white/25 hidden sm:block">
               FIFA 2026 · Yapay Zeka Tahminleri
             </div>
+            <nav className="flex gap-4 text-[11px] font-mono text-white/40">
+  <a href="/" className="text-white/80">Maçlar</a>
+  <a href="/bracket" className="hover:text-white/70 transition-colors">Bracket</a>
+  <a href="/standings" className="hover:text-white/70 transition-colors">Sıralama</a>
+</nav>
           </div>
         </div>
       </header>
