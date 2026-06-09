@@ -251,3 +251,22 @@ for match in matches:
 MATCHES_JSON.write_text(json.dumps(matches, ensure_ascii=False, indent=2))
 print(f"✅ {len(matches)} maç gelişmiş modelle güncellendi → {MATCHES_JSON}")
 print("\nNot: Nesine MS oranları korundu, olasılıklar modelden hesaplandı.")
+
+
+# ── Nesine oranlarını tekrar uygula ───────────────────────────────────────────
+NESINE_CACHE = ROOT / "data_raw/nesine_odds.json"
+if NESINE_CACHE.exists():
+    nesine = json.loads(NESINE_CACHE.read_text())
+    applied = 0
+    for match in matches:
+        key = f"{match['home']['name']}-{match['away']['name']}"
+        if key in nesine:
+            o = nesine[key]
+            if o.get('ms1'): match['ms']['home']['value'] = o['ms1']
+            if o.get('msX'): match['ms']['draw']['value'] = o['msX']
+            if o.get('ms2'): match['ms']['away']['value'] = o['ms2']
+            if o.get('alt'): match['overUnder']['under']['value'] = o['alt']
+            if o.get('ust'): match['overUnder']['over']['value']  = o['ust']
+            applied += 1
+    MATCHES_JSON.write_text(json.dumps(matches, ensure_ascii=False, indent=2))
+    print(f"✅ {applied} maça Nesine oranları geri uygulandı")

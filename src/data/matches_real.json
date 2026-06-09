@@ -42,17 +42,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.43,
+        "value": 1.23,
         "probability": 0.703
       },
       "draw": {
         "label": "MS X",
-        "value": 4.98,
+        "value": 4.04,
         "probability": 0.188
       },
       "away": {
         "label": "MS 2",
-        "value": 6.69,
+        "value": 7.69,
         "probability": 0.109
       }
     },
@@ -61,12 +61,12 @@
       "expectedGoals": 2.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.61,
+        "value": 1.92,
         "probability": 0.526
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.33,
+        "value": 1.49,
         "probability": 0.474
       }
     },
@@ -143,17 +143,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.24,
+        "value": 2.28,
         "probability": 0.769
       },
       "draw": {
         "label": "MS X",
-        "value": 7.78,
+        "value": 2.79,
         "probability": 0.14
       },
       "away": {
         "label": "MS 2",
-        "value": 10.38,
+        "value": 2.53,
         "probability": 0.089
       }
     },
@@ -162,12 +162,12 @@
       "expectedGoals": 3.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.98,
         "probability": 0.692
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.45,
+        "value": 1.45,
         "probability": 0.308
       }
     },
@@ -244,17 +244,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.04,
+        "value": 1.73,
         "probability": 0.336
       },
       "draw": {
         "label": "MS X",
-        "value": 4.11,
+        "value": 2.93,
         "probability": 0.262
       },
       "away": {
         "label": "MS 2",
-        "value": 3.17,
+        "value": 3.65,
         "probability": 0.402
       }
     },
@@ -263,12 +263,12 @@
       "expectedGoals": 2.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.57,
+        "value": 2.02,
         "probability": 0.487
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.43,
+        "value": 1.44,
         "probability": 0.513
       }
     },
@@ -345,17 +345,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.92,
+        "value": 1.61,
         "probability": 0.387
       },
       "draw": {
         "label": "MS X",
-        "value": 4.53,
+        "value": 3.06,
         "probability": 0.251
       },
       "away": {
         "label": "MS 2",
-        "value": 1.75,
+        "value": 4.1,
         "probability": 0.361
       }
     },
@@ -364,12 +364,12 @@
       "expectedGoals": 2.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.43,
+        "value": 1.98,
         "probability": 0.538
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.84,
+        "value": 1.45,
         "probability": 0.462
       }
     },
@@ -446,17 +446,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.96,
+        "value": 3.94,
         "probability": 0.09
       },
       "draw": {
         "label": "MS X",
-        "value": 4.74,
+        "value": 3.14,
         "probability": 0.146
       },
       "away": {
         "label": "MS 2",
-        "value": 1.57,
+        "value": 1.62,
         "probability": 0.763
       }
     },
@@ -465,12 +465,12 @@
       "expectedGoals": 3.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.48,
+        "value": 1.88,
         "probability": 0.664
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.66,
+        "value": 1.51,
         "probability": 0.336
       }
     },
@@ -547,17 +547,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 14.9,
+        "value": 3.47,
         "probability": 0.11
       },
       "draw": {
         "label": "MS X",
-        "value": 8.89,
+        "value": 3.03,
         "probability": 0.18
       },
       "away": {
         "label": "MS 2",
-        "value": 1.17,
+        "value": 1.74,
         "probability": 0.709
       }
     },
@@ -566,12 +566,12 @@
       "expectedGoals": 2.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.26,
+        "value": 1.9,
         "probability": 0.565
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.89,
+        "value": 1.5,
         "probability": 0.435
       }
     },
@@ -642,17 +642,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.13,
+        "value": 1.58,
         "probability": 0.658
       },
       "draw": {
         "label": "MS X",
-        "value": 10.87,
+        "value": 3.2,
         "probability": 0.193
       },
       "away": {
         "label": "MS 2",
-        "value": 21.47,
+        "value": 4.02,
         "probability": 0.148
       }
     },
@@ -661,12 +661,12 @@
       "expectedGoals": 3.1,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.25,
+        "value": 1.92,
         "probability": 0.597
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.95,
+        "value": 1.49,
         "probability": 0.403
       }
     },
@@ -743,17 +743,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 8.21,
+        "value": 11.1,
         "probability": 0.009
       },
       "draw": {
         "label": "MS X",
-        "value": 6.15,
+        "value": 5.61,
         "probability": 0.029
       },
       "away": {
         "label": "MS 2",
-        "value": 1.32,
+        "value": 1.07,
         "probability": 0.922
       }
     },
@@ -762,12 +762,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.36,
+        "value": 1.44,
         "probability": 0.829
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.17,
+        "value": 1.97,
         "probability": 0.171
       }
     },
@@ -838,17 +838,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.11,
+        "value": 1.42,
         "probability": 0.919
       },
       "draw": {
         "label": "MS X",
-        "value": 12.1,
+        "value": 3.51,
         "probability": 0.034
       },
       "away": {
         "label": "MS 2",
-        "value": 25.06,
+        "value": 4.87,
         "probability": 0.011
       }
     },
@@ -857,12 +857,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.24,
+        "value": 1.78,
         "probability": 0.83
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.12,
+        "value": 1.59,
         "probability": 0.17
       }
     },
@@ -939,17 +939,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.36,
+        "value": 1.14,
         "probability": 0.707
       },
       "draw": {
         "label": "MS X",
-        "value": 5.78,
+        "value": 4.73,
         "probability": 0.175
       },
       "away": {
         "label": "MS 2",
-        "value": 7.33,
+        "value": 9.58,
         "probability": 0.117
       }
     },
@@ -958,12 +958,12 @@
       "expectedGoals": 3.1,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.38,
+        "value": 1.72,
         "probability": 0.606
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.05,
+        "value": 1.64,
         "probability": 0.394
       }
     },
@@ -1040,17 +1040,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.28,
+        "value": 1.86,
         "probability": 0.824
       },
       "draw": {
         "label": "MS X",
-        "value": 4.4,
+        "value": 2.93,
         "probability": 0.11
       },
       "away": {
         "label": "MS 2",
-        "value": 2.62,
+        "value": 3.15,
         "probability": 0.061
       }
     },
@@ -1059,12 +1059,12 @@
       "expectedGoals": 3.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.35,
+        "value": 1.87,
         "probability": 0.736
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.26,
+        "value": 1.52,
         "probability": 0.264
       }
     },
@@ -1135,17 +1135,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.82,
+        "value": 1.35,
         "probability": 0.427
       },
       "draw": {
         "label": "MS X",
-        "value": 4.32,
+        "value": 3.63,
         "probability": 0.258
       },
       "away": {
         "label": "MS 2",
-        "value": 1.64,
+        "value": 5.65,
         "probability": 0.315
       }
     },
@@ -1154,12 +1154,12 @@
       "expectedGoals": 2.7,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.7,
+        "value": 1.77,
         "probability": 0.497
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.17,
+        "value": 1.59,
         "probability": 0.503
       }
     },
@@ -1236,17 +1236,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 6.95,
+        "value": 1.44,
         "probability": 0.582
       },
       "draw": {
         "label": "MS X",
-        "value": 6.45,
+        "value": 3.4,
         "probability": 0.221
       },
       "away": {
         "label": "MS 2",
-        "value": 1.35,
+        "value": 4.91,
         "probability": 0.197
       }
     },
@@ -1255,12 +1255,12 @@
       "expectedGoals": 2.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.83,
         "probability": 0.559
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.54,
+        "value": 1.55,
         "probability": 0.441
       }
     },
@@ -1337,17 +1337,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.9,
+        "value": 5.29,
         "probability": 0.08
       },
       "draw": {
         "label": "MS X",
-        "value": 4.64,
+        "value": 3.77,
         "probability": 0.126
       },
       "away": {
         "label": "MS 2",
-        "value": 3.27,
+        "value": 1.35,
         "probability": 0.79
       }
     },
@@ -1356,12 +1356,12 @@
       "expectedGoals": 3.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.3,
+        "value": 1.68,
         "probability": 0.734
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.55,
+        "value": 1.68,
         "probability": 0.266
       }
     },
@@ -1438,17 +1438,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 23.12,
+        "value": 3.57,
         "probability": 0.034
       },
       "draw": {
         "label": "MS X",
-        "value": 12.36,
+        "value": 2.92,
         "probability": 0.084
       },
       "away": {
         "label": "MS 2",
-        "value": 1.13,
+        "value": 1.75,
         "probability": 0.875
       }
     },
@@ -1457,12 +1457,12 @@
       "expectedGoals": 3.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.2,
+        "value": 2.04,
         "probability": 0.729
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.64,
+        "value": 1.42,
         "probability": 0.271
       }
     },
@@ -1544,12 +1544,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 5.23,
+        "value": 11.35,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 3.84,
+        "value": 28.0,
         "probability": 0.005
       }
     },
@@ -1558,12 +1558,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.18,
+        "value": 1.14,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.9,
+        "value": 3.21,
         "probability": 0.183
       }
     },
@@ -1640,17 +1640,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 5.43,
+        "value": 6.04,
         "probability": 0.008
       },
       "draw": {
         "label": "MS X",
-        "value": 5.2,
+        "value": 4.09,
         "probability": 0.029
       },
       "away": {
         "label": "MS 2",
-        "value": 1.49,
+        "value": 1.27,
         "probability": 0.923
       }
     },
@@ -1659,12 +1659,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.36,
+        "value": 1.62,
         "probability": 0.828
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.16,
+        "value": 1.74,
         "probability": 0.172
       }
     },
@@ -1741,17 +1741,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.19,
+        "value": 1.17,
         "probability": 0.925
       },
       "draw": {
         "label": "MS X",
-        "value": 11.13,
+        "value": 4.64,
         "probability": 0.027
       },
       "away": {
         "label": "MS 2",
-        "value": 15.55,
+        "value": 7.99,
         "probability": 0.007
       }
     },
@@ -1760,12 +1760,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.14,
+        "value": 1.52,
         "probability": 0.824
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.88,
+        "value": 1.87,
         "probability": 0.176
       }
     },
@@ -1842,17 +1842,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.34,
+        "value": 1.75,
         "probability": 0.702
       },
       "draw": {
         "label": "MS X",
-        "value": 5.27,
+        "value": 2.99,
         "probability": 0.187
       },
       "away": {
         "label": "MS 2",
-        "value": 8.87,
+        "value": 3.46,
         "probability": 0.111
       }
     },
@@ -1861,12 +1861,12 @@
       "expectedGoals": 2.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.73,
+        "value": 2.04,
         "probability": 0.537
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.12,
+        "value": 1.42,
         "probability": 0.463
       }
     },
@@ -1943,17 +1943,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.59,
+        "value": 4.55,
         "probability": 0.245
       },
       "draw": {
         "label": "MS X",
-        "value": 4.43,
+        "value": 3.37,
         "probability": 0.223
       },
       "away": {
         "label": "MS 2",
-        "value": 2.29,
+        "value": 1.52,
         "probability": 0.532
       }
     },
@@ -1962,12 +1962,12 @@
       "expectedGoals": 3.1,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.33,
+        "value": 1.8,
         "probability": 0.607
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.36,
+        "value": 1.61,
         "probability": 0.393
       }
     },
@@ -2044,17 +2044,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.5,
+        "value": 1.54,
         "probability": 0.326
       },
       "draw": {
         "label": "MS X",
-        "value": 4.63,
+        "value": 3.39,
         "probability": 0.258
       },
       "away": {
         "label": "MS 2",
-        "value": 1.83,
+        "value": 4.03,
         "probability": 0.416
       }
     },
@@ -2063,12 +2063,12 @@
       "expectedGoals": 2.7,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.33,
+        "value": 1.78,
         "probability": 0.502
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.34,
+        "value": 1.58,
         "probability": 0.498
       }
     },
@@ -2145,17 +2145,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.17,
+        "value": 1.99,
         "probability": 0.857
       },
       "draw": {
         "label": "MS X",
-        "value": 7.76,
+        "value": 2.87,
         "probability": 0.095
       },
       "away": {
         "label": "MS 2",
-        "value": 16.9,
+        "value": 3.08,
         "probability": 0.043
       }
     },
@@ -2164,12 +2164,12 @@
       "expectedGoals": 3.7,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.5,
+        "value": 2.07,
         "probability": 0.716
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.62,
+        "value": 1.44,
         "probability": 0.284
       }
     },
@@ -2246,17 +2246,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.73,
+        "value": 2.45,
         "probability": 0.576
       },
       "draw": {
         "label": "MS X",
-        "value": 4.86,
+        "value": 3.08,
         "probability": 0.205
       },
       "away": {
         "label": "MS 2",
-        "value": 3.8,
+        "value": 2.26,
         "probability": 0.218
       }
     },
@@ -2265,12 +2265,12 @@
       "expectedGoals": 3.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.28,
+        "value": 1.7,
         "probability": 0.662
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.71,
+        "value": 1.7,
         "probability": 0.338
       }
     },
@@ -2347,17 +2347,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 14.69,
+        "value": 1.92,
         "probability": 0.078
       },
       "draw": {
         "label": "MS X",
-        "value": 6.87,
+        "value": 2.88,
         "probability": 0.171
       },
       "away": {
         "label": "MS 2",
-        "value": 1.2,
+        "value": 3.06,
         "probability": 0.75
       }
     },
@@ -2366,12 +2366,12 @@
       "expectedGoals": 2.7,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.59,
+        "value": 2.03,
         "probability": 0.505
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.36,
+        "value": 1.43,
         "probability": 0.495
       }
     },
@@ -2453,12 +2453,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 12.87,
+        "value": 23.1,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 21.51,
+        "value": 34.0,
         "probability": 0.005
       }
     },
@@ -2472,7 +2472,7 @@
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.32,
+        "value": 4.37,
         "probability": 0.183
       }
     },
@@ -2549,17 +2549,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.89,
+        "value": 3.21,
         "probability": 0.15
       },
       "draw": {
         "label": "MS X",
-        "value": 3.94,
+        "value": 2.59,
         "probability": 0.228
       },
       "away": {
         "label": "MS 2",
-        "value": 3.76,
+        "value": 2.02,
         "probability": 0.622
       }
     },
@@ -2568,12 +2568,12 @@
       "expectedGoals": 2.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.8,
+        "value": 2.48,
         "probability": 0.456
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.03,
+        "value": 1.27,
         "probability": 0.544
       }
     },
@@ -2650,17 +2650,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.53,
+        "value": 1.37,
         "probability": 0.799
       },
       "draw": {
         "label": "MS X",
-        "value": 5.53,
+        "value": 3.8,
         "probability": 0.12
       },
       "away": {
         "label": "MS 2",
-        "value": 4.81,
+        "value": 5.1,
         "probability": 0.076
       }
     },
@@ -2669,12 +2669,12 @@
       "expectedGoals": 3.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.59,
         "probability": 0.75
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.53,
+        "value": 1.78,
         "probability": 0.25
       }
     },
@@ -2756,12 +2756,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 3.92,
+        "value": 6.19,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 3.97,
+        "value": 13.4,
         "probability": 0.005
       }
     },
@@ -2770,12 +2770,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.86,
+        "value": 1.47,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 1.96,
+        "value": 1.95,
         "probability": 0.183
       }
     },
@@ -2852,17 +2852,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 6.99,
+        "value": 11.4,
         "probability": 0.011
       },
       "draw": {
         "label": "MS X",
-        "value": 5.95,
+        "value": 5.74,
         "probability": 0.036
       },
       "away": {
         "label": "MS 2",
-        "value": 1.37,
+        "value": 1.08,
         "probability": 0.921
       }
     },
@@ -2871,12 +2871,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.31,
+        "value": 1.47,
         "probability": 0.822
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.51,
+        "value": 1.94,
         "probability": 0.178
       }
     },
@@ -2953,17 +2953,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 8.03,
+        "value": 4.31,
         "probability": 0.285
       },
       "draw": {
         "label": "MS X",
-        "value": 5.89,
+        "value": 3.37,
         "probability": 0.244
       },
       "away": {
         "label": "MS 2",
-        "value": 1.33,
+        "value": 1.5,
         "probability": 0.471
       }
     },
@@ -2972,12 +2972,12 @@
       "expectedGoals": 2.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.41,
+        "value": 1.64,
         "probability": 0.543
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.92,
+        "value": 1.71,
         "probability": 0.457
       }
     },
@@ -3054,17 +3054,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.25,
+        "value": 1.76,
         "probability": 0.537
       },
       "draw": {
         "label": "MS X",
-        "value": 6.1,
+        "value": 3.19,
         "probability": 0.2
       },
       "away": {
         "label": "MS 2",
-        "value": 1.59,
+        "value": 3.21,
         "probability": 0.263
       }
     },
@@ -3073,12 +3073,12 @@
       "expectedGoals": 3.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.08,
+        "value": 1.68,
         "probability": 0.738
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 8.02,
+        "value": 1.67,
         "probability": 0.262
       }
     },
@@ -3155,17 +3155,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.49,
+        "value": 1.68,
         "probability": 0.67
       },
       "draw": {
         "label": "MS X",
-        "value": 4.25,
+        "value": 3.0,
         "probability": 0.196
       },
       "away": {
         "label": "MS 2",
-        "value": 1.9,
+        "value": 3.8,
         "probability": 0.133
       }
     },
@@ -3174,12 +3174,12 @@
       "expectedGoals": 2.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.52,
+        "value": 2.03,
         "probability": 0.552
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.55,
+        "value": 1.43,
         "probability": 0.448
       }
     },
@@ -3256,17 +3256,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.17,
+        "value": 1.44,
         "probability": 0.734
       },
       "draw": {
         "label": "MS X",
-        "value": 11.89,
+        "value": 3.55,
         "probability": 0.149
       },
       "away": {
         "label": "MS 2",
-        "value": 18.04,
+        "value": 4.63,
         "probability": 0.114
       }
     },
@@ -3275,12 +3275,12 @@
       "expectedGoals": 3.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.15,
+        "value": 1.68,
         "probability": 0.728
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.61,
+        "value": 1.67,
         "probability": 0.272
       }
     },
@@ -3357,17 +3357,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 21.92,
+        "value": 4.63,
         "probability": 0.029
       },
       "draw": {
         "label": "MS X",
-        "value": 12.99,
+        "value": 3.19,
         "probability": 0.072
       },
       "away": {
         "label": "MS 2",
-        "value": 1.14,
+        "value": 1.5,
         "probability": 0.889
       }
     },
@@ -3376,12 +3376,12 @@
       "expectedGoals": 4.1,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.16,
+        "value": 1.98,
         "probability": 0.765
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.29,
+        "value": 1.46,
         "probability": 0.235
       }
     },
@@ -3458,17 +3458,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.13,
+        "value": 1.85,
         "probability": 0.626
       },
       "draw": {
         "label": "MS X",
-        "value": 13.62,
+        "value": 2.99,
         "probability": 0.192
       },
       "away": {
         "label": "MS 2",
-        "value": 24.36,
+        "value": 3.14,
         "probability": 0.182
       }
     },
@@ -3477,12 +3477,12 @@
       "expectedGoals": 3.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.17,
+        "value": 1.83,
         "probability": 0.671
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.13,
+        "value": 1.55,
         "probability": 0.329
       }
     },
@@ -3559,17 +3559,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 9.11,
+        "value": 5.68,
         "probability": 0.019
       },
       "draw": {
         "label": "MS X",
-        "value": 7.27,
+        "value": 3.84,
         "probability": 0.051
       },
       "away": {
         "label": "MS 2",
-        "value": 1.27,
+        "value": 1.33,
         "probability": 0.909
       }
     },
@@ -3578,12 +3578,12 @@
       "expectedGoals": 4.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.68,
         "probability": 0.808
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.41,
+        "value": 1.67,
         "probability": 0.192
       }
     },
@@ -3660,17 +3660,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.32,
+        "value": 1.45,
         "probability": 0.898
       },
       "draw": {
         "label": "MS X",
-        "value": 4.36,
+        "value": 3.49,
         "probability": 0.065
       },
       "away": {
         "label": "MS 2",
-        "value": 2.57,
+        "value": 4.56,
         "probability": 0.025
       }
     },
@@ -3679,12 +3679,12 @@
       "expectedGoals": 4.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.36,
+        "value": 1.76,
         "probability": 0.775
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.17,
+        "value": 1.6,
         "probability": 0.225
       }
     },
@@ -3761,17 +3761,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.29,
+        "value": 1.66,
         "probability": 0.792
       },
       "draw": {
         "label": "MS X",
-        "value": 7.24,
+        "value": 3.01,
         "probability": 0.133
       },
       "away": {
         "label": "MS 2",
-        "value": 8.36,
+        "value": 3.87,
         "probability": 0.073
       }
     },
@@ -3780,12 +3780,12 @@
       "expectedGoals": 3.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.18,
+        "value": 2.05,
         "probability": 0.667
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.96,
+        "value": 1.42,
         "probability": 0.333
       }
     },
@@ -3862,17 +3862,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.44,
+        "value": 1.23,
         "probability": 0.596
       },
       "draw": {
         "label": "MS X",
-        "value": 5.47,
+        "value": 4.2,
         "probability": 0.204
       },
       "away": {
         "label": "MS 2",
-        "value": 1.58,
+        "value": 7.01,
         "probability": 0.199
       }
     },
@@ -3881,12 +3881,12 @@
       "expectedGoals": 3.3,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.19,
+        "value": 1.65,
         "probability": 0.637
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.84,
+        "value": 1.7,
         "probability": 0.363
       }
     },
@@ -3963,17 +3963,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.55,
+        "value": 4.39,
         "probability": 0.341
       },
       "draw": {
         "label": "MS X",
-        "value": 4.49,
+        "value": 3.29,
         "probability": 0.268
       },
       "away": {
         "label": "MS 2",
-        "value": 1.84,
+        "value": 1.51,
         "probability": 0.391
       }
     },
@@ -3982,12 +3982,12 @@
       "expectedGoals": 2.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.4,
+        "value": 1.99,
         "probability": 0.463
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.99,
+        "value": 1.44,
         "probability": 0.537
       }
     },
@@ -4064,17 +4064,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.66,
+        "value": 1.98,
         "probability": 0.071
       },
       "draw": {
         "label": "MS X",
-        "value": 5.07,
+        "value": 2.67,
         "probability": 0.136
       },
       "away": {
         "label": "MS 2",
-        "value": 1.58,
+        "value": 3.19,
         "probability": 0.791
       }
     },
@@ -4083,12 +4083,12 @@
       "expectedGoals": 3.3,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.32,
+        "value": 2.33,
         "probability": 0.641
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.44,
+        "value": 1.31,
         "probability": 0.359
       }
     },
@@ -4165,17 +4165,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.82,
+        "value": 8.4,
         "probability": 0.021
       },
       "draw": {
         "label": "MS X",
-        "value": 5.04,
+        "value": 4.98,
         "probability": 0.054
       },
       "away": {
         "label": "MS 2",
-        "value": 1.71,
+        "value": 1.15,
         "probability": 0.906
       }
     },
@@ -4184,12 +4184,12 @@
       "expectedGoals": 4.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.23,
+        "value": 1.48,
         "probability": 0.804
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.23,
+        "value": 1.94,
         "probability": 0.196
       }
     },
@@ -4271,12 +4271,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 19.16,
+        "value": 9.92,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 51.99,
+        "value": 24.35,
         "probability": 0.005
       }
     },
@@ -4285,12 +4285,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.22,
+        "value": 1.19,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.33,
+        "value": 2.85,
         "probability": 0.183
       }
     },
@@ -4367,17 +4367,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.47,
+        "value": 6.99,
         "probability": 0.064
       },
       "draw": {
         "label": "MS X",
-        "value": 3.59,
+        "value": 4.04,
         "probability": 0.162
       },
       "away": {
         "label": "MS 2",
-        "value": 2.07,
+        "value": 1.25,
         "probability": 0.774
       }
     },
@@ -4386,12 +4386,12 @@
       "expectedGoals": 2.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 2.11,
+        "value": 1.72,
         "probability": 0.494
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 1.73,
+        "value": 1.64,
         "probability": 0.506
       }
     },
@@ -4473,12 +4473,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 20.56,
+        "value": 9.02,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 61.13,
+        "value": 23.5,
         "probability": 0.005
       }
     },
@@ -4487,12 +4487,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.23,
+        "value": 1.31,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.21,
+        "value": 2.34,
         "probability": 0.183
       }
     },
@@ -4569,17 +4569,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.2,
+        "value": 1.25,
         "probability": 0.865
       },
       "draw": {
         "label": "MS X",
-        "value": 3.66,
+        "value": 4.1,
         "probability": 0.098
       },
       "away": {
         "label": "MS 2",
-        "value": 3.11,
+        "value": 6.69,
         "probability": 0.033
       }
     },
@@ -4588,12 +4588,12 @@
       "expectedGoals": 3.3,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.97,
+        "value": 1.68,
         "probability": 0.635
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 1.84,
+        "value": 1.68,
         "probability": 0.365
       }
     },
@@ -4670,17 +4670,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.41,
+        "value": 2.27,
         "probability": 0.261
       },
       "draw": {
         "label": "MS X",
-        "value": 3.51,
+        "value": 2.87,
         "probability": 0.288
       },
       "away": {
         "label": "MS 2",
-        "value": 2.86,
+        "value": 2.47,
         "probability": 0.451
       }
     },
@@ -4689,12 +4689,12 @@
       "expectedGoals": 2.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 2.13,
+        "value": 1.87,
         "probability": 0.366
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 1.72,
+        "value": 1.51,
         "probability": 0.634
       }
     },
@@ -4771,17 +4771,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 44.91,
+        "value": 4.77,
         "probability": 0.014
       },
       "draw": {
         "label": "MS X",
-        "value": 17.96,
+        "value": 3.55,
         "probability": 0.045
       },
       "away": {
         "label": "MS 2",
-        "value": 1.09,
+        "value": 1.43,
         "probability": 0.92
       }
     },
@@ -4790,12 +4790,12 @@
       "expectedGoals": 4.5,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.67,
         "probability": 0.8
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.45,
+        "value": 1.68,
         "probability": 0.2
       }
     },
@@ -4872,17 +4872,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.54,
+        "value": 1.27,
         "probability": 0.784
       },
       "draw": {
         "label": "MS X",
-        "value": 5.44,
+        "value": 3.97,
         "probability": 0.133
       },
       "away": {
         "label": "MS 2",
-        "value": 4.81,
+        "value": 6.37,
         "probability": 0.081
       }
     },
@@ -4891,12 +4891,12 @@
       "expectedGoals": 3.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.23,
+        "value": 1.7,
         "probability": 0.698
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.24,
+        "value": 1.65,
         "probability": 0.302
       }
     },
@@ -4973,17 +4973,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 6.23,
+        "value": 12.7,
         "probability": 0.012
       },
       "draw": {
         "label": "MS X",
-        "value": 5.53,
+        "value": 6.27,
         "probability": 0.038
       },
       "away": {
         "label": "MS 2",
-        "value": 1.42,
+        "value": 1.05,
         "probability": 0.92
       }
     },
@@ -4992,12 +4992,12 @@
       "expectedGoals": 4.7,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.35,
+        "value": 1.39,
         "probability": 0.819
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.25,
+        "value": 2.11,
         "probability": 0.181
       }
     },
@@ -5079,12 +5079,12 @@
       },
       "draw": {
         "label": "MS X",
-        "value": 9.13,
+        "value": 8.36,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 15.36,
+        "value": 23.1,
         "probability": 0.005
       }
     },
@@ -5093,12 +5093,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.25,
+        "value": 1.34,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.99,
+        "value": 2.23,
         "probability": 0.183
       }
     },
@@ -5175,17 +5175,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.33,
+        "value": 1.84,
         "probability": 0.502
       },
       "draw": {
         "label": "MS X",
-        "value": 4.63,
+        "value": 3.04,
         "probability": 0.231
       },
       "away": {
         "label": "MS 2",
-        "value": 2.49,
+        "value": 3.11,
         "probability": 0.267
       }
     },
@@ -5194,12 +5194,12 @@
       "expectedGoals": 3.1,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.24,
+        "value": 1.74,
         "probability": 0.59
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.07,
+        "value": 1.62,
         "probability": 0.41
       }
     },
@@ -5276,17 +5276,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 4.67,
+        "value": 3.88,
         "probability": 0.128
       },
       "draw": {
         "label": "MS X",
-        "value": 5.73,
+        "value": 3.21,
         "probability": 0.158
       },
       "away": {
         "label": "MS 2",
-        "value": 1.54,
+        "value": 1.6,
         "probability": 0.712
       }
     },
@@ -5295,12 +5295,12 @@
       "expectedGoals": 3.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.16,
+        "value": 1.74,
         "probability": 0.723
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.4,
+        "value": 1.62,
         "probability": 0.277
       }
     },
@@ -5377,17 +5377,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.49,
+        "value": 1.26,
         "probability": 0.879
       },
       "draw": {
         "label": "MS X",
-        "value": 4.98,
+        "value": 4.05,
         "probability": 0.085
       },
       "away": {
         "label": "MS 2",
-        "value": 5.77,
+        "value": 6.55,
         "probability": 0.031
       }
     },
@@ -5396,12 +5396,12 @@
       "expectedGoals": 3.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.49,
+        "value": 1.68,
         "probability": 0.697
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.64,
+        "value": 1.67,
         "probability": 0.303
       }
     },
@@ -5478,17 +5478,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.88,
+        "value": 1.21,
         "probability": 0.917
       },
       "draw": {
         "label": "MS X",
-        "value": 5.03,
+        "value": 4.22,
         "probability": 0.032
       },
       "away": {
         "label": "MS 2",
-        "value": 3.19,
+        "value": 7.4,
         "probability": 0.01
       }
     },
@@ -5497,12 +5497,12 @@
       "expectedGoals": 5.0,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.17,
+        "value": 1.68,
         "probability": 0.834
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.11,
+        "value": 1.67,
         "probability": 0.166
       }
     },
@@ -5579,17 +5579,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 2.31,
+        "value": 1.15,
         "probability": 0.724
       },
       "draw": {
         "label": "MS X",
-        "value": 4.28,
+        "value": 5.04,
         "probability": 0.161
       },
       "away": {
         "label": "MS 2",
-        "value": 2.61,
+        "value": 8.26,
         "probability": 0.114
       }
     },
@@ -5598,12 +5598,12 @@
       "expectedGoals": 3.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.4,
+        "value": 1.44,
         "probability": 0.666
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.97,
+        "value": 2.0,
         "probability": 0.334
       }
     },
@@ -5680,17 +5680,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.25,
+        "value": 1.45,
         "probability": 0.922
       },
       "draw": {
         "label": "MS X",
-        "value": 7.96,
+        "value": 3.39,
         "probability": 0.029
       },
       "away": {
         "label": "MS 2",
-        "value": 9.94,
+        "value": 4.77,
         "probability": 0.008
       }
     },
@@ -5699,12 +5699,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.17,
+        "value": 1.73,
         "probability": 0.829
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 5.04,
+        "value": 1.63,
         "probability": 0.171
       }
     },
@@ -5781,17 +5781,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 6.93,
+        "value": 5.8,
         "probability": 0.08
       },
       "draw": {
         "label": "MS X",
-        "value": 6.32,
+        "value": 3.79,
         "probability": 0.134
       },
       "away": {
         "label": "MS 2",
-        "value": 1.36,
+        "value": 1.33,
         "probability": 0.784
       }
     },
@@ -5800,12 +5800,12 @@
       "expectedGoals": 3.6,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.23,
+        "value": 1.7,
         "probability": 0.689
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.26,
+        "value": 1.65,
         "probability": 0.311
       }
     },
@@ -5882,17 +5882,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.38,
+        "value": 3.17,
         "probability": 0.461
       },
       "draw": {
         "label": "MS X",
-        "value": 6.39,
+        "value": 2.84,
         "probability": 0.229
       },
       "away": {
         "label": "MS 2",
-        "value": 6.42,
+        "value": 1.91,
         "probability": 0.31
       }
     },
@@ -5901,12 +5901,12 @@
       "expectedGoals": 3.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.18,
+        "value": 1.87,
         "probability": 0.626
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.94,
+        "value": 1.52,
         "probability": 0.374
       }
     },
@@ -5983,17 +5983,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 10.65,
+        "value": 12.55,
         "probability": 0.005
       },
       "draw": {
         "label": "MS X",
-        "value": 7.87,
+        "value": 6.21,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 1.23,
+        "value": 1.05,
         "probability": 0.931
       }
     },
@@ -6002,12 +6002,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.41,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.43,
+        "value": 2.06,
         "probability": 0.183
       }
     },
@@ -6084,17 +6084,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.26,
+        "value": 1.11,
         "probability": 0.908
       },
       "draw": {
         "label": "MS X",
-        "value": 6.98,
+        "value": 5.22,
         "probability": 0.059
       },
       "away": {
         "label": "MS 2",
-        "value": 9.86,
+        "value": 9.83,
         "probability": 0.02
       }
     },
@@ -6103,12 +6103,12 @@
       "expectedGoals": 4.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.3,
+        "value": 1.49,
         "probability": 0.77
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 3.56,
+        "value": 1.92,
         "probability": 0.23
       }
     },
@@ -6185,17 +6185,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.86,
+        "value": 6.98,
         "probability": 0.012
       },
       "draw": {
         "label": "MS X",
-        "value": 4.38,
+        "value": 4.16,
         "probability": 0.04
       },
       "away": {
         "label": "MS 2",
-        "value": 3.54,
+        "value": 1.24,
         "probability": 0.926
       }
     },
@@ -6204,12 +6204,12 @@
       "expectedGoals": 4.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.45,
+        "value": 1.72,
         "probability": 0.796
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.77,
+        "value": 1.64,
         "probability": 0.204
       }
     },
@@ -6286,17 +6286,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.74,
+        "value": 1.1,
         "probability": 0.922
       },
       "draw": {
         "label": "MS X",
-        "value": 5.02,
+        "value": 5.57,
         "probability": 0.029
       },
       "away": {
         "label": "MS 2",
-        "value": 3.7,
+        "value": 9.53,
         "probability": 0.008
       }
     },
@@ -6305,12 +6305,12 @@
       "expectedGoals": 4.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.22,
+        "value": 1.37,
         "probability": 0.829
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.33,
+        "value": 2.15,
         "probability": 0.171
       }
     },
@@ -6387,17 +6387,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.96,
+        "value": 1.28,
         "probability": 0.851
       },
       "draw": {
         "label": "MS X",
-        "value": 3.88,
+        "value": 3.79,
         "probability": 0.107
       },
       "away": {
         "label": "MS 2",
-        "value": 3.55,
+        "value": 6.75,
         "probability": 0.039
       }
     },
@@ -6406,12 +6406,12 @@
       "expectedGoals": 3.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.81,
+        "value": 1.95,
         "probability": 0.624
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.01,
+        "value": 1.47,
         "probability": 0.376
       }
     },
@@ -6488,17 +6488,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 6.05,
+        "value": 3.12,
         "probability": 0.312
       },
       "draw": {
         "label": "MS X",
-        "value": 6.0,
+        "value": 2.95,
         "probability": 0.243
       },
       "away": {
         "label": "MS 2",
-        "value": 1.41,
+        "value": 1.87,
         "probability": 0.445
       }
     },
@@ -6507,12 +6507,12 @@
       "expectedGoals": 2.9,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.22,
+        "value": 1.86,
         "probability": 0.561
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.37,
+        "value": 1.53,
         "probability": 0.439
       }
     },
@@ -6589,17 +6589,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 5.31,
+        "value": 2.05,
         "probability": 0.505
       },
       "draw": {
         "label": "MS X",
-        "value": 4.54,
+        "value": 2.91,
         "probability": 0.265
       },
       "away": {
         "label": "MS 2",
-        "value": 1.56,
+        "value": 2.76,
         "probability": 0.231
       }
     },
@@ -6608,12 +6608,12 @@
       "expectedGoals": 2.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.64,
+        "value": 2.03,
         "probability": 0.422
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.27,
+        "value": 1.43,
         "probability": 0.578
       }
     },
@@ -6690,17 +6690,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.44,
+        "value": 1.51,
         "probability": 0.689
       },
       "draw": {
         "label": "MS X",
-        "value": 5.83,
+        "value": 3.32,
         "probability": 0.179
       },
       "away": {
         "label": "MS 2",
-        "value": 5.73,
+        "value": 4.31,
         "probability": 0.131
       }
     },
@@ -6709,12 +6709,12 @@
       "expectedGoals": 3.2,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.23,
+        "value": 1.86,
         "probability": 0.625
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.27,
+        "value": 1.53,
         "probability": 0.375
       }
     },
@@ -6791,17 +6791,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 7.65,
+        "value": 1.78,
         "probability": 0.739
       },
       "draw": {
         "label": "MS X",
-        "value": 5.37,
+        "value": 3.08,
         "probability": 0.166
       },
       "away": {
         "label": "MS 2",
-        "value": 1.37,
+        "value": 3.27,
         "probability": 0.095
       }
     },
@@ -6810,12 +6810,12 @@
       "expectedGoals": 3.0,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.56,
+        "value": 2.0,
         "probability": 0.584
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.46,
+        "value": 1.44,
         "probability": 0.416
       }
     },
@@ -6892,17 +6892,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.09,
+        "value": 1.15,
         "probability": 0.931
       },
       "draw": {
         "label": "MS X",
-        "value": 18.02,
+        "value": 4.98,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 45.26,
+        "value": 8.59,
         "probability": 0.005
       }
     },
@@ -6911,12 +6911,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.5,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.44,
+        "value": 1.89,
         "probability": 0.183
       }
     },
@@ -6993,17 +6993,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 3.44,
+        "value": 5.63,
         "probability": 0.005
       },
       "draw": {
         "label": "MS X",
-        "value": 4.4,
+        "value": 3.58,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 1.88,
+        "value": 1.36,
         "probability": 0.931
       }
     },
@@ -7012,12 +7012,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.43,
+        "value": 1.8,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.86,
+        "value": 1.56,
         "probability": 0.183
       }
     },
@@ -7094,17 +7094,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 9.68,
+        "value": 8.59,
         "probability": 0.005
       },
       "draw": {
         "label": "MS X",
-        "value": 7.55,
+        "value": 5.27,
         "probability": 0.024
       },
       "away": {
         "label": "MS 2",
-        "value": 1.26,
+        "value": 1.13,
         "probability": 0.931
       }
     },
@@ -7113,12 +7113,12 @@
       "expectedGoals": 4.8,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.21,
+        "value": 1.44,
         "probability": 0.817
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 4.52,
+        "value": 2.01,
         "probability": 0.183
       }
     },
@@ -7195,17 +7195,17 @@
     "ms": {
       "home": {
         "label": "MS 1",
-        "value": 1.21,
+        "value": 1.45,
         "probability": 0.927
       },
       "draw": {
         "label": "MS X",
-        "value": 7.37,
+        "value": 3.36,
         "probability": 0.039
       },
       "away": {
         "label": "MS 2",
-        "value": 12.96,
+        "value": 4.78,
         "probability": 0.011
       }
     },
@@ -7214,12 +7214,12 @@
       "expectedGoals": 4.4,
       "over": {
         "label": "2.5 Üst",
-        "value": 1.4,
+        "value": 1.86,
         "probability": 0.797
       },
       "under": {
         "label": "2.5 Alt",
-        "value": 2.99,
+        "value": 1.52,
         "probability": 0.203
       }
     },
