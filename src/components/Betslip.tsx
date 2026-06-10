@@ -1,13 +1,73 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { useBetslip } from '@/lib/betslip-context'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
-import { X, Trash2, ReceiptText } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { X, Trash2, ReceiptText, LogIn } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
+import Link from 'next/link'
 
 export function Betslip() {
   const { bets, remove, clear, totalOdds } = useBetslip()
+  const [user, setUser]       = useState<{id:string, email?:string} | null>(null)
+  const [saving, setSaving]   = useState(false)
+  const [msg, setMsg]         = useState('')
+  const supabase = createClient()
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
+  }, [supabase])
+
+  async function saveCoupon() {
+    if (!user || bets.length === 0) return
+    setSaving(true); setMsg('')
+    try {
+      // Kuponu kaydet
+      const { data: coupon, error: couponErr } = await supabase
+        .from('coupons')
+        .insert({ user_id: user.id, total_odd: totalOdds, title: `${bets.length} maçlık kupon` })
+        .select()
+        .single()
+
+      if (couponErr) throw couponErr
+
+      // Bahisleri kaydet
+      const betsToInsert = bets.map(b => ({
+        coupon_id:    coupon.id,
+        match_id:     b.matchId,
+        match_label:  b.label.split('·')[0].trim(),
+        market_key:   b.marketKey,
+        market_label: b.label.split('·')[1]?.trim() ?? b.marketKey,
+        odd:          b.odd,
+      }))
+
+      const { error: betsErr } = await supabase.from('coupon_bets').insert(betsToInsert)
+      if (betsErr) throw betsErr
+
+      // Puan ver (+5)
+      await supabase.rpc('increment_points', { user_id: user.id, amount: 5 }).maybeSingle()
+
+      // İlk kupon rozeti
+      const { data: existingCoupons } = await supabase
+        .from('coupons').select('id', { count: 'exact' }).eq('user_id', user.id)
+      if ((existingCoupons?.length ?? 0) === 1) {
+        const { data: badge } = await supabase.from('badges').select('id').eq('key','first_coupon').single()
+        if (badge) await supabase.from('user_badges').insert({ user_id: user.id, badge_id: badge.id }).maybeSingle()
+      }
+
+      setMsg('✅ Kupon kaydedildi! +5 puan')
+      clear()
+      setTimeout(() => setMsg(''), 3000)
+    } catch (e: unknown) {
+      setMsg(`❌ ${e instanceof Error ? e.message : 'Hata'}`)
+    }
+    setSaving(false)
+  }
 
   return (
     <div className="flex flex-col h-full rounded-xl border border-white/8 bg-white/[0.03] overflow-hidden">
@@ -62,7 +122,6 @@ export function Betslip() {
 
           <Separator className="opacity-50" />
 
-          {/* Total + CTA */}
           <div className="p-3 space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs text-white/40 font-mono">Toplam oran</span>
@@ -70,17 +129,34 @@ export function Betslip() {
                 {totalOdds.toFixed(2)}
               </span>
             </div>
-
-            <div className="space-y-1">
-              <div className="flex items-center justify-between text-[11px] font-mono text-white/30">
-                <span>100 ₺ için</span>
-                <span className="text-chalk-200">{(100 * totalOdds).toFixed(0)} ₺</span>
-              </div>
+            <div className="flex items-center justify-between text-[11px] font-mono text-white/30">
+              <span>100 ₺ için</span>
+              <span className="text-chalk-200">{(100 * totalOdds).toFixed(0)} ₺</span>
             </div>
 
-            <Button variant="pitch" className="w-full text-xs tracking-widest uppercase font-mono">
-              Kuponu Kaydet
-            </Button>
+            {msg && (
+              <p className={`text-[10px] font-mono text-center ${msg.startsWith('✅') ? 'text-grass-400' : 'text-red-400'}`}>
+                {msg}
+              </p>
+            )}
+
+            {user ? (
+              <Button
+                onClick={saveCoupon}
+                disabled={saving}
+                variant="pitch"
+                className="w-full text-xs tracking-widest uppercase font-mono"
+              >
+                {saving ? 'Kaydediliyor...' : 'Kuponu Kaydet (+5p)'}
+              </Button>
+            ) : (
+              <Link href="/auth">
+                <Button variant="outline" className="w-full text-xs font-mono border-white/20 text-white/60 hover:text-white">
+                  <LogIn size={12} className="mr-2" />
+                  Kaydetmek için giriş yap
+                </Button>
+              </Link>
+            )}
           </div>
         </>
       )}

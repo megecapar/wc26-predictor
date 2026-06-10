@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
+import { createClient } from '@/lib/supabase/client'
 import { MatchPrediction } from '@/lib/types'
 import { MatchCard } from '@/components/MatchCard'
 import { Betslip } from '@/components/Betslip'
@@ -33,6 +34,16 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
   const [group,      setGroup]        = useState('all')
   const [date,       setDate]         = useState('all')
   const [isLive,     setIsLive]       = useState(false)
+  const [user,       setUser]         = useState<{id:string, email?:string}|null>(null)
+  const supabase = createClient()
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
+  }, [supabase])
 
   // Her 5 dakikada bir canlı güncelleme
   useEffect(() => {
@@ -100,6 +111,12 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
             <nav className="flex gap-4 text-[11px] font-mono text-white/40">
               <a href="/bracket" className="hover:text-white/70 transition-colors">Bracket</a>
               <a href="/standings" className="hover:text-white/70 transition-colors">Sıralama</a>
+              <a href="/leaderboard" className="hover:text-white/70 transition-colors">Liderboard</a>
+              {user ? (
+                <a href="/profile" className="text-grass-400 hover:text-grass-300 transition-colors">@{user.email?.split('@')[0]}</a>
+              ) : (
+                <a href="/auth" className="hover:text-white/70 transition-colors">Giriş</a>
+              )}
             </nav>
             {lastUpdate && (
               <span className="text-[10px] font-mono text-white/20 hidden sm:block">
