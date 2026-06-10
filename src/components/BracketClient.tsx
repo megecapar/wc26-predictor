@@ -77,36 +77,40 @@ function getGroupResults(matches: MatchPrediction[]) {
 }
 
 function simulate(standings: Record<string,Team[]>) {
-  const g = (grp: string, pos: number) => standings[grp]?.[pos] ?? BLANK
+  const w = (grp: string) => standings[grp]?.[0] ?? BLANK  // group winner
+  const r = (grp: string) => standings[grp]?.[1] ?? BLANK  // runner-up
+  const t3= (grp: string) => standings[grp]?.[2] ?? BLANK  // third place
 
-  // En iyi 8 üçüncü
-  const thirds  = Object.keys(GROUPS_DEF).map(grp => standings[grp]?.[2] ?? BLANK)
-  const best8   = [...thirds].sort((a,b)=>b.elo-a.elo).slice(0,8)
-  // Üçüncüleri hangi gruplara dağıtılacağı basitleştirildi
-  const t = (i: number) => best8[i] ?? BLANK
+  // En iyi 8 üçüncü (ELO sıralı)
+  const thirds = Object.keys(GROUPS_DEF).map(t3)
+  const best8  = [...thirds].sort((a,b)=>b.elo-a.elo).slice(0,8)
+  // Üçüncü takımların hangi gruptan geldiğine göre eşleşme değişir
+  // Basitleştirme: best8[0..7] = en iyi üçüncüler, ELO sıralı
+  // Gerçekte 495 senaryo var, burada en yaygın olanı kullanıyoruz
+  const b = (i: number) => best8[i] ?? BLANK
 
-  // Resmi FIFA WC 2026 R32 eşleşmeleri
-  // Sol bracket (8 maç)
-  const leftPairs:  [Team,Team][] = [
-    [g('A',0), g('B',1)],   // 1A vs 2B
-    [g('C',0), g('D',1)],   // 1C vs 2D
-    [g('E',0), g('F',1)],   // 1E vs 2F
-    [g('G',0), g('H',1)],   // 1G vs 2H
-    [g('I',0), g('J',1)],   // 1I vs 2J
-    [g('K',0), g('L',1)],   // 1K vs 2L
-    [t(0),     t(1)    ],   // en iyi üçüncü 1 vs 2
-    [t(2),     t(3)    ],   // en iyi üçüncü 3 vs 4
+  // Resmi FIFA WC 2026 R32 eşleşmeleri (CBS Sports / NBC Sports kaynaklı)
+  // Sol bracket — Match 73-80
+  const leftPairs: [Team,Team][] = [
+    [r('A'),  r('B') ],  // M73: 2A vs 2B
+    [w('E'),  b(0)   ],  // M74: 1E vs best3rd (A/B/C/D/F)
+    [w('F'),  r('C') ],  // M75: 1F vs 2C
+    [w('C'),  r('F') ],  // M76: 1C vs 2F
+    [r('E'),  r('I') ],  // M78: 2E vs 2I
+    [w('I'),  b(1)   ],  // M77: 1I vs best3rd (C/D/F/G/H)
+    [w('A'),  b(2)   ],  // M79: 1A vs best3rd (C/E/F/H/I)
+    [w('L'),  b(3)   ],  // M80: 1L vs best3rd (E/H/I/J/K)
   ]
-  // Sağ bracket (8 maç)
+  // Sağ bracket — Match 81-88
   const rightPairs: [Team,Team][] = [
-    [g('B',0), g('A',1)],   // 1B vs 2A
-    [g('D',0), g('C',1)],   // 1D vs 2C
-    [g('F',0), g('E',1)],   // 1F vs 2E
-    [g('H',0), g('G',1)],   // 1H vs 2G
-    [g('J',0), g('I',1)],   // 1J vs 2I
-    [g('L',0), g('K',1)],   // 1L vs 2K
-    [t(4),     t(5)    ],   // en iyi üçüncü 5 vs 6
-    [t(6),     t(7)    ],   // en iyi üçüncü 7 vs 8
+    [r('K'),  r('L') ],  // M83: 2K vs 2L
+    [w('H'),  r('J') ],  // M84: 1H vs 2J
+    [w('B'),  b(4)   ],  // M85: 1B vs best3rd (E/F/G/I/J)
+    [r('D'),  r('G') ],  // M88: 2D vs 2G
+    [w('J'),  r('H') ],  // M86: 1J vs 2H
+    [w('K'),  b(5)   ],  // M87: 1K vs best3rd (D/E/I/J/L)
+    [w('G'),  b(6)   ],  // M81: 1G vs best3rd (A/E/H/I/J)
+    [w('D'),  b(7)   ],  // M82: 1D vs best3rd (B/E/F/I/J)
   ]
 
   function playRound(pairs:[Team,Team][]): {winners:Team[], nextPairs:[Team,Team][]} {
