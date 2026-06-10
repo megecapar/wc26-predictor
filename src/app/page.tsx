@@ -1,7 +1,7 @@
 import { getMatches, getLastUpdate } from '@/lib/blob'
 import HomeClient from '@/components/HomeClient'
 
-export const revalidate = 300
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const [matches, lastUpdate] = await Promise.all([

@@ -32,9 +32,7 @@ interface Props {
 function MobileBetslip() {
   const { bets, totalOdds } = useBetslip()
   const [open, setOpen] = useState(false)
-
   if (bets.length === 0) return null
-
   return (
     <>
       {open && (
@@ -60,21 +58,14 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
   const [date,       setDate]         = useState('all')
   const [isLive,     setIsLive]       = useState(false)
 
-
-  // Her 5 dakikada bir canlı güncelleme
   useEffect(() => {
     const refresh = async () => {
       try {
-        // Canlı maç var mı kontrol et
         const liveRes = await fetch('/api/live')
         if (!liveRes.ok) return
         const liveData = await liveRes.json()
-
-        // Bugün maç yoksa güncelleme yapma
         if (liveData.skipped) { setIsLive(false); return }
         setIsLive(true)
-
-        // Güncel maç verisini çek
         const matchRes = await fetch('/api/matches', { cache: 'no-store' })
         if (!matchRes.ok) return
         const { matches: newMatches, lastUpdate: newTime } = await matchRes.json()
@@ -84,64 +75,24 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
         }
       } catch { /* sessiz hata */ }
     }
-
     refresh()
     const interval = setInterval(refresh, 5 * 60 * 1000)
     return () => clearInterval(interval)
   }, [])
 
-  const groups = useMemo(() =>
-    [...new Set(matches.map(m => m.group))].sort(), [matches]
-  )
-
-  const dates = useMemo(() =>
-    [...new Set(matches.map(m => m.date))].sort(), [matches]
-  )
+  const groups = useMemo(() => [...new Set(matches.map(m => m.group))].sort(), [matches])
+  const dates  = useMemo(() => [...new Set(matches.map(m => m.date))].sort(),  [matches])
 
   const filtered = useMemo(() =>
-    matches
-      .filter(m => group === 'all' || m.group === group)
-      .filter(m => date  === 'all' || m.date  === date),
+    matches.filter(m => group === 'all' || m.group === group)
+           .filter(m => date  === 'all' || m.date  === date),
     [matches, group, date]
   )
-
   const grouped = useMemo(() => groupByDate(filtered), [filtered])
 
   return (
     <div className="min-h-screen pitch-stripes">
-      <header className="border-b border-white/8 bg-black/20 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl font-display tracking-wider text-chalk-50">WC26</span>
-            <span className="text-[10px] font-mono text-grass-400 border border-grass-500/30 rounded px-1.5 py-0.5 bg-grass-500/10">
-              PREDICTOR
-            </span>
-            {isLive && (
-              <span className="flex items-center gap-1 text-[10px] font-mono text-red-400 border border-red-500/30 rounded px-1.5 py-0.5 bg-red-500/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
-                CANLI
-              </span>
-            )}
-          </div>
-          <div className="flex items-center gap-3">
-            <nav className="flex gap-4 text-[11px] font-mono text-white/40">
-              <a href="/bracket" className="hover:text-white/70 transition-colors">Bracket</a>
-              <a href="/standings" className="hover:text-white/70 transition-colors">Sıralama</a>
-              <a href="/leaderboard" className="hover:text-white/70 transition-colors">Liderboard</a>
-              {user ? (
-                <a href="/profile" className="text-grass-400 hover:text-grass-300 transition-colors">@{user.email?.split('@')[0]}</a>
-              ) : (
-                <a href="/auth" className="hover:text-white/70 transition-colors">Giriş</a>
-              )}
-            </nav>
-            {lastUpdate && (
-              <span className="text-[10px] font-mono text-white/20 hidden sm:block">
-                güncellendi: {new Date(lastUpdate).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })}
-              </span>
-            )}
-          </div>
-        </div>
-      </header>
+      <Navbar active="/" isLive={isLive} lastUpdate={lastUpdate} />
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
@@ -159,35 +110,16 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
             <div className="mb-3">
               <GroupFilter value={group} onChange={setGroup} groups={groups} />
             </div>
-
             <div className="flex gap-2 flex-wrap mb-6">
-              <button
-                onClick={() => setDate('all')}
-                className={cn(
-                  'text-xs font-mono px-3 py-1.5 rounded-md border transition-all',
-                  date === 'all'
-                    ? 'bg-white/10 text-white border-white/20'
-                    : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60'
-                )}
-              >
+              <button onClick={() => setDate('all')} className={cn('text-xs font-mono px-3 py-1.5 rounded-md border transition-all', date === 'all' ? 'bg-white/10 text-white border-white/20' : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60')}>
                 Tüm günler
               </button>
               {dates.map(d => (
-                <button
-                  key={d}
-                  onClick={() => setDate(d)}
-                  className={cn(
-                    'text-xs font-mono px-3 py-1.5 rounded-md border transition-all',
-                    date === d
-                      ? 'bg-white/10 text-white border-white/20'
-                      : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60'
-                  )}
-                >
+                <button key={d} onClick={() => setDate(d)} className={cn('text-xs font-mono px-3 py-1.5 rounded-md border transition-all', date === d ? 'bg-white/10 text-white border-white/20' : 'text-white/40 border-white/10 hover:border-white/20 hover:text-white/60')}>
                   {new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })}
                 </button>
               ))}
             </div>
-
             <div className="space-y-8">
               {Array.from(grouped.entries()).map(([d, dayMatches]) => (
                 <div key={d}>
@@ -202,7 +134,6 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
                   </div>
                 </div>
               ))}
-
               {filtered.length === 0 && (
                 <div className="text-center py-16 text-white/25 font-mono text-sm">
                   Bu filtre için maç bulunamadı.
@@ -210,15 +141,12 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
               )}
             </div>
           </div>
-
-          {/* Masaüstü: sticky sidebar */}
           <div className="hidden lg:block lg:sticky lg:top-20 h-[calc(100vh-6rem)]">
             <Betslip />
           </div>
         </div>
       </main>
 
-      {/* Mobil: sticky bottom kupon */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-20">
         <MobileBetslip />
       </div>
