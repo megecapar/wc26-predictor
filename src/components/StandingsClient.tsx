@@ -1,6 +1,6 @@
 'use client'
+import { Navbar } from '@/components/Navbar'
 import { MatchPrediction } from '@/lib/types'
-import Link from 'next/link'
 
 interface Props { matches: MatchPrediction[] }
 
@@ -85,19 +85,7 @@ export default function StandingsClient({ matches }: Props) {
 
   return (
     <div className="min-h-screen pitch-stripes">
-      <header className="border-b border-white/8 bg-black/20 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="text-2xl font-display tracking-wider text-chalk-50 hover:text-grass-400 transition-colors">WC26</Link>
-            <span className="text-[10px] font-mono text-grass-400 border border-grass-500/30 rounded px-1.5 py-0.5 bg-grass-500/10">PREDICTOR</span>
-          </div>
-          <nav className="flex gap-4 text-[11px] font-mono text-white/40">
-            <Link href="/" className="hover:text-white/70 transition-colors">Maçlar</Link>
-            <Link href="/bracket" className="hover:text-white/70 transition-colors">Bracket</Link>
-            <Link href="/standings" className="text-white/80">Sıralama</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar active="/bracket" />
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-8">

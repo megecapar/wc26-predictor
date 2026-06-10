@@ -1,9 +1,10 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { Navbar } from '@/components/Navbar'
 import { MatchPrediction } from '@/lib/types'
 import { MatchCard } from '@/components/MatchCard'
 import { Betslip } from '@/components/Betslip'
+import { useBetslip } from '@/lib/betslip-context'
 import { GroupFilter } from '@/components/GroupFilter'
 import { cn } from '@/lib/utils'
 
@@ -28,22 +29,37 @@ interface Props {
   lastUpdate: string | null
 }
 
+function MobileBetslip() {
+  const { bets, totalOdds } = useBetslip()
+  const [open, setOpen] = useState(false)
+
+  if (bets.length === 0) return null
+
+  return (
+    <>
+      {open && (
+        <div className="bg-pitch-950/95 backdrop-blur-md border-t border-white/8 p-3 max-h-[60vh] overflow-y-auto">
+          <Betslip />
+        </div>
+      )}
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-4 py-3 bg-grass-500 text-white font-mono text-sm"
+      >
+        <span>🎯 Kupon ({bets.length} seçim)</span>
+        <span className="font-medium">Toplam: {totalOdds.toFixed(2)} {open ? '▼' : '▲'}</span>
+      </button>
+    </>
+  )
+}
+
 export default function HomeClient({ matches: initialMatches, lastUpdate: initialLastUpdate }: Props) {
   const [matches,    setMatchesState] = useState(initialMatches)
   const [lastUpdate, setLastUpdate]   = useState(initialLastUpdate)
   const [group,      setGroup]        = useState('all')
   const [date,       setDate]         = useState('all')
   const [isLive,     setIsLive]       = useState(false)
-  const [user,       setUser]         = useState<{id:string, email?:string}|null>(null)
-  const supabase = createClient()
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data.user))
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
-      setUser(session?.user ?? null)
-    })
-    return () => subscription.unsubscribe()
-  }, [supabase])
 
   // Her 5 dakikada bir canlı güncelleme
   useEffect(() => {
@@ -138,7 +154,7 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 items-start pb-24 lg:pb-0">
           <div>
             <div className="mb-3">
               <GroupFilter value={group} onChange={setGroup} groups={groups} />
@@ -195,11 +211,17 @@ export default function HomeClient({ matches: initialMatches, lastUpdate: initia
             </div>
           </div>
 
-          <div className="lg:sticky lg:top-20 h-[calc(100vh-6rem)]">
+          {/* Masaüstü: sticky sidebar */}
+          <div className="hidden lg:block lg:sticky lg:top-20 h-[calc(100vh-6rem)]">
             <Betslip />
           </div>
         </div>
       </main>
+
+      {/* Mobil: sticky bottom kupon */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-20">
+        <MobileBetslip />
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { Navbar } from '@/components/Navbar'
 
 interface LeaderUser {
   id: string
@@ -18,19 +18,7 @@ const RANK_ICONS: Record<number, string> = { 1: '🥇', 2: '🥈', 3: '🥉' }
 export default function LeaderboardClient({ topUsers, currentUserId }: Props) {
   return (
     <div className="min-h-screen pitch-stripes">
-      <header className="border-b border-white/8 bg-black/20 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="text-2xl font-display tracking-wider text-chalk-50 hover:text-grass-400">WC26</Link>
-            <span className="text-[10px] font-mono text-grass-400 border border-grass-500/30 rounded px-1.5 py-0.5 bg-grass-500/10">PREDICTOR</span>
-          </div>
-          <nav className="flex gap-4 text-[11px] font-mono text-white/40">
-            <Link href="/" className="hover:text-white/70">Maçlar</Link>
-            <Link href="/leaderboard" className="text-white/80">Liderboard</Link>
-            <Link href="/profile" className="hover:text-white/70">Profil</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar active="/leaderboard" />
 
       <main className="max-w-3xl mx-auto px-4 py-8">
         <div className="mb-8">

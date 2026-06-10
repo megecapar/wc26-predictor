@@ -1,4 +1,5 @@
 'use client'
+import { Navbar } from '@/components/Navbar'
 import { useState, useEffect } from 'react'
 import { MatchPrediction } from '@/lib/types'
 
@@ -115,15 +116,7 @@ export default function AdminClient() {
 
   return (
     <div className="min-h-screen pitch-stripes">
-      <header className="border-b border-white/8 bg-black/20 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <a href="/" className="text-2xl font-display tracking-wider text-chalk-50 hover:text-grass-400">WC26</a>
-            <span className="text-[10px] font-mono text-red-400 border border-red-500/30 rounded px-1.5 py-0.5 bg-red-500/10">ADMIN</span>
-          </div>
-          <span className="text-[10px] font-mono text-white/25">{matches.length} maç yüklendi</span>
-        </div>
-      </header>
+      <Navbar active="/admin" />
 
       <main className="max-w-5xl mx-auto px-4 py-8 space-y-6">
 

@@ -17,12 +17,19 @@ export default function AuthPage() {
     setLoading(true); setError('')
     try {
       if (mode === 'signup') {
-        const { error: signUpError } = await supabase.auth.signUp({
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
           email, password,
           options: { data: { username } }
         })
         if (signUpError) throw signUpError
-        setError('✅ Kayıt başarılı! Email onayı gerekebilir.')
+        // Profili username ile güncelle
+        if (signUpData.user) {
+          await supabase.from('profiles').upsert({
+            id: signUpData.user.id,
+            username: username || email.split('@')[0],
+          })
+        }
+        setError('✅ Kayıt başarılı! Email onayını kontrol et.')
       } else {
         const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
         if (signInError) throw signInError
