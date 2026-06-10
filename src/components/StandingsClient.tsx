@@ -18,8 +18,19 @@ function simulate(matches: MatchPrediction[], runs = 3000): Record<string, TeamS
   }
 
   const eloOf = (name: string) => teams[name]?.elo ?? 1500
+
+  // matches_real.json olasılık tablosu
+  const probs: Record<string, number> = {}
+  for (const m of matches) {
+    probs[`${m.home.name}__${m.away.name}`] = m.ms.home.probability
+    probs[`${m.away.name}__${m.home.name}`] = m.ms.away.probability
+  }
+
   function play(a: string, b: string): string {
-    const pA = 1 / (1 + 10 ** ((eloOf(b) - eloOf(a)) / 400))
+    const key = `${a}__${b}`
+    const pA = probs[key] !== undefined
+      ? probs[key]
+      : 1 / (1 + 10 ** ((eloOf(b) - eloOf(a)) / 400))
     return Math.random() < pA ? a : b
   }
   function playRound(ps: string[]): string[] {

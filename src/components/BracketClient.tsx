@@ -53,7 +53,34 @@ const FLAGS: Record<string, string> = {
 
 const BLANK: Team = { name: '?', flag: '🏳️', elo: 0 }
 function getTeam(n: string): Team { return { name: n, flag: FLAGS[n]??'🏳️', elo: ELO[n]??1500 } }
-function beat(a?: Team, b?: Team): Team { const ta=a??BLANK,tb=b??BLANK; return ta.elo>=tb.elo?ta:tb }
+
+// Maç olasılık tablosu — matches_real.json'dan doldurulur
+let MATCH_PROBS: Record<string, number> = {}
+
+function setMatchProbs(matches: MatchPrediction[]) {
+  MATCH_PROBS = {}
+  for (const m of matches) {
+    // key: "HomeTeam__AwayTeam" → ev sahibinin kazanma olasılığı
+    MATCH_PROBS[`${m.home.name}__${m.away.name}`] = m.ms.home.probability
+    MATCH_PROBS[`${m.away.name}__${m.home.name}`] = m.ms.away.probability
+  }
+}
+
+function getWinProb(a: Team, b: Team): number {
+  // Önce matches_real.json'daki olasılığa bak
+  const key = `${a.name}__${b.name}`
+  if (MATCH_PROBS[key] !== undefined) return MATCH_PROBS[key]
+  // Yoksa ELO'dan hesapla
+  return 1 / (1 + 10 ** ((b.elo - a.elo) / 400))
+}
+
+function beat(a?: Team, b?: Team): Team {
+  const ta = a ?? BLANK, tb = b ?? BLANK
+  if (ta.name === '?' || tb.name === '?') return ta.name !== '?' ? ta : tb
+  // Olasılığa göre kazan (deterministik: %50+ kazanır)
+  const pA = getWinProb(ta, tb)
+  return pA >= 0.5 ? ta : tb
+}
 
 function getGroupResults(matches: MatchPrediction[]) {
   const pts: Record<string,number> = {}
@@ -200,6 +227,8 @@ function ColRight({ label, pairs, winners, gap }: { label:string; pairs:[Team,Te
 const GAP = 3
 
 export default function BracketClient({ matches }: Props) {
+  // Gelişmiş model olasılıklarını bracket'e yükle
+  setMatchProbs(matches)
   const {standings, pts} = getGroupResults(matches)
   const sim = simulate(standings)
 
