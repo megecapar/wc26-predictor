@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 
 interface LeaderUser {
@@ -72,10 +71,10 @@ export default function LeaderboardClient({ topUsers, currentUserId }: Props) {
                   }
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className={`text-sm font-mono truncate ${u.id === currentUserId ? 'text-grass-300 font-medium' : 'text-white/70'}`}>
+                  <Link href={`/profile/${u.username}`} className={`text-sm font-mono truncate hover:underline ${u.id === currentUserId ? 'text-grass-300 font-medium' : 'text-white/70'}`}>
                     @{u.username}
                     {u.id === currentUserId && <span className="text-[10px] text-grass-500 ml-2">sen</span>}
-                  </p>
+                  </Link>
                 </div>
                 <span className={`text-sm font-mono font-medium ${i === 0 ? 'text-gold-300' : i < 3 ? 'text-chalk-200' : 'text-white/50'}`}>
                   {u.points}

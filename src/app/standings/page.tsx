@@ -1,7 +1,7 @@
 import { getMatches } from '@/lib/blob'
 import StandingsClient from '@/components/StandingsClient'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 300
 
 export default async function StandingsPage() {
   const matches = await getMatches()
