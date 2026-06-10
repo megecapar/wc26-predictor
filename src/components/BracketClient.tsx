@@ -77,26 +77,37 @@ function getGroupResults(matches: MatchPrediction[]) {
 }
 
 function simulate(standings: Record<string,Team[]>) {
-  const groups = Object.keys(GROUPS_DEF).sort()
-  const firsts  = groups.map(g=>standings[g][0]??BLANK)
-  const seconds = groups.map(g=>standings[g][1]??BLANK)
-  const thirds  = groups.map(g=>standings[g][2]??BLANK)
+  const g = (grp: string, pos: number) => standings[grp]?.[pos] ?? BLANK
+
+  // En iyi 8 üçüncü
+  const thirds  = Object.keys(GROUPS_DEF).map(grp => standings[grp]?.[2] ?? BLANK)
   const best8   = [...thirds].sort((a,b)=>b.elo-a.elo).slice(0,8)
+  // Üçüncüleri hangi gruplara dağıtılacağı basitleştirildi
+  const t = (i: number) => best8[i] ?? BLANK
 
-  // 32 takım — ELO sıralı serpme
-  const all32 = [...firsts,...seconds,...best8].sort((a,b)=>b.elo-a.elo)
-
-  // Sol bracket (1-16): 1v16, 2v15, 3v14, 4v13 = R32'nin ilk 8 maçı
-  // Sağ bracket (17-32): 5v12, 6v11, 7v10, 8v9 = R32'nin son 8 maçı
-  // Sonra sol ve sağ kazananlar kendi içinde ilerler, ortada buluşurlar
-  const leftPairs:  [Team,Team][] = []
-  const rightPairs: [Team,Team][] = []
-  for (let i=0;i<8;i++) {
-    leftPairs.push([all32[i]??BLANK, all32[31-i]??BLANK])
-  }
-  for (let i=8;i<16;i++) {
-    rightPairs.push([all32[i]??BLANK, all32[31-i]??BLANK])
-  }
+  // Resmi FIFA WC 2026 R32 eşleşmeleri
+  // Sol bracket (8 maç)
+  const leftPairs:  [Team,Team][] = [
+    [g('A',0), g('B',1)],   // 1A vs 2B
+    [g('C',0), g('D',1)],   // 1C vs 2D
+    [g('E',0), g('F',1)],   // 1E vs 2F
+    [g('G',0), g('H',1)],   // 1G vs 2H
+    [g('I',0), g('J',1)],   // 1I vs 2J
+    [g('K',0), g('L',1)],   // 1K vs 2L
+    [t(0),     t(1)    ],   // en iyi üçüncü 1 vs 2
+    [t(2),     t(3)    ],   // en iyi üçüncü 3 vs 4
+  ]
+  // Sağ bracket (8 maç)
+  const rightPairs: [Team,Team][] = [
+    [g('B',0), g('A',1)],   // 1B vs 2A
+    [g('D',0), g('C',1)],   // 1D vs 2C
+    [g('F',0), g('E',1)],   // 1F vs 2E
+    [g('H',0), g('G',1)],   // 1H vs 2G
+    [g('J',0), g('I',1)],   // 1J vs 2I
+    [g('L',0), g('K',1)],   // 1L vs 2K
+    [t(4),     t(5)    ],   // en iyi üçüncü 5 vs 6
+    [t(6),     t(7)    ],   // en iyi üçüncü 7 vs 8
+  ]
 
   function playRound(pairs:[Team,Team][]): {winners:Team[], nextPairs:[Team,Team][]} {
     const w = pairs.map(([a,b])=>beat(a,b))
