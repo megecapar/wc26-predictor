@@ -108,27 +108,49 @@ export default function ProfileClient({ profile, badges, coupons, followersCount
           {coupons.length === 0 ? (
             <p className="text-xs font-mono text-white/25 text-center py-6">Henüz kupon oluşturmadın</p>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-3">
               {coupons.map(c => (
-                <div key={c.id} className="flex items-center justify-between px-3 py-2.5 bg-white/[0.02] rounded-lg border border-white/5">
-                  <div>
-                    <p className="text-xs font-mono text-white/70">{c.title || `${c.coupon_bets?.length ?? 0} maçlık kupon`}</p>
-                    <p className="text-[10px] font-mono text-white/30 mt-0.5">
-                      {new Date(c.created_at).toLocaleDateString('tr-TR')} · Oran: {c.total_odd}
-                    </p>
+                <div key={c.id} className="bg-white/[0.02] rounded-lg border border-white/5 overflow-hidden">
+                  {/* Kupon header */}
+                  <div className="flex items-center justify-between px-3 py-2.5 border-b border-white/5">
+                    <div>
+                      <p className="text-xs font-mono text-white/70">{c.title || `${c.coupon_bets?.length ?? 0} maçlık kupon`}</p>
+                      <p className="text-[10px] font-mono text-white/30 mt-0.5">
+                        {new Date(c.created_at).toLocaleDateString('tr-TR')} · Toplam oran: <span className="text-gold-300">{c.total_odd}</span>
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {c.points_won > 0 && (
+                        <span className="text-[10px] font-mono text-gold-400">+{c.points_won} puan</span>
+                      )}
+                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
+                        c.status === 'won'  ? 'bg-grass-500/20 text-grass-300' :
+                        c.status === 'lost' ? 'bg-red-500/20 text-red-400' :
+                        'bg-white/5 text-white/40'
+                      }`}>
+                        {c.status === 'won' ? '✅ Kazandı' : c.status === 'lost' ? '❌ Kaybetti' : '⏳ Bekliyor'}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    {c.points_won > 0 && (
-                      <span className="text-[10px] font-mono text-gold-400">+{c.points_won} puan</span>
-                    )}
-                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
-                      c.status === 'won'     ? 'bg-grass-500/20 text-grass-300' :
-                      c.status === 'lost'    ? 'bg-red-500/20 text-red-400' :
-                      'bg-white/5 text-white/40'
-                    }`}>
-                      {c.status === 'won' ? '✅ Kazandı' : c.status === 'lost' ? '❌ Kaybetti' : '⏳ Bekliyor'}
-                    </span>
-                  </div>
+                  {/* Bahis detayları */}
+                  {c.coupon_bets && c.coupon_bets.length > 0 && (
+                    <div className="divide-y divide-white/5">
+                      {c.coupon_bets.map(b => (
+                        <div key={b.id} className="flex items-center justify-between px-3 py-2">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                              b.result === 'won'  ? 'bg-grass-400' :
+                              b.result === 'lost' ? 'bg-red-400' :
+                              'bg-white/20'
+                            }`} />
+                            <p className="text-[10px] font-mono text-white/50 truncate">{b.match_label}</p>
+                            <span className="text-[10px] font-mono text-white/25 flex-shrink-0">{b.market_label}</span>
+                          </div>
+                          <span className="text-[10px] font-mono text-grass-300 ml-2 flex-shrink-0">{b.odd}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
