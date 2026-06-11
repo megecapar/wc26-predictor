@@ -4,6 +4,8 @@ import { MatchPrediction } from '@/lib/types'
 
 interface Props { matches: MatchPrediction[] }
 interface Team { name: string; flag: string; elo: number }
+interface TeamRow extends Team { pts: number; expPts: number }
+interface GroupResult { first: Team; second: Team; third: Team; standings: TeamRow[] }
 
 const GROUPS_DEF: Record<string, string[]> = {
   A: ['Mexico','South Korea','South Africa','Czech Republic'],
