@@ -1,7 +1,7 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/client'
+import { useUser } from '@/lib/user-context'
 
 interface NavbarProps {
   active?: string
@@ -9,54 +9,9 @@ interface NavbarProps {
   lastUpdate?: string | null
 }
 
-// Singleton client — her render'da yeni client oluşturma
-let cachedUser: { username: string; id: string } | null | undefined = undefined
-
 export function Navbar({ active, isLive, lastUpdate }: NavbarProps) {
-  const [username, setUsername] = useState<string | null>(null)
-  const [userId,   setUserId]   = useState<string | null>(null)
+  const { userId, username } = useUser()
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const loadUser = useCallback(async () => {
-    // Cache'de varsa tekrar istek atma
-    if (cachedUser !== undefined) {
-      setUsername(cachedUser?.username ?? null)
-      setUserId(cachedUser?.id ?? null)
-      return
-    }
-
-    const supabase = createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { cachedUser = null; return }
-
-    const { data: profile } = await supabase
-      .from('profiles').select('username').eq('id', user.id).single()
-
-    const userData = {
-      id: user.id,
-      username: profile?.username ?? user.email?.split('@')[0] ?? ''
-    }
-    cachedUser = userData
-    setUsername(userData.username)
-    setUserId(userData.id)
-  }, [])
-
-  useEffect(() => {
-    loadUser()
-
-    const supabase = createClient()
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (!session?.user) {
-        cachedUser = null
-        setUserId(null); setUsername(null)
-        return
-      }
-      // Yeni giriş — cache'i sıfırla
-      cachedUser = undefined
-      loadUser()
-    })
-    return () => subscription.unsubscribe()
-  }, [loadUser])
 
   const links = [
     { href: '/',            label: 'Maçlar'     },
@@ -111,7 +66,6 @@ export function Navbar({ active, isLive, lastUpdate }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobil menü */}
       {menuOpen && (
         <div className="sm:hidden border-t border-white/8 bg-black/60 backdrop-blur-md px-4 py-3 space-y-1" onClick={() => setMenuOpen(false)}>
           {links.map(l => (

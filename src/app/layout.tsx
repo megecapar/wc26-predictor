@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
+import { Inter, Space_Mono, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { BetslipProvider } from '@/lib/betslip-context'
+import { UserProvider } from '@/lib/user-context'
+
+const inter   = Inter({ subsets: ['latin'], variable: '--font-body' })
+const mono    = Space_Mono({ weight: ['400','700'], subsets: ['latin'], variable: '--font-mono' })
+const display = Space_Grotesk({ subsets: ['latin'], variable: '--font-display' })
 
 export const metadata: Metadata = {
   title: 'WC26 Predictor',
@@ -9,16 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="tr" className={`${inter.variable} ${mono.variable} ${display.variable}`}>
       <body>
-        <BetslipProvider>
-          {children}
-        </BetslipProvider>
+        <UserProvider>
+          <BetslipProvider>
+            {children}
+          </BetslipProvider>
+        </UserProvider>
       </body>
     </html>
   )

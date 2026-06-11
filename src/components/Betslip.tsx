@@ -6,31 +6,24 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import { X, Trash2, ReceiptText, LogIn } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { useUser } from '@/lib/user-context'
 import Link from 'next/link'
 
 export function Betslip() {
   const { bets, remove, clear, totalOdds } = useBetslip()
-  const [user, setUser]       = useState<{id:string, email?:string} | null>(null)
+  const { userId } = useUser()
   const [saving, setSaving]   = useState(false)
   const [msg, setMsg]         = useState('')
   const supabase = createClient()
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data.user))
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
-      setUser(session?.user ?? null)
-    })
-    return () => subscription.unsubscribe()
-  }, [supabase])
-
   async function saveCoupon() {
-    if (!user || bets.length === 0) return
+    if (!userId || bets.length === 0) return
     setSaving(true); setMsg('')
     try {
       // Kuponu kaydet
       const { data: coupon, error: couponErr } = await supabase
         .from('coupons')
-        .insert({ user_id: user.id, total_odd: totalOdds, title: `${bets.length} maçlık kupon` })
+        .insert({ user_id: userId!, total_odd: totalOdds, title: `${bets.length} maçlık kupon` })
         .select()
         .single()
 
@@ -50,14 +43,14 @@ export function Betslip() {
       if (betsErr) throw betsErr
 
       // Puan ver (+5)
-      await supabase.rpc('increment_points', { user_id: user.id, amount: 5 }).maybeSingle()
+      await supabase.rpc('increment_points', { user_id: userId!, amount: 5 }).maybeSingle()
 
       // İlk kupon rozeti
       const { data: existingCoupons } = await supabase
-        .from('coupons').select('id', { count: 'exact' }).eq('user_id', user.id)
+        .from('coupons').select('id', { count: 'exact' }).eq('user_id', userId!)
       if ((existingCoupons?.length ?? 0) === 1) {
         const { data: badge } = await supabase.from('badges').select('id').eq('key','first_coupon').single()
-        if (badge) await supabase.from('user_badges').insert({ user_id: user.id, badge_id: badge.id }).maybeSingle()
+        if (badge) await supabase.from('user_badges').insert({ user_id: userId!, badge_id: badge.id }).maybeSingle()
       }
 
       setMsg('✅ Kupon kaydedildi! +5 puan')
