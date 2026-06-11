@@ -133,7 +133,7 @@ export function Betslip() {
               </p>
             )}
 
-            {user ? (
+            {userId ? (
               <Button
                 onClick={saveCoupon}
                 disabled={saving}
