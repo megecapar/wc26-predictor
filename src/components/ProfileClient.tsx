@@ -178,7 +178,7 @@ export default function ProfileClient({
                         <button
                           onClick={() => {
                             const bets = c.coupon_bets?.map(b => `⚽ ${b.match_label} → ${b.market_label} (${b.odd})`).join('\n') ?? ''
-                            const text = encodeURIComponent(`WC26 Predictor - Kuponum 🎯\n\n${bets}\n\nToplam: ${c.total_odd}x\nhttps://wc26-predictor-orcin.vercel.app #FIFA2026 #WorldCup2026`)
+                            const text = encodeURIComponent(`WC26 Predictor - Kuponym 🎯\n\n${bets}\n\nToplam: ${c.total_odd}x\nhttps://wc26-predictor-orcin.vercel.app #FIFA2026 #WorldCup2026`)
                             window.open(`https://twitter.com/intent/tweet?text=${text}`)
                           }}
                           className="flex-1 text-[10px] font-mono py-1.5 rounded border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 transition-colors"
@@ -188,7 +188,7 @@ export default function ProfileClient({
                         <button
                           onClick={() => {
                             const bets = c.coupon_bets?.map(b => `⚽ ${b.match_label} → ${b.market_label} (${b.odd})`).join('\n') ?? ''
-                            const text = encodeURIComponent(`WC26 Predictor - Kuponum 🎯\n\n${bets}\n\nToplam: ${c.total_odd}x\nhttps://wc26-predictor-orcin.vercel.app`)
+                            const text = encodeURIComponent(`WC26 Predictor - Kuponym 🎯\n\n${bets}\n\nToplam: ${c.total_odd}x\nhttps://wc26-predictor-orcin.vercel.app`)
                             window.open(`https://wa.me/?text=${text}`)
                           }}
                           className="flex-1 text-[10px] font-mono py-1.5 rounded border border-white/10 text-white/40 hover:text-grass-400 hover:border-grass-500/30 transition-colors"

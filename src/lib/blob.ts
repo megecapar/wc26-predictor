@@ -8,6 +8,11 @@ import { MatchPrediction } from '@/lib/types'
 
 const IS_PROD = !!process.env.BLOB_READ_WRITE_TOKEN
 
+// Bellek içi cache — Blob'a gereksiz istek atmayı önler
+let matchesCache: MatchPrediction[] | null = null
+let matchesCacheTime = 0
+const CACHE_TTL = 5 * 60 * 1000 // 5 dakika
+
 const MATCHES_KEY     = 'wc26/matches.json'
 const ELO_KEY         = 'wc26/elo.json'
 const FINISHED_KEY    = 'wc26/finished.json'
@@ -37,15 +42,28 @@ async function blobSet(key: string, value: unknown): Promise<void> {
 
 // ── Maç verisi ────────────────────────────────────────────────────────────────
 export async function getMatches(): Promise<MatchPrediction[]> {
+  // Bellek cache'i kontrol et
+  if (matchesCache && Date.now() - matchesCacheTime < CACHE_TTL) {
+    return matchesCache
+  }
   if (IS_PROD) {
     const cached = await blobGet<MatchPrediction[]>(MATCHES_KEY)
-    if (cached && cached.length > 0) return cached
+    if (cached && cached.length > 0) {
+      matchesCache = cached
+      matchesCacheTime = Date.now()
+      return cached
+    }
   }
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  return require('@/data/matches_real.json') as MatchPrediction[]
+  const data = require('@/data/matches_real.json') as MatchPrediction[]
+  matchesCache = data
+  matchesCacheTime = Date.now()
+  return data
 }
 
 export async function setMatches(matches: MatchPrediction[]): Promise<void> {
+  matchesCache = matches
+  matchesCacheTime = Date.now()
   await blobSet(MATCHES_KEY, matches)
 }
 

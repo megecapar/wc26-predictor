@@ -87,14 +87,13 @@ function getGroupResults(matches: MatchPrediction[]) {
   for (const m of matches) {
     pts[m.home.name]??=0; pts[m.away.name]??=0
     if (m.result) {
+      // Sadece oynanan maçların gerçek puanlarını say
       const {homeScore:hs,awayScore:as_}=m.result
       if(hs>as_) pts[m.home.name]+=3
       else if(hs===as_){pts[m.home.name]++;pts[m.away.name]++}
       else pts[m.away.name]+=3
-    } else {
-      pts[m.home.name]+=m.ms.home.probability*3+m.ms.draw.probability
-      pts[m.away.name]+=m.ms.away.probability*3+m.ms.draw.probability
     }
+    // Oynanmamış maçlar için puan ekleme — sadece ELO'ya göre sırala
   }
   const res: Record<string,Team[]> = {}
   for (const [g,teams] of Object.entries(GROUPS_DEF)) {
