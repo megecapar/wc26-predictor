@@ -15,6 +15,7 @@ export function Navbar({ active, isLive, lastUpdate }: NavbarProps) {
 
   const links = [
     { href: '/',            label: 'Maçlar'     },
+    { href: '/predict',     label: 'Tahminim'   },
     { href: '/bracket',     label: 'Bracket'    },
     { href: '/standings',   label: 'Sıralama'   },
     { href: '/leaderboard', label: 'Liderboard' },
