@@ -92,7 +92,9 @@ function getGroupResults(matches: MatchPrediction[]): Record<string, GroupResult
       if (hs > as_)        { realPts[m.home.name] += 3 }
       else if (hs === as_) { realPts[m.home.name] += 1; realPts[m.away.name] += 1 }
       else                 { realPts[m.away.name] += 3 }
+      // Oynanan maç expPts'e dokunmaz
     } else {
+      // Sadece oynanmamış maçlar için beklenen puan ekle
       expPts[m.home.name] += m.ms.home.probability * 3 + m.ms.draw.probability
       expPts[m.away.name] += m.ms.away.probability * 3 + m.ms.draw.probability
     }
@@ -104,7 +106,9 @@ function getGroupResults(matches: MatchPrediction[]): Record<string, GroupResult
       const t  = getTeam(n)
       const rp = realPts[n] ?? 0
       const ep = expPts[n]  ?? 0
-      return { ...t, pts: rp, expPts: Math.round((rp + ep) * 10) / 10 }
+      // Toplam = gerçek puan + kalan maçların beklentisi
+      const total = Math.round((rp + ep) * 10) / 10
+      return { ...t, pts: rp, expPts: total }
     }).sort((a, b) => b.expPts - a.expPts || b.elo - a.elo)
 
     res[g] = { first: rows[0] ?? BLANK, second: rows[1] ?? BLANK, third: rows[2] ?? BLANK, standings: rows }
