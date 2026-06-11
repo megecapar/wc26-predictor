@@ -83,17 +83,30 @@ function beat(a?: Team, b?: Team): Team {
 }
 
 function getGroupResults(matches: MatchPrediction[]) {
-  const pts: Record<string,number> = {}
+  const pts:     Record<string,number>  = {}  // gerçek puan
+  const expPts:  Record<string,number>  = {}  // model beklenen puan
+  const played:  Record<string,boolean> = {}  // oynanmış maç var mı
+
   for (const m of matches) {
-    pts[m.home.name]??=0; pts[m.away.name]??=0
+    pts[m.home.name]??=0;    pts[m.away.name]??=0
+    expPts[m.home.name]??=0; expPts[m.away.name]??=0
+
     if (m.result) {
-      // Sadece oynanan maçların gerçek puanlarını say
+      // Gerçek sonuç
+      played[m.home.name] = true; played[m.away.name] = true
       const {homeScore:hs,awayScore:as_}=m.result
-      if(hs>as_) pts[m.home.name]+=3
-      else if(hs===as_){pts[m.home.name]++;pts[m.away.name]++}
-      else pts[m.away.name]+=3
+      if(hs>as_)        { pts[m.home.name]+=3 }
+      else if(hs===as_) { pts[m.home.name]+=1; pts[m.away.name]+=1 }
+      else              { pts[m.away.name]+=3 }
+      // Oynanan maç için beklenen puan da gerçek puan olsun
+      expPts[m.home.name] = pts[m.home.name]
+      expPts[m.away.name] = pts[m.away.name]
+    } else {
+      // Oynanmamış: model olasılıklarından beklenen puan
+      // P(galibiyet)×3 + P(beraberlik)×1
+      expPts[m.home.name] += m.ms.home.probability * 3 + m.ms.draw.probability * 1
+      expPts[m.away.name] += m.ms.away.probability * 3 + m.ms.draw.probability * 1
     }
-    // Oynanmamış maçlar için puan ekleme — sadece ELO'ya göre sırala
   }
   const res: Record<string,Team[]> = {}
   for (const [g,teams] of Object.entries(GROUPS_DEF)) {
@@ -301,14 +314,21 @@ export default function BracketClient({ matches }: Props) {
                 <div key={g} className="rounded-lg border border-white/8 overflow-hidden">
                   <div className="flex items-center justify-between px-3 py-2 bg-white/[0.04] border-b border-white/8">
                     <span className="text-[10px] font-mono font-medium text-white/50 uppercase tracking-widest">Grup {g}</span>
-                    <span className="text-[9px] font-mono text-white/20">ELO&nbsp;&nbsp;Puan</span>
+                    <span className="text-[9px] font-mono text-white/20">Puan</span>
                   </div>
-                  {sorted.map((t,i) => (
+                  {groupResults[g].standings.map((t,i) => (
                     <div key={t.name} className={`flex items-center gap-2 px-3 py-1.5 border-b border-white/5 last:border-b-0 ${i<2?'bg-grass-500/5':sim.best8.some(b=>b.name===t.name)?'bg-gold-500/5':''}`}>
                       <span className="text-xs flex-shrink-0">{t.flag}</span>
                       <span className={`flex-1 text-[10px] font-mono truncate ${i<2?'text-white/80':sim.best8.some(b=>b.name===t.name)?'text-gold-400':'text-white/35'}`}>{t.name}</span>
-                      <span className="text-[9px] font-mono text-white/25 w-8 text-right">{t.elo}</span>
-                      <span className={`text-[10px] font-mono w-5 text-right font-medium ${i<2?'text-grass-400':'text-white/25'}`}>{Math.round(pts[t.name]??0)}</span>
+                      <span className="text-[9px] font-mono text-white/25 w-8 text-right hidden sm:block">{t.elo}</span>
+                      <div className="flex flex-col items-end">
+                        <span className={`text-[10px] font-mono font-medium ${i<2?'text-grass-400':'text-white/25'}`}>
+                          {t.pts > 0 ? t.pts : t.expPts.toFixed(1)}
+                        </span>
+                        {t.pts === 0 && t.expPts > 0 && (
+                          <span className="text-[8px] font-mono text-white/20">tahmin</span>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
