@@ -115,10 +115,10 @@ function getGroupResults(matches: MatchPrediction[]) {
   return {standings: res, pts}
 }
 
-function simulate(standings: Record<string,Team[]>) {
-  const w = (grp: string) => standings[grp]?.[0] ?? BLANK  // group winner
-  const r = (grp: string) => standings[grp]?.[1] ?? BLANK  // runner-up
-  const t3= (grp: string) => standings[grp]?.[2] ?? BLANK  // third place
+function simulate(standings: Record<string,GroupResult>) {
+  const w = (grp: string) => standings[grp]?.first  ?? BLANK
+  const r = (grp: string) => standings[grp]?.second ?? BLANK
+  const t3= (grp: string) => standings[grp]?.third  ?? BLANK
 
   // En iyi 8 üçüncü (ELO sıralı)
   const thirds = Object.keys(GROUPS_DEF).map(t3)
@@ -241,7 +241,7 @@ const GAP = 3
 export default function BracketClient({ matches }: Props) {
   // Gelişmiş model olasılıklarını bracket'e yükle
   setMatchProbs(matches)
-  const {standings, pts} = getGroupResults(matches)
+  const groupResults = getGroupResults(matches)
   const sim = simulate(standings)
 
   return (
