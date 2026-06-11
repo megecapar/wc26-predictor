@@ -54,7 +54,7 @@ type BracketState = {
   champion: string
 }
 
-const STEPS = ['Gruplar', 'En İyi 8 Üçüncü', 'Son 32', 'Son 16', 'Çeyrek', 'Yarı', 'Final']
+const STEPS = ['Gruplar', 'Son 32', 'Son 16', 'Çeyrek', 'Yarı', 'Final']
 
 export default function PredictClient({ matches }: Props) {
   const { userId, username } = useUser()
@@ -79,25 +79,29 @@ export default function PredictClient({ matches }: Props) {
   // Grup seçimi
   function selectGroupTeam(g: string, team: string) {
     const current = groups[g] ?? ['', '']
+    // Zaten seçiliyse kaldır
     if (current[0] === team) {
       setGroups(prev => ({ ...prev, [g]: ['', current[1]] }))
-    } else if (current[1] === team) {
-      setGroups(prev => ({ ...prev, [g]: [current[0], ''] }))
-    } else if (!current[0]) {
-      setGroups(prev => ({ ...prev, [g]: [team, current[1]] }))
-    } else if (!current[1]) {
-      setGroups(prev => ({ ...prev, [g]: [current[0], team] }))
-    } else {
-      // İkisi de dolu — ilkini değiştir
-      setGroups(prev => ({ ...prev, [g]: [team, current[1]] }))
+      return
     }
+    if (current[1] === team) {
+      setGroups(prev => ({ ...prev, [g]: [current[0], ''] }))
+      return
+    }
+    // Boş slot varsa doldur
+    if (!current[0]) { setGroups(prev => ({ ...prev, [g]: [team, current[1]] })); return }
+    if (!current[1]) { setGroups(prev => ({ ...prev, [g]: [current[0], team] })); return }
+    // 1. ve 2. dolu → 3. sıraya tıklandı: best8'e ekle/çıkar
+    setSelectedThirds(prev =>
+      prev.includes(team) ? prev.filter(x => x !== team) : prev.length < 8 ? [...prev, team] : prev
+    )
   }
 
   // Grup adımı tamamlandı mı?
   const groupsDone = Object.keys(GROUPS_DEF).every(g => {
     const sel = groups[g]
     return sel && sel[0] && sel[1]
-  })
+  }) && selectedThirds.length === 8
 
   // R32 maç eşleşmeleri (resmi FIFA formatı)
   function getR32Pairs(): [string, string][] {
@@ -126,18 +130,7 @@ export default function PredictClient({ matches }: Props) {
   // Adım geçiş
   function nextStep() {
     if (step === 0) {
-      // Adım 1'e geçince 3. sıra takımları hesapla
-      const thirds: string[] = []
-      for (const [g, teams] of Object.entries(GROUPS_DEF)) {
-        const sel = groups[g] ?? ['', '']
-        const third = teams.find(t => t !== sel[0] && t !== sel[1])
-        if (third) thirds.push(third)
-      }
-      setBest8(thirds) // 12 üçüncü takım
-      setSelectedThirds([]) // seçimleri sıfırla
-    }
-    if (step === 1) {
-      // Seçilen 8 üçüncüyü kaydet
+      // Seçilen 8 üçüncüyü best8 olarak kaydet
       setBest8(selectedThirds)
     }
     setStep(s => s + 1)
@@ -153,7 +146,7 @@ export default function PredictClient({ matches }: Props) {
       bracket,
       champion,
       updated_at: new Date().toISOString(),
-    })
+    }, { onConflict: 'user_id' })
     if (error) setMsg('❌ ' + error.message)
     else { setSaved(true); setMsg('✅ Bracket kaydedildi!') }
     setSaving(false)
@@ -174,11 +167,11 @@ export default function PredictClient({ matches }: Props) {
     window.open(`https://wa.me/?text=${text}`)
   }
 
-  const r32pairs = step >= 2 ? getR32Pairs() : []
-  const r16pairs = step >= 3 ? getNextPairs(r32, 8) : []
-  const qfpairs  = step >= 4 ? getNextPairs(r16, 4) : []
-  const sfpairs  = step >= 5 ? getNextPairs(qf,  2) : []
-  const finpairs = step >= 6 ? getNextPairs(sf,  1) : []
+  const r32pairs = step >= 1 ? getR32Pairs() : []
+  const r16pairs = step >= 2 ? getNextPairs(r32, 8) : []
+  const qfpairs  = step >= 3 ? getNextPairs(r16, 4) : []
+  const sfpairs  = step >= 4 ? getNextPairs(qf,  2) : []
+  const finpairs = step >= 5 ? getNextPairs(sf,  1) : []
 
   return (
     <div className="min-h-screen pitch-stripes">
@@ -205,7 +198,7 @@ export default function PredictClient({ matches }: Props) {
         {/* STEP 0 — Gruplar */}
         {step === 0 && (
           <div>
-            <p className="text-xs font-mono text-white/40 mb-4">Her gruptan çıkacak 2 takımı seç (1. ve 2. sıralar)</p>
+            <p className="text-xs font-mono text-white/40 mb-1">1. ve 2. sıraları seç · 3. sıraya tıklayarak en iyi 8 üçüncüyü belirle ★</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               {Object.entries(GROUPS_DEF).map(([g, teams]) => {
                 const sel = groups[g] ?? ['', '']
@@ -222,75 +215,48 @@ export default function PredictClient({ matches }: Props) {
                       const isFirst  = sel[0] === t
                       const isSecond = sel[1] === t
                       return (
-                        <button key={t} onClick={() => selectGroupTeam(g, t)}
-                          className={`w-full flex items-center gap-2 px-3 py-2 border-b border-white/5 last:border-0 transition-colors ${isFirst ? 'bg-grass-500/15' : isSecond ? 'bg-grass-500/8' : 'hover:bg-white/5'}`}>
-                          <span className="text-base">{getFlag(t)}</span>
-                          <span className={`text-xs font-mono flex-1 text-left ${isFirst || isSecond ? 'text-white/90' : 'text-white/50'}`}>{t}</span>
-                          {isFirst  && <span className="text-[9px] font-mono text-grass-400">1.</span>}
-                          {isSecond && <span className="text-[9px] font-mono text-grass-300">2.</span>}
-                        </button>
+                        {(() => {
+                          const isThird = !isFirst && !isSecond
+                          const inBest8 = selectedThirds.includes(t)
+                          return (
+                            <button key={t} onClick={() => selectGroupTeam(g, t)}
+                              className={`w-full flex items-center gap-2 px-3 py-2 border-b border-white/5 last:border-0 transition-colors ${isFirst ? 'bg-grass-500/15' : isSecond ? 'bg-grass-500/8' : inBest8 ? 'bg-gold-500/10' : 'hover:bg-white/5'}`}>
+                              <span className="text-base">{getFlag(t)}</span>
+                              <span className={`text-xs font-mono flex-1 text-left ${isFirst || isSecond ? 'text-white/90' : inBest8 ? 'text-gold-300' : 'text-white/50'}`}>{t}</span>
+                              {isFirst  && <span className="text-[9px] font-mono text-grass-400">1.</span>}
+                              {isSecond && <span className="text-[9px] font-mono text-grass-300">2.</span>}
+                              {isThird && inBest8 && <span className="text-[9px] font-mono text-gold-400">3.★</span>}
+                            </button>
+                          )
+                        })()}
                       )
                     })}
                   </div>
                 )
               })}
             </div>
-            <button onClick={nextStep} disabled={!groupsDone}
-              className="w-full py-3 bg-grass-500 disabled:opacity-30 text-white font-mono text-sm rounded-xl hover:bg-grass-400 transition-colors">
-              Devam → Son 32 {!groupsDone && `(${Object.keys(GROUPS_DEF).length - Object.keys(groups).filter(g => groups[g]?.[0] && groups[g]?.[1]).length} grup kaldı)`}
-            </button>
-          </div>
-        )}
-
-        {/* STEP 1 — En iyi 8 üçüncü seçimi */}
-        {step === 1 && (
-          <div>
-            <p className="text-xs font-mono text-white/40 mb-1">12 gruptan üçüncü biten takımlar arasından 8 tanesini seç</p>
-            <p className="text-[10px] font-mono text-white/25 mb-4">Seçilen 8 takım Son 32'ye katılır</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
-              {best8.map(t => {
-                const selected = selectedThirds.includes(t)
-                return (
-                  <button key={t}
-                    onClick={() => {
-                      if (selected) {
-                        setSelectedThirds(prev => prev.filter(x => x !== t))
-                      } else if (selectedThirds.length < 8) {
-                        setSelectedThirds(prev => [...prev, t])
-                      }
-                    }}
-                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border transition-colors ${selected ? 'bg-gold-500/15 border-gold-500/30' : 'bg-white/[0.02] border-white/8 hover:bg-white/5'}`}>
-                    <span className="text-base">{getFlag(t)}</span>
-                    <span className={`text-xs font-mono flex-1 text-left ${selected ? 'text-gold-300' : 'text-white/50'}`}>{t}</span>
-                    {selected && <span className="text-[10px] font-mono text-gold-400">{selectedThirds.indexOf(t) + 1}</span>}
-                  </button>
-                )
-              })}
-            </div>
-            <p className="text-[10px] font-mono text-white/30 mb-4 text-center">
-              {selectedThirds.length}/8 seçildi
-            </p>
-            <div className="flex gap-3">
-              <button onClick={() => setStep(0)} className="px-6 py-3 border border-white/10 text-white/50 font-mono text-sm rounded-xl hover:border-white/20 transition-colors">
-                ← Geri
-              </button>
-              <button onClick={nextStep} disabled={selectedThirds.length !== 8}
-                className="flex-1 py-3 bg-grass-500 disabled:opacity-30 text-white font-mono text-sm rounded-xl hover:bg-grass-400 transition-colors">
-                Devam → Son 32 {selectedThirds.length < 8 && `(${8 - selectedThirds.length} kaldı)`}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-[10px] font-mono text-white/30 px-1">
+                <span>En iyi 8 üçüncü: {selectedThirds.length}/8 seçildi</span>
+                <span>Gruplar: {Object.keys(groups).filter(g => groups[g]?.[0] && groups[g]?.[1]).length}/{Object.keys(GROUPS_DEF).length}</span>
+              </div>
+              <button onClick={nextStep} disabled={!groupsDone}
+                className="w-full py-3 bg-grass-500 disabled:opacity-30 text-white font-mono text-sm rounded-xl hover:bg-grass-400 transition-colors">
+                Devam → Son 32
               </button>
             </div>
           </div>
         )}
 
-        {/* STEP 2-5 — Eleme turları */}
-        {step >= 2 && step <= 5 && (() => {
+        {/* STEP 1-4 — Eleme turları */}
+        {step >= 1 && step <= 4 && (() => {
           const configs = [
             { label: 'Son 32', pairs: r32pairs, state: r32, setState: setR32, key: 'r32' },
             { label: 'Son 16', pairs: r16pairs, state: r16, setState: setR16, key: 'r16' },
             { label: 'Çeyrek Final', pairs: qfpairs, state: qf, setState: setQF, key: 'qf' },
             { label: 'Yarı Final', pairs: sfpairs, state: sf, setState: setSF, key: 'sf' },
           ]
-          const cfg = configs[step - 2]
+          const cfg = configs[step - 1]
           const currentDone = cfg.pairs.every((_, i) => cfg.state[`m${i}`])
 
           return (
@@ -331,7 +297,7 @@ export default function PredictClient({ matches }: Props) {
         })()}
 
         {/* STEP 5 — Final & Şampiyon */}
-        {step === 6 && (
+        {step === 5 && (
           <div>
             <p className="text-xs font-mono text-white/40 mb-4">Final — Şampiyonu seç!</p>
 
