@@ -17,27 +17,62 @@ function FormDot({ result }: { result: 'win' | 'draw' | 'loss' }) {
   )
 }
 
+function getBetResult(
+  marketKey: string,
+  result: { homeScore: number; awayScore: number } | undefined
+): 'won' | 'lost' | null {
+  if (!result) return null
+  const hs = result.homeScore, as_ = result.awayScore
+  const total = hs + as_
+  if (marketKey === 'ms.home')  return hs > as_   ? 'won' : 'lost'
+  if (marketKey === 'ms.draw')  return hs === as_  ? 'won' : 'lost'
+  if (marketKey === 'ms.away')  return as_ > hs   ? 'won' : 'lost'
+  if (marketKey === 'ou.over')  return total > 2.5 ? 'won' : 'lost'
+  if (marketKey === 'ou.under') return total <= 2.5? 'won' : 'lost'
+  if (marketKey === 'btts.yes') return hs > 0 && as_ > 0 ? 'won' : 'lost'
+  if (marketKey === 'btts.no')  return !(hs > 0 && as_ > 0) ? 'won' : 'lost'
+  if (marketKey === 'ht.home')  return hs > as_   ? 'won' : 'lost'
+  if (marketKey === 'ht.draw')  return hs === as_  ? 'won' : 'lost'
+  if (marketKey === 'ht.away')  return as_ > hs   ? 'won' : 'lost'
+  return null
+}
+
 function OddCell({
-  label, odd, probability, marketKey, matchId, colorClass,
+  label, odd, probability, marketKey, matchId, colorClass, betResult,
 }: {
   label: string; odd: number; probability: number
   marketKey: string; matchId: string; colorClass: string
+  betResult: 'won' | 'lost' | null
 }) {
   const { toggle, isSelected } = useBetslip()
   const selected = isSelected(matchId, marketKey)
+  const finished = betResult !== null
+
   return (
     <button
-      onClick={() => toggle({ matchId, marketKey, label, odd })}
+      onClick={() => !finished && toggle({ matchId, marketKey, label, odd })}
       className={cn(
-        'bet-cell flex flex-col items-center justify-center gap-0.5 py-3 px-2 border border-white/5 rounded-md transition-all',
-        selected ? colorClass : 'hover:border-white/15 hover:bg-white/5',
+        'bet-cell flex flex-col items-center justify-center gap-0.5 py-3 px-2 border rounded-md transition-all relative',
+        finished
+          ? betResult === 'won'
+            ? 'border-grass-500/40 bg-grass-500/10 cursor-default'
+            : 'border-red-500/30 bg-red-500/8 cursor-default'
+          : selected
+            ? colorClass
+            : 'border-white/5 hover:border-white/15 hover:bg-white/5',
       )}
     >
       <span className="text-[10px] text-white/40 uppercase tracking-widest font-mono">{label}</span>
-      <span className={cn('text-lg font-mono font-medium tabular transition-colors', selected ? 'text-white' : 'text-chalk-100')}>
+      <span className={cn('text-lg font-mono font-medium tabular transition-colors',
+        finished
+          ? betResult === 'won' ? 'text-grass-300' : 'text-red-400'
+          : selected ? 'text-white' : 'text-chalk-100'
+      )}>
         {odd.toFixed(2)}
       </span>
       <span className="text-[10px] text-white/35 font-mono">%{Math.round(probability * 100)}</span>
+      {betResult === 'won'  && <span className="absolute top-1 right-1.5 text-[11px] text-grass-400">✓</span>}
+      {betResult === 'lost' && <span className="absolute top-1 right-1.5 text-[11px] text-red-400">✗</span>}
     </button>
   )
 }
@@ -50,8 +85,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-// En iyi tek öneriyi hesapla
 function getBestPick(match: MatchPrediction) {
+  if (match.result) return null // Biten maçta öneri gösterme
   const options = [
     { label: `${match.home.name} kazanır`, odd: match.ms.home.value, prob: match.ms.home.probability, marketKey: 'ms.home' },
     { label: 'Beraberlik',                 odd: match.ms.draw.value, prob: match.ms.draw.probability, marketKey: 'ms.draw' },
@@ -61,7 +96,6 @@ function getBestPick(match: MatchPrediction) {
     { label: 'KG Var',                    odd: match.btts.yes.value, prob: match.btts.yes.probability, marketKey: 'btts.yes' },
     { label: 'KG Yok',                    odd: match.btts.no.value,  prob: match.btts.no.probability,  marketKey: 'btts.no'  },
   ]
-  // value = prob * odd, sadece prob>%50 ve oran>1.30 olanlar
   const valid = options.filter(o => o.prob > 0.50 && o.odd > 1.30)
   if (!valid.length) return null
   return valid.sort((a, b) => (b.prob * b.odd) - (a.prob * a.odd))[0]
@@ -69,6 +103,7 @@ function getBestPick(match: MatchPrediction) {
 
 export function MatchCard({ match }: { match: MatchPrediction }) {
   const { toggle, isSelected } = useBetslip()
+  const r = match.result
 
   const confidenceConfig = {
     high: { label: 'Yüksek güven', variant: 'success' as const, icon: <Flame size={10} /> },
@@ -87,11 +122,16 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
         <div className="flex items-center gap-1.5 text-white/40 text-xs font-mono">
           <Clock size={11} />
           {match.kickoff}
-          {match.venue && <span className="text-white/20 hidden sm:inline">· {match.venue}</span>}
         </div>
-        <Badge variant={conf.variant} className="flex items-center gap-1 text-[10px]">
-          {conf.icon}{conf.label}
-        </Badge>
+        {r ? (
+          <span className="text-[10px] font-mono text-white/40 bg-white/5 px-2 py-0.5 rounded">
+            MAÇ BİTTİ
+          </span>
+        ) : (
+          <Badge variant={conf.variant} className="flex items-center gap-1 text-[10px]">
+            {conf.icon}{conf.label}
+          </Badge>
+        )}
         <span className="text-[10px] text-white/30 font-mono">{match.stage}</span>
       </div>
 
@@ -100,15 +140,15 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
         <div className="flex flex-col items-center gap-2">
           <span className="text-4xl leading-none">{match.home.flag}</span>
           <span className="text-sm font-medium text-chalk-100 text-center">{match.home.name}</span>
-          <div className="flex gap-0.5">{match.home.form.map((r, i) => <FormDot key={i} result={r} />)}</div>
+          <div className="flex gap-0.5">{match.home.form.map((f, i) => <FormDot key={i} result={f} />)}</div>
         </div>
         <div className="flex flex-col items-center gap-1">
-          {match.result ? (
+          {r ? (
             <>
-              <div className="flex items-center gap-2 text-xl font-mono font-medium text-chalk-100">
-                <span>{match.result.homeScore}</span>
-                <span className="text-white/30 text-sm">-</span>
-                <span>{match.result.awayScore}</span>
+              <div className="flex items-center gap-2 text-2xl font-mono font-medium text-chalk-100">
+                <span>{r.homeScore}</span>
+                <span className="text-white/30 text-base">-</span>
+                <span>{r.awayScore}</span>
               </div>
               <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest">Bitti</span>
             </>
@@ -125,11 +165,11 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
         <div className="flex flex-col items-center gap-2">
           <span className="text-4xl leading-none">{match.away.flag}</span>
           <span className="text-sm font-medium text-chalk-100 text-center">{match.away.name}</span>
-          <div className="flex gap-0.5">{match.away.form.map((r, i) => <FormDot key={i} result={r} />)}</div>
+          <div className="flex gap-0.5">{match.away.form.map((f, i) => <FormDot key={i} result={f} />)}</div>
         </div>
       </div>
 
-      {/* Favori Öneri */}
+      {/* Favori Öneri — sadece oynanmamış maçlarda */}
       {pick && (
         <>
           <Separator className="opacity-50" />
@@ -171,9 +211,9 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
       {/* MS */}
       <SectionLabel>Maç Sonucu</SectionLabel>
       <div className="grid grid-cols-3 gap-2 px-3 pb-3">
-        <OddCell label="MS 1" odd={match.ms.home.value} probability={match.ms.home.probability} marketKey="ms.home" matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" />
-        <OddCell label="MS X" odd={match.ms.draw.value} probability={match.ms.draw.probability} marketKey="ms.draw" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15" />
-        <OddCell label="MS 2" odd={match.ms.away.value} probability={match.ms.away.probability} marketKey="ms.away" matchId={match.id} colorClass="border-blue-500/40 bg-blue-500/15" />
+        <OddCell label="MS 1" odd={match.ms.home.value} probability={match.ms.home.probability} marketKey="ms.home" matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" betResult={getBetResult('ms.home', r)} />
+        <OddCell label="MS X" odd={match.ms.draw.value} probability={match.ms.draw.probability} marketKey="ms.draw" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15"  betResult={getBetResult('ms.draw', r)} />
+        <OddCell label="MS 2" odd={match.ms.away.value} probability={match.ms.away.probability} marketKey="ms.away" matchId={match.id} colorClass="border-blue-500/40 bg-blue-500/15"  betResult={getBetResult('ms.away', r)} />
       </div>
 
       <Separator className="opacity-50" />
@@ -181,8 +221,8 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
       {/* 2.5 */}
       <SectionLabel>2.5 Üst / Alt</SectionLabel>
       <div className="grid grid-cols-2 gap-2 px-3 pb-3">
-        <OddCell label="2.5 Üst" odd={match.overUnder.over.value}  probability={match.overUnder.over.probability}  marketKey="ou.over"  matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" />
-        <OddCell label="2.5 Alt" odd={match.overUnder.under.value} probability={match.overUnder.under.probability} marketKey="ou.under" matchId={match.id} colorClass="border-red-500/40 bg-red-500/15" />
+        <OddCell label="2.5 Üst" odd={match.overUnder.over.value}  probability={match.overUnder.over.probability}  marketKey="ou.over"  matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" betResult={getBetResult('ou.over',  r)} />
+        <OddCell label="2.5 Alt" odd={match.overUnder.under.value} probability={match.overUnder.under.probability} marketKey="ou.under" matchId={match.id} colorClass="border-red-500/40 bg-red-500/15"   betResult={getBetResult('ou.under', r)} />
       </div>
 
       <Separator className="opacity-50" />
@@ -190,10 +230,10 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
       {/* KG + İY */}
       <SectionLabel>KG Var / Yok · İlk Yarı</SectionLabel>
       <div className="grid grid-cols-4 gap-2 px-3 pb-3">
-        <OddCell label="KG Var" odd={match.btts.yes.value} probability={match.btts.yes.probability} marketKey="btts.yes" matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" />
-        <OddCell label="KG Yok" odd={match.btts.no.value}  probability={match.btts.no.probability}  marketKey="btts.no"  matchId={match.id} colorClass="border-red-500/40 bg-red-500/15" />
-        <OddCell label="İY 1"   odd={match.htMs.home.value} probability={match.htMs.home.probability} marketKey="ht.home" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15" />
-        <OddCell label="İY X"   odd={match.htMs.draw.value} probability={match.htMs.draw.probability} marketKey="ht.draw" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15" />
+        <OddCell label="KG Var" odd={match.btts.yes.value} probability={match.btts.yes.probability} marketKey="btts.yes" matchId={match.id} colorClass="border-grass-500/40 bg-grass-500/15" betResult={getBetResult('btts.yes', r)} />
+        <OddCell label="KG Yok" odd={match.btts.no.value}  probability={match.btts.no.probability}  marketKey="btts.no"  matchId={match.id} colorClass="border-red-500/40 bg-red-500/15"   betResult={getBetResult('btts.no',  r)} />
+        <OddCell label="İY 1"   odd={match.htMs.home.value} probability={match.htMs.home.probability} marketKey="ht.home" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15" betResult={getBetResult('ht.home',  r)} />
+        <OddCell label="İY X"   odd={match.htMs.draw.value} probability={match.htMs.draw.probability} marketKey="ht.draw" matchId={match.id} colorClass="border-gold-500/40 bg-gold-500/15" betResult={getBetResult('ht.draw',  r)} />
       </div>
     </div>
   )
