@@ -33,7 +33,6 @@ export async function POST(req: NextRequest) {
   const matches = await getMatches()
   const match = matches.find(m => m.id === matchId)
   if (!match) return NextResponse.json({ error: 'Maç bulunamadı' }, { status: 404 })
-  if (match.result) return NextResponse.json({ error: 'Maç zaten bitti' }, { status: 400 })
 
   // Mevcut ELO'dan lambda hesapla
   const eH = match.home.elo ?? 1500
