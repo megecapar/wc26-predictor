@@ -103,11 +103,24 @@ export function MatchCard({ match }: { match: MatchPrediction }) {
           <div className="flex gap-0.5">{match.home.form.map((r, i) => <FormDot key={i} result={r} />)}</div>
         </div>
         <div className="flex flex-col items-center gap-1">
-          <span className="text-[10px] font-mono text-white/20 tracking-widest uppercase">vs</span>
-          <div className="flex items-center gap-1 mt-1">
-            <TrendingUp size={10} className="text-white/25" />
-            <span className="text-[10px] font-mono text-white/30">{match.overUnder.expectedGoals.toFixed(1)} gol</span>
-          </div>
+          {match.result ? (
+            <>
+              <div className="flex items-center gap-2 text-xl font-mono font-medium text-chalk-100">
+                <span>{match.result.homeScore}</span>
+                <span className="text-white/30 text-sm">-</span>
+                <span>{match.result.awayScore}</span>
+              </div>
+              <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest">Bitti</span>
+            </>
+          ) : (
+            <>
+              <span className="text-[10px] font-mono text-white/20 tracking-widest uppercase">vs</span>
+              <div className="flex items-center gap-1 mt-1">
+                <TrendingUp size={10} className="text-white/25" />
+                <span className="text-[10px] font-mono text-white/30">{match.overUnder.expectedGoals.toFixed(1)} gol</span>
+              </div>
+            </>
+          )}
         </div>
         <div className="flex flex-col items-center gap-2">
           <span className="text-4xl leading-none">{match.away.flag}</span>

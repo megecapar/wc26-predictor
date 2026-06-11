@@ -3,7 +3,7 @@ import { Navbar } from '@/components/Navbar'
 import { useState, useEffect } from 'react'
 import { MatchPrediction } from '@/lib/types'
 
-const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASS ?? 'wc26admin'
+const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASS ?? process.env.NEXT_PUBLIC_CRON_SECRET ?? 'wc26admin2026'
 
 type MatchEvent = {
   type: 'red_card' | 'injury'
@@ -74,7 +74,7 @@ export default function AdminClient() {
           matchId: eventMatch,
           type: eventType,
           team: eventTeam,
-          player: eventPlayer,
+          player: eventPlayer || undefined,
           minute: eventMinute ? parseInt(eventMinute) : undefined,
         }),
       })
