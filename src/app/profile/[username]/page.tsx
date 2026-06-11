@@ -8,41 +8,31 @@ export default async function PublicProfilePage({ params }: { params: { username
   const supabase = await createServerSupabase()
 
   const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('username', params.username)
-    .single()
-
+    .from('profiles').select('*').eq('username', params.username).single()
   if (!profile) notFound()
 
   const { data: { user } } = await supabase.auth.getUser()
   const isOwn = user?.id === profile.id
 
-  const { data: userBadges } = await supabase
-    .from('user_badges').select('*, badges(*)').eq('user_id', profile.id)
+  const [
+    { data: userBadges },
+    { data: coupons },
+    { data: followersData },
+    { data: followingData },
+    { data: bracketData },
+  ] = await Promise.all([
+    supabase.from('user_badges').select('*, badges(*)').eq('user_id', profile.id),
+    supabase.from('coupons').select('*, coupon_bets(*)').eq('user_id', profile.id).order('created_at', { ascending: false }).limit(20),
+    supabase.from('follows').select('follower_id', { count: 'exact' }).eq('following_id', profile.id),
+    supabase.from('follows').select('following_id', { count: 'exact' }).eq('follower_id', profile.id),
+    supabase.from('user_brackets').select('bracket, champion, updated_at').eq('user_id', profile.id).single(),
+  ])
 
-  const { data: coupons } = await supabase
-    .from('coupons').select('*, coupon_bets(*)')
-    .eq('user_id', profile.id)
-    .order('created_at', { ascending: false })
-    .limit(20)
-
-  const { data: followersData } = await supabase
-    .from('follows').select('follower_id', { count: 'exact' }).eq('following_id', profile.id)
-
-  const { data: followingData } = await supabase
-    .from('follows').select('following_id', { count: 'exact' }).eq('follower_id', profile.id)
-
-  // Takip ediyor mu?
   let isFollowing = false
-  if (user) {
-    const { data: followData } = await supabase
-      .from('follows')
-      .select('follower_id')
-      .eq('follower_id', user.id)
-      .eq('following_id', profile.id)
-      .single()
-    isFollowing = !!followData
+  if (user && !isOwn) {
+    const { data: f } = await supabase.from('follows')
+      .select('follower_id').eq('follower_id', user.id).eq('following_id', profile.id).single()
+    isFollowing = !!f
   }
 
   return (
@@ -55,6 +45,7 @@ export default async function PublicProfilePage({ params }: { params: { username
       isOwn={isOwn}
       isFollowing={isFollowing}
       viewerId={user?.id}
+      bracket={bracketData ? { ...bracketData.bracket, champion: bracketData.champion, updated_at: bracketData.updated_at } : null}
     />
   )
 }

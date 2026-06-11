@@ -6,6 +6,12 @@ import { useRouter } from 'next/navigation'
 import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 
+interface UserBracket {
+  champion: string
+  groups?: Record<string, [string, string]>
+  updated_at?: string
+}
+
 interface Props {
   profile: Profile | null
   badges: UserBadge[]
@@ -15,12 +21,27 @@ interface Props {
   isOwn?: boolean
   isFollowing?: boolean
   viewerId?: string
+  bracket?: UserBracket | null
 }
+
+const FLAGS: Record<string,string> = {
+  'Spain':'🇪🇸','Argentina':'🇦🇷','France':'🇫🇷','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Colombia':'🇨🇴',
+  'Brazil':'🇧🇷','Portugal':'🇵🇹','Netherlands':'🇳🇱','Croatia':'🇭🇷','Ecuador':'🇪🇨',
+  'Norway':'🇳🇴','Germany':'🇩🇪','Switzerland':'🇨🇭','Uruguay':'🇺🇾','Turkey':'🇹🇷',
+  'Japan':'🇯🇵','Senegal':'🇸🇳','Belgium':'🇧🇪','Morocco':'🇲🇦','Sweden':'🇸🇪',
+  'USA':'🇺🇸','Mexico':'🇲🇽','South Korea':'🇰🇷','Australia':'🇦🇺','Iran':'🇮🇷',
+  'Algeria':'🇩🇿','Ivory Coast':'🇨🇮','DR Congo':'🇨🇩','Tunisia':'🇹🇳','Paraguay':'🇵🇾',
+  'Saudi Arabia':'🇸🇦','South Africa':'🇿🇦','Scotland':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','Canada':'🇨🇦',
+  'Czech Republic':'🇨🇿','Ghana':'🇬🇭','Iraq':'🇮🇶','Jordan':'🇯🇴','Uzbekistan':'🇺🇿',
+  'Cape Verde':'🇨🇻','Bosnia & Herzegovina':'🇧🇦','New Zealand':'🇳🇿','Qatar':'🇶🇦',
+  'Haiti':'🇭🇹','Curaçao':'🇨🇼','Panama':'🇵🇦','Egypt':'🇪🇬','Austria':'🇦🇹',
+}
+function gf(n: string) { return FLAGS[n] ?? '🏳️' }
 
 export default function ProfileClient({
   profile, badges, coupons,
   followersCount, followingCount,
-  isOwn = true, isFollowing: initFollowing = false, viewerId
+  isOwn = true, isFollowing: initFollowing = false, viewerId, bracket
 }: Props) {
   const supabase = createClient()
   const router   = useRouter()
@@ -120,6 +141,43 @@ export default function ProfileClient({
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Bracket tahmini */}
+        {bracket?.champion && (
+          <div className="bg-white/[0.03] border border-white/8 rounded-xl p-5">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-xs font-mono text-white/40 uppercase tracking-widest">Bracket Tahmini</h2>
+              {bracket.updated_at && (
+                <span className="text-[9px] font-mono text-white/20">
+                  {new Date(bracket.updated_at).toLocaleDateString('tr-TR')}
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-gold-500/10 border border-gold-500/20 rounded-lg">
+              <span className="text-3xl">{gf(bracket.champion)}</span>
+              <div>
+                <p className="text-xs font-mono text-white/40">Şampiyon Tahmini</p>
+                <p className="text-base font-medium text-gold-300">{bracket.champion}</p>
+              </div>
+              {isOwn && (
+                <Link href="/predict" className="ml-auto text-[10px] font-mono text-white/30 hover:text-white/60 border border-white/10 rounded px-2 py-1 transition-colors">
+                  Düzenle
+                </Link>
+              )}
+            </div>
+            {bracket.groups && (
+              <div className="mt-3 grid grid-cols-3 sm:grid-cols-4 gap-1.5">
+                {Object.entries(bracket.groups).map(([g, teams]) => (
+                  <div key={g} className="bg-white/[0.02] rounded p-1.5">
+                    <p className="text-[8px] font-mono text-white/25 mb-1">GRP {g}</p>
+                    <p className="text-[10px] font-mono text-white/60">{gf(teams[0])} {teams[0]?.split(' ')[0]}</p>
+                    <p className="text-[10px] font-mono text-white/40">{gf(teams[1])} {teams[1]?.split(' ')[0]}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
