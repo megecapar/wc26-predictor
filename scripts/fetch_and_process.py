@@ -117,25 +117,91 @@ FLAGS = {
 }
 
 FIXTURES = [
-    # (home, away, date, kickoff, group, hafta)
-    ("United States",  "Bolivia",      "2026-06-11", "21:00", "A", 1),
-    ("Canada",         "Venezuela",    "2026-06-12", "18:00", "A", 1),
-    ("Mexico",         "Ecuador",      "2026-06-13", "21:00", "B", 1),
-    ("Argentina",      "Chile",        "2026-06-14", "00:00", "B", 1),
-    ("Spain",          "Brazil",       "2026-06-14", "21:00", "C", 1),
-    ("France",         "Germany",      "2026-06-15", "21:00", "C", 1),
-    ("England",        "Portugal",     "2026-06-16", "21:00", "D", 1),
-    ("Netherlands",    "Turkey",       "2026-06-17", "18:00", "D", 1),
-    ("Japan",          "Denmark",      "2026-06-18", "15:00", "E", 1),
-    ("Morocco",        "Croatia",      "2026-06-18", "21:00", "E", 1),
-    ("Serbia",         "Switzerland",  "2026-06-19", "15:00", "F", 1),
-    ("South Korea",    "Uruguay",      "2026-06-19", "21:00", "F", 1),
-    ("Senegal",        "Ghana",        "2026-06-20", "15:00", "G", 1),
-    ("Poland",         "Tunisia",      "2026-06-20", "21:00", "G", 1),
-    ("Saudi Arabia",   "Panama",       "2026-06-21", "15:00", "H", 1),
-    ("Australia",      "Iran",         "2026-06-21", "21:00", "H", 1),
+    # Grup A
+    ("Mexico",        "South Africa",       "2026-06-11", "22:00", "A", 1),
+    ("South Korea",   "Czech Republic",     "2026-06-12", "05:00", "A", 1),
+    ("Czech Republic","South Africa",       "2026-06-15", "19:00", "A", 2),
+    ("Mexico",        "South Korea",        "2026-06-15", "22:00", "A", 2),
+    ("South Africa",  "South Korea",        "2026-06-19", "22:00", "A", 3),
+    ("Czech Republic","Mexico",             "2026-06-19", "22:00", "A", 3),
+    # Grup B
+    ("Canada",        "Switzerland",        "2026-06-12", "22:00", "B", 1),
+    ("Qatar",         "Bosnia & Herzegovina","2026-06-13", "01:00", "B", 1),
+    ("Switzerland",   "Bosnia & Herzegovina","2026-06-16", "22:00", "B", 2),
+    ("Canada",        "Qatar",              "2026-06-17", "01:00", "B", 2),
+    ("Switzerland",   "Canada",             "2026-06-20", "22:00", "B", 3),
+    ("Bosnia & Herzegovina","Qatar",        "2026-06-20", "22:00", "B", 3),
+    # Grup C
+    ("Brazil",        "Morocco",            "2026-06-13", "22:00", "C", 1),
+    ("Scotland",      "Haiti",              "2026-06-14", "01:00", "C", 1),
+    ("Morocco",       "Scotland",           "2026-06-17", "19:00", "C", 2),
+    ("Brazil",        "Haiti",              "2026-06-17", "22:00", "C", 2),
+    ("Scotland",      "Brazil",             "2026-06-21", "22:00", "C", 3),
+    ("Morocco",       "Haiti",              "2026-06-21", "22:00", "C", 3),
+    # Grup D
+    ("USA",           "Paraguay",           "2026-06-14", "22:00", "D", 1),
+    ("Australia",     "Turkey",             "2026-06-15", "01:00", "D", 1),
+    ("Turkey",        "Paraguay",           "2026-06-18", "19:00", "D", 2),
+    ("USA",           "Australia",          "2026-06-18", "22:00", "D", 2),
+    ("Turkey",        "USA",                "2026-06-22", "22:00", "D", 3),
+    ("Paraguay",      "Australia",          "2026-06-22", "22:00", "D", 3),
+    # Grup E
+    ("Germany",       "Curaçao",            "2026-06-15", "22:00", "E", 1),
+    ("Ivory Coast",   "Ecuador",            "2026-06-16", "01:00", "E", 1),
+    ("Germany",       "Ivory Coast",        "2026-06-19", "19:00", "E", 2),
+    ("Ecuador",       "Curaçao",            "2026-06-19", "01:00", "E", 2),
+    ("Curaçao",       "Ivory Coast",        "2026-06-23", "22:00", "E", 3),
+    ("Ecuador",       "Germany",            "2026-06-23", "22:00", "E", 3),
+    # Grup F
+    ("Netherlands",   "Japan",              "2026-06-16", "19:00", "F", 1),
+    ("Sweden",        "Tunisia",            "2026-06-16", "22:00", "F", 1),
+    ("Japan",         "Sweden",             "2026-06-20", "01:00", "F", 2),
+    ("Netherlands",   "Tunisia",            "2026-06-20", "19:00", "F", 2),
+    ("Tunisia",       "Japan",              "2026-06-24", "22:00", "F", 3),
+    ("Netherlands",   "Sweden",             "2026-06-24", "22:00", "F", 3),
+    # Grup G
+    ("Belgium",       "Egypt",              "2026-06-17", "22:00", "G", 1),
+    ("Iran",          "New Zealand",        "2026-06-18", "01:00", "G", 1),
+    ("Belgium",       "Iran",               "2026-06-21", "01:00", "G", 2),
+    ("Egypt",         "New Zealand",        "2026-06-21", "19:00", "G", 2),
+    ("Egypt",         "Iran",               "2026-06-25", "22:00", "G", 3),
+    ("New Zealand",   "Belgium",            "2026-06-25", "22:00", "G", 3),
+    # Grup H
+    ("Spain",         "Cape Verde",         "2026-06-18", "22:00", "H", 1),
+    ("Saudi Arabia",  "Uruguay",            "2026-06-19", "01:00", "H", 1),
+    ("Spain",         "Saudi Arabia",       "2026-06-22", "01:00", "H", 2),
+    ("Uruguay",       "Cape Verde",         "2026-06-22", "19:00", "H", 2),
+    ("Cape Verde",    "Saudi Arabia",       "2026-06-26", "22:00", "H", 3),
+    ("Uruguay",       "Spain",              "2026-06-26", "22:00", "H", 3),
+    # Grup I
+    ("France",        "Senegal",            "2026-06-19", "22:00", "I", 1),
+    ("Iraq",          "Norway",             "2026-06-20", "01:00", "I", 1),
+    ("France",        "Iraq",               "2026-06-23", "01:00", "I", 2),
+    ("Norway",        "Senegal",            "2026-06-23", "19:00", "I", 2),
+    ("Senegal",       "Iraq",               "2026-06-27", "22:00", "I", 3),
+    ("Norway",        "France",             "2026-06-27", "22:00", "I", 3),
+    # Grup J
+    ("Argentina",     "Algeria",            "2026-06-20", "22:00", "J", 1),
+    ("Austria",       "Jordan",             "2026-06-21", "01:00", "J", 1),
+    ("Argentina",     "Austria",            "2026-06-24", "01:00", "J", 2),
+    ("Algeria",       "Jordan",             "2026-06-24", "19:00", "J", 2),
+    ("Algeria",       "Austria",            "2026-06-28", "22:00", "J", 3),
+    ("Jordan",        "Argentina",          "2026-06-28", "22:00", "J", 3),
+    # Grup K
+    ("Portugal",      "Uzbekistan",         "2026-06-21", "22:00", "K", 1),
+    ("Colombia",      "DR Congo",           "2026-06-22", "01:00", "K", 1),
+    ("Portugal",      "Colombia",           "2026-06-25", "01:00", "K", 2),
+    ("Uzbekistan",    "DR Congo",           "2026-06-25", "19:00", "K", 2),
+    ("Uzbekistan",    "Colombia",           "2026-06-29", "22:00", "K", 3),
+    ("DR Congo",      "Portugal",           "2026-06-29", "22:00", "K", 3),
+    # Grup L
+    ("England",       "Croatia",            "2026-06-22", "22:00", "L", 1),
+    ("Ghana",         "Panama",             "2026-06-23", "01:00", "L", 1),
+    ("England",       "Ghana",              "2026-06-26", "01:00", "L", 2),
+    ("Panama",        "Croatia",            "2026-06-26", "19:00", "L", 2),
+    ("Panama",        "England",            "2026-06-30", "22:00", "L", 3),
+    ("Croatia",       "Ghana",              "2026-06-30", "22:00", "L", 3),
 ]
-
 # ── 6. Ana işlem ────────────────────────────────────────────────────────────
 def main():
     results_csv = DATA / "results.csv"
