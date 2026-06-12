@@ -8,7 +8,6 @@ import Link from 'next/link'
 
 interface Props { matches: MatchPrediction[] }
 
-
 const GROUPS_DEF: Record<string, string[]> = {
   A: ['Mexico','South Korea','South Africa','Czech Republic'],
   B: ['Canada','Switzerland','Qatar','Bosnia & Herzegovina'],
@@ -38,7 +37,6 @@ const FLAGS: Record<string, string> = {
 }
 function gf(n: string) { return FLAGS[n] ?? '🏳️' }
 
-// Sol ve sağ bracket tamamen ayrı — her birinin kendi r32/r16/qf/sf state'i var
 interface SideState { r32: string[]; r16: string[]; qf: string[]; sf: string }
 const emptySide = (): SideState => ({ r32: [], r16: [], qf: [], sf: '' })
 
@@ -108,18 +106,41 @@ function SideColReverse({ label, pairs, winners, gap, onPick }: {
 export default function PredictClient({ matches: _matches }: Props) {
   const { userId } = useUser()
   const supabase = createClient()
-  const [step, setStep] = useState(0)
-  const [saving, setSaving] = useState(false)
-  const [saved, setSaved] = useState(false)
-  const [msg, setMsg] = useState('')
 
-  const [groups, setGroups] = useState<Record<string,[string,string]>>({})
-  const [selectedThirds, setSelectedThirds] = useState<string[]>([])
+  const [step,           setStep]          = useState(0)
+  const [saving,         setSaving]        = useState(false)
+  const [saved,          setSaved]         = useState(false)
+  const [msg,            setMsg]           = useState('')
+  const [groups,         setGroups]        = useState<Record<string,[string,string]>>({})
+  const [selectedThirds, setSelectedThirds]= useState<string[]>([])
+  const [left,           setLeft]          = useState<SideState>(emptySide())
+  const [right,          setRight]         = useState<SideState>(emptySide())
+  const [champion,       setChampion]      = useState('')
 
-  // Sol ve sağ bracket tamamen ayrı state
-  const [left,  setLeft]  = useState<SideState>(emptySide())
-  const [right, setRight] = useState<SideState>(emptySide())
-  const [champion, setChampion] = useState('')
+  // localStorage'dan yükle (bir kez)
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('wc26_bracket_draft')
+      if (raw) {
+        const d = JSON.parse(raw)
+        if (d.groups)         setGroups(d.groups)
+        if (d.selectedThirds) setSelectedThirds(d.selectedThirds)
+        if (d.left)           setLeft(d.left)
+        if (d.right)          setRight(d.right)
+        if (d.champion)       setChampion(d.champion)
+        if (typeof d.step === 'number') setStep(d.step)
+      }
+    } catch {}
+  }, [])
+
+  // Her değişimde localStorage'a kaydet
+  useEffect(() => {
+    try {
+      localStorage.setItem('wc26_bracket_draft', JSON.stringify({
+        groups, selectedThirds, left, right, champion, step
+      }))
+    } catch {}
+  }, [groups, selectedThirds, left, right, champion, step])
 
   function selectGroupTeam(g: string, team: string) {
     const cur = groups[g] ?? ['','']
@@ -143,7 +164,6 @@ export default function PredictClient({ matches: _matches }: Props) {
     }
   }
 
-  // Sol pick handler
   function pickLeft(round: 'r32'|'r16'|'qf'|'sf', idx: number, team: string) {
     setLeft(prev => {
       const next = {...prev}
@@ -155,7 +175,6 @@ export default function PredictClient({ matches: _matches }: Props) {
     })
   }
 
-  // Sağ pick handler
   function pickRight(round: 'r32'|'r16'|'qf'|'sf', idx: number, team: string) {
     setRight(prev => {
       const next = {...prev}
@@ -169,15 +188,13 @@ export default function PredictClient({ matches: _matches }: Props) {
 
   const { left: lR32, right: rR32 } = step===1 ? getR32() : { left:[], right:[] }
 
-  // Sol tur hesapla
-  const lR16pairs:  [string,string][] = [[left.r32[0]??'?',left.r32[1]??'?'],[left.r32[2]??'?',left.r32[3]??'?'],[left.r32[4]??'?',left.r32[5]??'?'],[left.r32[6]??'?',left.r32[7]??'?']]
-  const lQFpairs:   [string,string][] = [[left.r16[0]??'?',left.r16[1]??'?'],[left.r16[2]??'?',left.r16[3]??'?']]
-  const lSFpair:    [string,string]   =  [left.qf[0]??'?', left.qf[1]??'?']
+  const lR16pairs: [string,string][] = [[left.r32[0]??'?',left.r32[1]??'?'],[left.r32[2]??'?',left.r32[3]??'?'],[left.r32[4]??'?',left.r32[5]??'?'],[left.r32[6]??'?',left.r32[7]??'?']]
+  const lQFpairs:  [string,string][] = [[left.r16[0]??'?',left.r16[1]??'?'],[left.r16[2]??'?',left.r16[3]??'?']]
+  const lSFpair:   [string,string]   =  [left.qf[0]??'?', left.qf[1]??'?']
 
-  // Sağ tur hesapla
-  const rR16pairs:  [string,string][] = [[right.r32[0]??'?',right.r32[1]??'?'],[right.r32[2]??'?',right.r32[3]??'?'],[right.r32[4]??'?',right.r32[5]??'?'],[right.r32[6]??'?',right.r32[7]??'?']]
-  const rQFpairs:   [string,string][] = [[right.r16[0]??'?',right.r16[1]??'?'],[right.r16[2]??'?',right.r16[3]??'?']]
-  const rSFpair:    [string,string]   =  [right.qf[0]??'?', right.qf[1]??'?']
+  const rR16pairs: [string,string][] = [[right.r32[0]??'?',right.r32[1]??'?'],[right.r32[2]??'?',right.r32[3]??'?'],[right.r32[4]??'?',right.r32[5]??'?'],[right.r32[6]??'?',right.r32[7]??'?']]
+  const rQFpairs:  [string,string][] = [[right.r16[0]??'?',right.r16[1]??'?'],[right.r16[2]??'?',right.r16[3]??'?']]
+  const rSFpair:   [string,string]   =  [right.qf[0]??'?', right.qf[1]??'?']
 
   async function saveBracket() {
     if (!userId||!champion) return
@@ -188,31 +205,13 @@ export default function PredictClient({ matches: _matches }: Props) {
       { onConflict:'user_id' }
     )
     if (error) setMsg('❌ '+error.message)
-    else { setSaved(true); setMsg('✅ Bracket kaydedildi!') }
+    else {
+      setSaved(true)
+      setMsg('✅ Bracket kaydedildi!')
+      localStorage.removeItem('wc26_bracket_draft')
+    }
     setSaving(false)
   }
-  // Sayfa yüklenince localStorage'dan oku
-  useEffect(() => {
-  try {
-    const saved = localStorage.getItem('wc26_bracket_draft')
-    if (saved) {
-      const d = JSON.parse(saved)
-      if (d.groups) setGroups(d.groups)
-      if (d.selectedThirds) setSelectedThirds(d.selectedThirds)
-      if (d.left) setLeft(d.left)
-      if (d.right) setRight(d.right)
-      if (d.champion) setChampion(d.champion)
-      if (d.step) setStep(d.step)
-    }
-  } catch {}
-}, [])
-useEffect(() => {
-  try {
-    localStorage.setItem('wc26_bracket_draft', JSON.stringify({
-      groups, selectedThirds, left, right, champion, step
-    }))
-  } catch {}
-}, [groups, selectedThirds, left, right, champion, step])
 
   function shareTwitter() {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`WC 2026 Bracket Tahminim 🏆\nŞampiyon: ${gf(champion)} ${champion}\nhttps://wc26-predictor-orcin.vercel.app/predict #FIFA2026`)}`)
@@ -220,8 +219,6 @@ useEffect(() => {
   function shareWhatsapp() {
     window.open(`https://wa.me/?text=${encodeURIComponent(`WC 2026 Bracket Tahminim 🏆\nŞampiyon: ${gf(champion)} ${champion}\nhttps://wc26-predictor-orcin.vercel.app/predict`)}`)
   }
-  
-  
 
   return (
     <div className="min-h-screen pitch-stripes">
@@ -241,7 +238,6 @@ useEffect(() => {
           ))}
         </div>
 
-        {/* STEP 0 — Gruplar */}
         {step===0 && (
           <div>
             <p className="text-xs font-mono text-white/40 mb-1">1. tıklama → 1. sıra · 2. tıklama → 2. sıra · 3. takıma tıklama → en iyi 8 üçüncü ★</p>
@@ -289,33 +285,23 @@ useEffect(() => {
           </div>
         )}
 
-        {/* STEP 1 — Bracket */}
         {step===1 && (
           <div>
             <p className="text-xs font-mono text-white/40 mb-4">Her maçta kazananı tıkla — turlar otomatik ilerler</p>
             <div className="bg-white/[0.02] border border-white/8 rounded-xl p-4 mb-6">
               <div className="overflow-x-auto pb-2">
                 <div className="flex items-start justify-center gap-0 min-w-max py-1">
-
-                  {/* ── SOL BRACKET ── */}
-                  <SideCol label="R32" pairs={lR32} winners={left.r32} gap={3}
-                    onPick={(i,t)=>pickLeft('r32',i,t)} />
+                  <SideCol label="R32" pairs={lR32} winners={left.r32} gap={3} onPick={(i,t)=>pickLeft('r32',i,t)} />
                   <div className="w-2 flex-shrink-0" />
-                  <SideCol label="R16" pairs={lR16pairs} winners={left.r16} gap={55}
-                    onPick={(i,t)=>pickLeft('r16',i,t)} />
+                  <SideCol label="R16" pairs={lR16pairs} winners={left.r16} gap={55} onPick={(i,t)=>pickLeft('r16',i,t)} />
                   <div className="w-2 flex-shrink-0" />
-                  <SideCol label="QF" pairs={lQFpairs} winners={left.qf} gap={167}
-                    onPick={(i,t)=>pickLeft('qf',i,t)} />
+                  <SideCol label="QF" pairs={lQFpairs} winners={left.qf} gap={167} onPick={(i,t)=>pickLeft('qf',i,t)} />
                   <div className="w-2 flex-shrink-0" />
-
-                  {/* Sol SF */}
                   <div className="flex flex-col flex-shrink-0">
                     <div className="text-[9px] font-mono text-white/25 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2">SF</div>
                     <MBox t1={lSFpair[0]} t2={lSFpair[1]} winner={left.sf} onPick={(t)=>pickLeft('sf',0,t)} />
                   </div>
                   <div className="w-2 flex-shrink-0" />
-
-                  {/* FINAL */}
                   <div className="flex flex-col flex-shrink-0 items-center">
                     <div className="text-[9px] font-mono text-white/25 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2">Final</div>
                     <div style={{marginTop:44}}>
@@ -329,25 +315,17 @@ useEffect(() => {
                       </div>
                     )}
                   </div>
-
                   <div className="w-2 flex-shrink-0" />
-                  {/* Sağ SF */}
                   <div className="flex flex-col flex-shrink-0">
                     <div className="text-[9px] font-mono text-white/25 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2">SF</div>
                     <MBox t1={rSFpair[0]} t2={rSFpair[1]} winner={right.sf} onPick={(t)=>pickRight('sf',0,t)} />
                   </div>
                   <div className="w-2 flex-shrink-0" />
-
-                  {/* ── SAĞ BRACKET ── */}
-                  <SideColReverse label="QF" pairs={rQFpairs} winners={right.qf} gap={167}
-                    onPick={(i,t)=>pickRight('qf',i,t)} />
+                  <SideColReverse label="QF" pairs={rQFpairs} winners={right.qf} gap={167} onPick={(i,t)=>pickRight('qf',i,t)} />
                   <div className="w-2 flex-shrink-0" />
-                  <SideColReverse label="R16" pairs={rR16pairs} winners={right.r16} gap={55}
-                    onPick={(i,t)=>pickRight('r16',i,t)} />
+                  <SideColReverse label="R16" pairs={rR16pairs} winners={right.r16} gap={55} onPick={(i,t)=>pickRight('r16',i,t)} />
                   <div className="w-2 flex-shrink-0" />
-                  <SideColReverse label="R32" pairs={rR32} winners={right.r32} gap={3}
-                    onPick={(i,t)=>pickRight('r32',i,t)} />
-
+                  <SideColReverse label="R32" pairs={rR32} winners={right.r32} gap={3} onPick={(i,t)=>pickRight('r32',i,t)} />
                 </div>
               </div>
             </div>
@@ -376,5 +354,4 @@ useEffect(() => {
       </main>
     </div>
   )
-  
 }
