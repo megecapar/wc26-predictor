@@ -29,12 +29,12 @@ export default function AuthPage() {
             username: username || email.split('@')[0],
           })
         }
-        router.push('/')
-        router.refresh()
+        setError('✅ Kayıt başarılı! Email onayını kontrol et.')
       } else {
         const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
         if (signInError) throw signInError
-        router.push('/')
+        const returnTo = new URLSearchParams(window.location.search).get('returnTo') ?? '/'
+        router.push(returnTo)
         router.refresh()
       }
     } catch (e: unknown) {
