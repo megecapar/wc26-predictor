@@ -80,31 +80,22 @@ function beat(a?: Team, b?: Team): Team {
 }
 
 function getGroupResults(matches: MatchPrediction[]): Record<string, GroupResult> {
-  const realPts: Record<string, number> = {}
   const expPts:  Record<string, number> = {}
 
   for (const m of matches) {
-    realPts[m.home.name] ??= 0; realPts[m.away.name] ??= 0
     expPts[m.home.name]  ??= 0; expPts[m.away.name]  ??= 0
 
-    if (m.result) {
-      const { homeScore: hs, awayScore: as_ } = m.result
-      if (hs > as_)        { realPts[m.home.name] += 3 }
-      else if (hs === as_) { realPts[m.home.name] += 1; realPts[m.away.name] += 1 }
-      else                 { realPts[m.away.name] += 3 }
-    } else {
-      expPts[m.home.name] += m.ms.home.probability * 3 + m.ms.draw.probability
-      expPts[m.away.name] += m.ms.away.probability * 3 + m.ms.draw.probability
-    }
+// Bracket grupları her zaman model tahminine göre — gerçek sonuçlar yansımaz
+    expPts[m.home.name] += m.ms.home.probability * 3 + m.ms.draw.probability
+    expPts[m.away.name] += m.ms.away.probability * 3 + m.ms.draw.probability
   }
 
   const res: Record<string, GroupResult> = {}
   for (const [g, teams] of Object.entries(GROUPS_DEF)) {
     const rows: TeamRow[] = teams.map(n => {
       const t  = getTeam(n)
-      const rp = realPts[n] ?? 0
       const ep = expPts[n]  ?? 0
-      return { ...t, pts: rp, expPts: Math.round((rp + ep) * 10) / 10 }
+      return { ...t, pts: 0, expPts: Math.round(ep * 10) / 10 }
     }).sort((a, b) => b.expPts - a.expPts || b.elo - a.elo)
 
     res[g] = { first: rows[0] ?? BLANK, second: rows[1] ?? BLANK, third: rows[2] ?? BLANK, standings: rows }
