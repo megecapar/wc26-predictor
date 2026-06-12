@@ -76,8 +76,9 @@ function MatchBox({ t1, t2, winner, onPick }: { t1: string; t2: string; winner: 
   )
 }
 
-function RoundCol({ label, pairs, winners, gap, reverse, onPick }: {
+function RoundCol({ label, displayLabel, pairs, winners, gap, reverse, onPick }: {
   label: string
+  displayLabel?: string
   pairs: [string, string][]
   winners: string[]
   gap: number
@@ -87,7 +88,7 @@ function RoundCol({ label, pairs, winners, gap, reverse, onPick }: {
   const list = reverse ? [...pairs].map((p, i) => ({ p, orig: pairs.length - 1 - i })).reverse() : pairs.map((p, i) => ({ p, orig: i }))
   return (
     <div className="flex flex-col flex-shrink-0">
-      <div className="text-[9px] font-mono text-white/25 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2 whitespace-nowrap">{label}</div>
+      <div className="text-[9px] font-mono text-white/25 uppercase tracking-widest text-center px-2 py-1.5 bg-white/[0.03] border border-white/8 rounded mb-2 whitespace-nowrap">{displayLabel ?? label}</div>
       <div className="flex flex-col">
         {list.map(({ p: [t1, t2], orig }, i) => (
           <div key={i} style={{ marginTop: i === 0 ? 0 : gap }}>
@@ -138,9 +139,9 @@ function BracketEditor({ r32Pairs, state, onPick }: {
 
         <RoundCol label="R32" pairs={lR32} winners={lR32.map((_, i) => state.r32[i] ?? '')} gap={GAP} onPick={onPick} />
         <div className="w-2 flex-shrink-0" />
-        <RoundCol label="R16" pairs={lR16} winners={lR16w.map((w, i) => state.r16[i] ?? '')} gap={55} onPick={onPick} />
+        <RoundCol label="LR16" displayLabel="R16" pairs={lR16} winners={lR16w.map((w, i) => state.r16[i] ?? '')} gap={55} onPick={onPick} />
         <div className="w-2 flex-shrink-0" />
-        <RoundCol label="QF" pairs={lQF} winners={lQF.map((_, i) => state.qf[i] ?? '')} gap={167} onPick={onPick} />
+        <RoundCol label="LQF" displayLabel="QF" pairs={lQF} winners={lQF.map((_, i) => state.qf[i] ?? '')} gap={167} onPick={onPick} />
         <div className="w-2 flex-shrink-0" />
 
         {/* Sol SF */}
@@ -173,9 +174,9 @@ function BracketEditor({ r32Pairs, state, onPick }: {
         </div>
         <div className="w-2 flex-shrink-0" />
 
-        <RoundCol label="QF" pairs={rQF} winners={rQF.map((_, i) => state.qf[i + 2] ?? '')} gap={167} reverse onPick={onPick} />
+        <RoundCol label="RQF" displayLabel="QF" pairs={rQF} winners={rQF.map((_, i) => state.qf[i + 2] ?? '')} gap={167} reverse onPick={onPick} />
         <div className="w-2 flex-shrink-0" />
-        <RoundCol label="R16" pairs={rR16} winners={rR16.map((_, i) => state.r16[i + 4] ?? '')} gap={55} reverse onPick={onPick} />
+        <RoundCol label="RR16" displayLabel="R16" pairs={rR16} winners={rR16.map((_, i) => state.r16[i + 4] ?? '')} gap={55} reverse onPick={onPick} />
         <div className="w-2 flex-shrink-0" />
         <RoundCol label="R32" pairs={rR32} winners={rR32.map((_, i) => state.r32[i + 8] ?? '')} gap={GAP} reverse onPick={onPick} />
       </div>
@@ -233,7 +234,8 @@ export default function PredictClient({ matches: _matches }: Props) {
 
   function handlePick(round: string, idx: number, team: string) {
     const roundMap: Record<string, keyof BracketState> = {
-      'R32': 'r32', 'R16': 'r16', 'QF': 'qf', 'SF': 'sf', 'Final': 'final'
+      'R32': 'r32', 'LR16': 'r16', 'RR16': 'r16',
+      'LQF': 'qf', 'RQF': 'qf', 'SF': 'sf', 'Final': 'final'
     }
     const key = roundMap[round]
     if (!key) return
