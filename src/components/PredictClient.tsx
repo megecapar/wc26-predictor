@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MatchPrediction } from '@/lib/types'
 import { Navbar } from '@/components/Navbar'
 import { createClient } from '@/lib/supabase/client'
@@ -7,6 +7,7 @@ import { useUser } from '@/lib/user-context'
 import Link from 'next/link'
 
 interface Props { matches: MatchPrediction[] }
+
 
 const GROUPS_DEF: Record<string, string[]> = {
   A: ['Mexico','South Korea','South Africa','Czech Republic'],
@@ -190,6 +191,28 @@ export default function PredictClient({ matches: _matches }: Props) {
     else { setSaved(true); setMsg('✅ Bracket kaydedildi!') }
     setSaving(false)
   }
+  // Sayfa yüklenince localStorage'dan oku
+  useEffect(() => {
+  try {
+    const saved = localStorage.getItem('wc26_bracket_draft')
+    if (saved) {
+      const d = JSON.parse(saved)
+      if (d.groups) setGroups(d.groups)
+      if (d.selectedThirds) setSelectedThirds(d.selectedThirds)
+      if (d.left) setLeft(d.left)
+      if (d.right) setRight(d.right)
+      if (d.champion) setChampion(d.champion)
+      if (d.step) setStep(d.step)
+    }
+  } catch {}
+}, [])
+useEffect(() => {
+  try {
+    localStorage.setItem('wc26_bracket_draft', JSON.stringify({
+      groups, selectedThirds, left, right, champion, step
+    }))
+  } catch {}
+}, [groups, selectedThirds, left, right, champion, step])
 
   function shareTwitter() {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`WC 2026 Bracket Tahminim 🏆\nŞampiyon: ${gf(champion)} ${champion}\nhttps://wc26-predictor-orcin.vercel.app/predict #FIFA2026`)}`)
@@ -197,6 +220,8 @@ export default function PredictClient({ matches: _matches }: Props) {
   function shareWhatsapp() {
     window.open(`https://wa.me/?text=${encodeURIComponent(`WC 2026 Bracket Tahminim 🏆\nŞampiyon: ${gf(champion)} ${champion}\nhttps://wc26-predictor-orcin.vercel.app/predict`)}`)
   }
+  
+  
 
   return (
     <div className="min-h-screen pitch-stripes">
@@ -351,4 +376,5 @@ export default function PredictClient({ matches: _matches }: Props) {
       </main>
     </div>
   )
+  
 }
