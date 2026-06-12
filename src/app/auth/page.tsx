@@ -29,7 +29,8 @@ export default function AuthPage() {
             username: username || email.split('@')[0],
           })
         }
-        setError('✅ Kayıt başarılı! Email onayını kontrol et.')
+        router.push('/')
+        router.refresh()
       } else {
         const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
         if (signInError) throw signInError
