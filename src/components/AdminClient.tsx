@@ -13,12 +13,17 @@ export default function AdminClient() {
   const [msg, setMsg]         = useState('')
   const [filter, setFilter]   = useState('')
 
+  // Skor
   const [selectedMatch, setSelectedMatch] = useState('')
   const [homeScore, setHomeScore]         = useState('')
   const [awayScore, setAwayScore]         = useState('')
-  const [xgHome, setXgHome]               = useState('')
-  const [xgAway, setXgAway]               = useState('')
 
+  // xG
+  const [xgMatch, setXgMatch] = useState('')
+  const [xgHome,  setXgHome]  = useState('')
+  const [xgAway,  setXgAway]  = useState('')
+
+  // Olay
   const [eventMatch,  setEventMatch]  = useState('')
   const [eventType,   setEventType]   = useState<'red_card'|'injury'>('red_card')
   const [eventTeam,   setEventTeam]   = useState<'home'|'away'>('home')
@@ -40,27 +45,38 @@ export default function AdminClient() {
     if (!selectedMatch || homeScore === '' || awayScore === '') return
     setLoading(true); setMsg('')
     try {
-      const body: Record<string, unknown> = {
-        matchId: selectedMatch,
-        homeScore: parseInt(homeScore),
-        awayScore: parseInt(awayScore),
-      }
-      if (xgHome !== '') body.xgHome = parseFloat(xgHome)
-      if (xgAway !== '') body.xgAway = parseFloat(xgAway)
-
       const res = await fetch('/api/admin/result', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ADMIN_PASS}` },
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          matchId: selectedMatch,
+          homeScore: parseInt(homeScore),
+          awayScore: parseInt(awayScore),
+        }),
       })
       const data = await res.json()
       setMsg(data.success ? `✅ ${data.message}` : `❌ ${data.error}`)
-      if (data.success) {
-        loadMatches()
-        setHomeScore(''); setAwayScore('')
-        setXgHome(''); setXgAway('')
-        setSelectedMatch('')
-      }
+      if (data.success) { loadMatches(); setHomeScore(''); setAwayScore(''); setSelectedMatch('') }
+    } catch { setMsg('❌ Bağlantı hatası') }
+    setLoading(false)
+  }
+
+  async function submitXg() {
+    if (!xgMatch || xgHome === '' || xgAway === '') return
+    setLoading(true); setMsg('')
+    try {
+      const res = await fetch('/api/admin/xg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ADMIN_PASS}` },
+        body: JSON.stringify({
+          matchId: xgMatch,
+          xgHome: parseFloat(xgHome),
+          xgAway: parseFloat(xgAway),
+        }),
+      })
+      const data = await res.json()
+      setMsg(data.success ? `✅ ${data.message}` : `❌ ${data.error}`)
+      if (data.success) { loadMatches(); setXgHome(''); setXgAway(''); setXgMatch('') }
     } catch { setMsg('❌ Bağlantı hatası') }
     setLoading(false)
   }
@@ -91,7 +107,7 @@ export default function AdminClient() {
     m.away.name.toLowerCase().includes(filter.toLowerCase())
   )
   const unplayed = filtered.filter(m => !m.result)
-  const played   = filtered.filter(m => m.result)
+  const played   = filtered.filter(m =>  m.result)
 
   if (!auth) return (
     <div className="min-h-screen pitch-stripes flex items-center justify-center">
@@ -102,9 +118,7 @@ export default function AdminClient() {
           onKeyDown={e => e.key === 'Enter' && login()}
           className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono mb-3 outline-none focus:border-grass-500/50"
         />
-        <button onClick={login} className="w-full bg-grass-500 text-white rounded-lg py-2 text-sm font-mono hover:bg-grass-400 transition-colors">
-          Giriş
-        </button>
+        <button onClick={login} className="w-full bg-grass-500 text-white rounded-lg py-2 text-sm font-mono hover:bg-grass-400 transition-colors">Giriş</button>
         {msg && <p className="text-xs font-mono text-red-400 mt-3 text-center">{msg}</p>}
       </div>
     </div>
@@ -130,7 +144,7 @@ export default function AdminClient() {
           <h2 className="text-sm font-mono font-medium text-chalk-100 mb-4 flex items-center gap-2">
             <span className="text-grass-400">⚽</span> Maç Sonucu Gir
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <select value={selectedMatch} onChange={e => setSelectedMatch(e.target.value)}
               className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none">
               <option value="">Maç seç...</option>
@@ -163,31 +177,49 @@ export default function AdminClient() {
               {loading ? 'Kaydediliyor...' : 'Kaydet & ELO Güncelle'}
             </button>
           </div>
+        </div>
 
-          {/* xG Alanları */}
-          <div className="grid grid-cols-2 gap-3 mt-2">
-            <div className="flex flex-col gap-1">
-              <label className="text-[10px] font-mono text-white/35">
-                xG Ev (opsiyonel) — SofaScore/FotMob&apos;dan bak
-              </label>
-              <input type="number" min="0" max="10" step="0.1" placeholder="ör: 1.8"
-                value={xgHome} onChange={e => setXgHome(e.target.value)}
-                className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-grass-500/50 text-center"
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <label className="text-[10px] font-mono text-white/35">
-                xG Deplasman (opsiyonel)
-              </label>
-              <input type="number" min="0" max="10" step="0.1" placeholder="ör: 0.9"
-                value={xgAway} onChange={e => setXgAway(e.target.value)}
-                className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-grass-500/50 text-center"
-              />
-            </div>
-          </div>
-          <p className="text-[10px] font-mono text-white/25 mt-2">
-            xG girilirse o takımın sonraki maçlarında lambda ayarlanır (+%15 etki)
+        {/* xG GİRİŞİ */}
+        <div className="bg-white/[0.02] border border-white/8 rounded-xl p-5">
+          <h2 className="text-sm font-mono font-medium text-chalk-100 mb-1 flex items-center gap-2">
+            <span className="text-blue-400">📊</span> xG Güncelle
+          </h2>
+          <p className="text-[10px] font-mono text-white/30 mb-4">
+            SofaScore veya FotMob&apos;dan bak · Sonraki maçlarda o takımın lambda&apos;sını etkiler (±%15)
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <select value={xgMatch} onChange={e => setXgMatch(e.target.value)}
+              className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none">
+              <option value="">Biten maç seç...</option>
+              {played.map(m => (
+                <option key={m.id} value={m.id}>
+                  {m.home.flag} {m.home.name} {m.result?.homeScore}-{m.result?.awayScore} {m.away.flag} {m.away.name}
+                  {(m.result as {xgHome?: number})?.xgHome !== undefined
+                    ? ` · xG: ${(m.result as {xgHome?: number}).xgHome}-${(m.result as {xgAway?: number}).xgAway}`
+                    : ' · xG yok'}
+                </option>
+              ))}
+            </select>
+            <div className="flex gap-2 items-center">
+              <div className="flex flex-col flex-1">
+                <label className="text-[9px] font-mono text-white/30 mb-1">xG Ev</label>
+                <input type="number" min="0" max="10" step="0.1" placeholder="ör: 1.8"
+                  value={xgHome} onChange={e => setXgHome(e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-blue-500/50 text-center" />
+              </div>
+              <span className="flex items-center text-white/30 font-mono mt-4">-</span>
+              <div className="flex flex-col flex-1">
+                <label className="text-[9px] font-mono text-white/30 mb-1">xG Dep</label>
+                <input type="number" min="0" max="10" step="0.1" placeholder="ör: 0.9"
+                  value={xgAway} onChange={e => setXgAway(e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-blue-500/50 text-center" />
+              </div>
+            </div>
+            <button onClick={submitXg} disabled={loading || !xgMatch || xgHome === '' || xgAway === ''}
+              className="bg-blue-500/80 disabled:opacity-40 text-white rounded-lg py-2 text-sm font-mono hover:bg-blue-400 transition-colors mt-4 sm:mt-0">
+              {loading ? 'Kaydediliyor...' : 'xG Kaydet & Lambda Güncelle'}
+            </button>
+          </div>
         </div>
 
         {/* OLAY GİRİŞİ */}
@@ -253,11 +285,10 @@ export default function AdminClient() {
                     <span>{m.home.flag} {m.home.name}</span>
                     <span className="text-grass-400 font-medium">{m.result?.homeScore} - {m.result?.awayScore}</span>
                     <span>{m.away.name} {m.away.flag}</span>
-                    {(m.result as {xgHome?: number})?.xgHome !== undefined && (
-                      <span className="text-[10px] text-white/30 ml-2">
-                        xG: {(m.result as {xgHome?: number}).xgHome} - {(m.result as {xgAway?: number}).xgAway}
-                      </span>
-                    )}
+                    {(m.result as {xgHome?: number})?.xgHome !== undefined
+                      ? <span className="text-[10px] text-blue-400/70 ml-1">xG {(m.result as {xgHome?: number}).xgHome}-{(m.result as {xgAway?: number}).xgAway}</span>
+                      : <span className="text-[10px] text-white/20 ml-1">xG —</span>
+                    }
                   </div>
                   <span className="text-[10px] font-mono text-white/25">{m.date}</span>
                 </div>
