@@ -20,7 +20,6 @@ export function Betslip() {
     if (!userId || bets.length === 0) return
     setSaving(true); setMsg('')
     try {
-      // Kuponu kaydet
       const { data: coupon, error: couponErr } = await supabase
         .from('coupons')
         .insert({ user_id: userId!, total_odd: totalOdds, title: `${bets.length} maçlık kupon` })
@@ -29,7 +28,6 @@ export function Betslip() {
 
       if (couponErr) throw couponErr
 
-      // Bahisleri kaydet
       const betsToInsert = bets.map(b => ({
         coupon_id:    coupon.id,
         match_id:     b.matchId,
@@ -42,10 +40,8 @@ export function Betslip() {
       const { error: betsErr } = await supabase.from('coupon_bets').insert(betsToInsert)
       if (betsErr) throw betsErr
 
-      // Puan ver (+5)
       await supabase.rpc('increment_points', { user_id: userId!, amount: 5 }).maybeSingle()
 
-      // İlk kupon rozeti
       const { data: existingCoupons } = await supabase
         .from('coupons').select('id', { count: 'exact' }).eq('user_id', userId!)
       if ((existingCoupons?.length ?? 0) === 1) {
@@ -62,9 +58,15 @@ export function Betslip() {
     setSaving(false)
   }
 
+  // Giriş yapılınca bekleyen kupon varsa otomatik kaydet
+  useEffect(() => {
+    if (userId && bets.length > 0) {
+      saveCoupon()
+    }
+  }, [userId]) // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className="flex flex-col h-full rounded-xl border border-white/8 bg-white/[0.03] overflow-hidden">
-      {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/8">
         <div className="flex items-center gap-2">
           <ReceiptText size={14} className="text-grass-400" />

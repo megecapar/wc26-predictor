@@ -39,7 +39,6 @@ function gf(n: string) { return FLAGS[n] ?? '🏳️' }
 
 interface SideState { r32: string[]; r16: string[]; qf: string[]; sf: string }
 const emptySide = (): SideState => ({ r32: [], r16: [], qf: [], sf: '' })
-
 const DRAFT_KEY = 'wc26_bracket_draft'
 
 function Slot({ team, win, onClick }: { team: string; win: boolean; onClick?: () => void }) {
@@ -127,12 +126,12 @@ export default function PredictClient({ matches: _matches }: Props) {
       const raw = localStorage.getItem(DRAFT_KEY)
       if (!raw) return
       const d = JSON.parse(raw)
-      if (d.groups)                    setGroups(d.groups)
-      if (d.selectedThirds)            setSelectedThirds(d.selectedThirds)
-      if (d.left)                      setLeft(d.left)
-      if (d.right)                     setRight(d.right)
-      if (d.champion)                  setChampion(d.champion)
-      if (typeof d.step === 'number')  setStep(d.step)
+      if (d.groups)                   setGroups(d.groups)
+      if (d.selectedThirds)           setSelectedThirds(d.selectedThirds)
+      if (d.left)                     setLeft(d.left)
+      if (d.right)                    setRight(d.right)
+      if (d.champion)                 setChampion(d.champion)
+      if (typeof d.step === 'number') setStep(d.step)
     } catch {}
   }, [])
 
@@ -143,7 +142,6 @@ export default function PredictClient({ matches: _matches }: Props) {
     } catch {}
   }, [groups, selectedThirds, left, right, champion, step])
 
-  // 3. Giriş yapılınca ve draft varsa otomatik kaydet
   const saveBracket = useCallback(async (silent = false) => {
     if (!userId || !champion) return
     setSaving(true)
@@ -162,13 +160,13 @@ export default function PredictClient({ matches: _matches }: Props) {
     setSaving(false)
   }, [userId, champion, groups, selectedThirds, left, right, supabase])
 
+  // 3. Giriş yapılınca draft varsa otomatik kaydet
   useEffect(() => {
     if (userId && champion && !saved) {
       saveBracket(true)
     }
   }, [userId]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Grup seçimi
   function selectGroupTeam(g: string, team: string) {
     const cur = groups[g] ?? ['', '']
     if (cur[0] === team) { setGroups(p => ({ ...p, [g]: ['', cur[1]] })); return }
@@ -248,7 +246,6 @@ export default function PredictClient({ matches: _matches }: Props) {
           ))}
         </div>
 
-        {/* STEP 0 — Gruplar */}
         {step === 0 && (
           <div>
             <p className="text-xs font-mono text-white/40 mb-1">1. tıklama → 1. sıra · 2. tıklama → 2. sıra · 3. takıma tıklama → en iyi 8 üçüncü ★</p>
@@ -296,7 +293,6 @@ export default function PredictClient({ matches: _matches }: Props) {
           </div>
         )}
 
-        {/* STEP 1 — Bracket */}
         {step === 1 && (
           <div>
             <p className="text-xs font-mono text-white/40 mb-4">Her maçta kazananı tıkla — turlar otomatik ilerler</p>
