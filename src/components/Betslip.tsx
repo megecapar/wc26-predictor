@@ -143,7 +143,7 @@ export function Betslip() {
                 {saving ? 'Kaydediliyor...' : 'Kuponu Kaydet (+5p)'}
               </Button>
             ) : (
-              <Link href="/auth">
+              <Link href="/auth?returnTo=/">
                 <Button variant="outline" className="w-full text-xs font-mono border-white/20 text-white/60 hover:text-white">
                   <LogIn size={12} className="mr-2" />
                   Kaydetmek için giriş yap
