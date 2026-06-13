@@ -16,6 +16,8 @@ export default function AdminClient() {
   const [selectedMatch, setSelectedMatch] = useState('')
   const [homeScore, setHomeScore]         = useState('')
   const [awayScore, setAwayScore]         = useState('')
+  const [xgHome, setXgHome]               = useState('')
+  const [xgAway, setXgAway]               = useState('')
 
   const [eventMatch,  setEventMatch]  = useState('')
   const [eventType,   setEventType]   = useState<'red_card'|'injury'>('red_card')
@@ -38,14 +40,27 @@ export default function AdminClient() {
     if (!selectedMatch || homeScore === '' || awayScore === '') return
     setLoading(true); setMsg('')
     try {
+      const body: Record<string, unknown> = {
+        matchId: selectedMatch,
+        homeScore: parseInt(homeScore),
+        awayScore: parseInt(awayScore),
+      }
+      if (xgHome !== '') body.xgHome = parseFloat(xgHome)
+      if (xgAway !== '') body.xgAway = parseFloat(xgAway)
+
       const res = await fetch('/api/admin/result', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ADMIN_PASS}` },
-        body: JSON.stringify({ matchId: selectedMatch, homeScore: parseInt(homeScore), awayScore: parseInt(awayScore) }),
+        body: JSON.stringify(body),
       })
       const data = await res.json()
       setMsg(data.success ? `✅ ${data.message}` : `❌ ${data.error}`)
-      if (data.success) { loadMatches(); setHomeScore(''); setAwayScore(''); setSelectedMatch('') }
+      if (data.success) {
+        loadMatches()
+        setHomeScore(''); setAwayScore('')
+        setXgHome(''); setXgAway('')
+        setSelectedMatch('')
+      }
     } catch { setMsg('❌ Bağlantı hatası') }
     setLoading(false)
   }
@@ -148,6 +163,31 @@ export default function AdminClient() {
               {loading ? 'Kaydediliyor...' : 'Kaydet & ELO Güncelle'}
             </button>
           </div>
+
+          {/* xG Alanları */}
+          <div className="grid grid-cols-2 gap-3 mt-2">
+            <div className="flex flex-col gap-1">
+              <label className="text-[10px] font-mono text-white/35">
+                xG Ev (opsiyonel) — SofaScore/FotMob&apos;dan bak
+              </label>
+              <input type="number" min="0" max="10" step="0.1" placeholder="ör: 1.8"
+                value={xgHome} onChange={e => setXgHome(e.target.value)}
+                className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-grass-500/50 text-center"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-[10px] font-mono text-white/35">
+                xG Deplasman (opsiyonel)
+              </label>
+              <input type="number" min="0" max="10" step="0.1" placeholder="ör: 0.9"
+                value={xgAway} onChange={e => setXgAway(e.target.value)}
+                className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 font-mono outline-none focus:border-grass-500/50 text-center"
+              />
+            </div>
+          </div>
+          <p className="text-[10px] font-mono text-white/25 mt-2">
+            xG girilirse o takımın sonraki maçlarında lambda ayarlanır (+%15 etki)
+          </p>
         </div>
 
         {/* OLAY GİRİŞİ */}
@@ -213,6 +253,11 @@ export default function AdminClient() {
                     <span>{m.home.flag} {m.home.name}</span>
                     <span className="text-grass-400 font-medium">{m.result?.homeScore} - {m.result?.awayScore}</span>
                     <span>{m.away.name} {m.away.flag}</span>
+                    {(m.result as {xgHome?: number})?.xgHome !== undefined && (
+                      <span className="text-[10px] text-white/30 ml-2">
+                        xG: {(m.result as {xgHome?: number}).xgHome} - {(m.result as {xgAway?: number}).xgAway}
+                      </span>
+                    )}
                   </div>
                   <span className="text-[10px] font-mono text-white/25">{m.date}</span>
                 </div>
